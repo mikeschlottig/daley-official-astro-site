@@ -1,0 +1,213 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  # ─── Blog Posts ─────────────────────────────────────────────────────────────
+  - name: blog
+    label: Blog Posts
+    type: collection
+    path: src/content/blog
+    filename: "{fields.title|slugify}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+        required: true
+        description: "1-2 sentence summary shown on blog card and in meta description."
+      - name: date
+        label: Date
+        type: string
+        required: true
+        description: 'Format: "April 1, 2025"'
+      - name: category
+        label: Category
+        type: string
+        required: true
+        description: 'e.g. "Soil Science", "Organic Gardening", "Amendments"'
+      - name: image
+        label: Hero Image
+        type: image
+        required: true
+        description: "Upload to public/images. For Sharp WebP optimization, also add to src/assets/images/ and blog-images.ts."
+      - name: author
+        label: Author
+        type: string
+        default: "Cameron Daley"
+      - name: readingTime
+        label: Reading Time
+        type: string
+        description: 'e.g. "7 min read"'
+      - name: featured
+        label: Featured
+        type: boolean
+        default: false
+      - name: tags
+        label: Tags
+        type: list
+        description: "SEO tags for the post."
+        fields:
+          - name: tag
+            label: Tag
+            type: string
+      - name: tldr
+        label: TL;DR Bullets
+        type: list
+        description: "3-5 key takeaways shown at top of article for AI crawlers."
+        fields:
+          - name: point
+            label: Bullet point
+            type: string
+      - name: relatedProducts
+        label: Related Products
+        type: list
+        description: "Product slugs, e.g. daleys-mix, premium-soil-mix"
+        fields:
+          - name: slug
+            label: Product slug
+            type: string
+      - name: ogImage
+        label: OG Image Override
+        type: image
+        description: "Optional. Overrides default OG image for social sharing."
+      - name: body
+        label: Content
+        type: rich-text
+
+  # ─── Products ────────────────────────────────────────────────────────────────
+  - name: products
+    label: Products
+    type: collection
+    path: src/content/products
+    filename: "{fields.name|slugify}.md"
+    fields:
+      - name: name
+        label: Product Name
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        type: string
+        required: true
+        description: 'e.g. "The Elite Professional Blend"'
+      - name: badge
+        label: Badge
+        type: string
+        description: 'e.g. "Best Seller", "New"'
+      - name: image
+        label: Product Image
+        type: image
+        required: true
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          - value: premium-media
+            label: Premium Media
+          - value: amendments
+            label: Amendments
+          - value: landscaping
+            label: Landscaping
+          - value: fertilizer
+            label: Fertilizer
+      - name: featured
+        label: Featured on Homepage
+        type: boolean
+        default: false
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+        description: "Lower number = shown first."
+      - name: price
+        label: Price
+        type: string
+        description: 'e.g. "$140 per yard"'
+      - name: totePrice
+        label: Tote Price
+        type: string
+        description: 'e.g. "$300 per 2-yard tote"'
+      - name: npk
+        label: NPK Ratio
+        type: string
+        description: 'Fertilizers only. e.g. "5-4-2"'
+      - name: components
+        label: Base Components
+        type: list
+        description: 'e.g. "35% Peat Moss"'
+        fields:
+          - name: component
+            label: Component
+            type: string
+      - name: enhancedWith
+        label: Enhanced With (Amendments)
+        type: list
+        fields:
+          - name: amendment
+            label: Amendment
+            type: string
+      - name: fertilizerIncluded
+        label: Fertilizer Included
+        type: string
+        description: 'e.g. "20 lbs Fertilizer + 10 lbs 8-3-1 Bat Guano"'
+      - name: usage
+        label: Usage
+        type: text
+        description: "How and where to use this product."
+      - name: season
+        label: Season
+        type: string
+        description: 'e.g. "All Seasons", "Spring / Fall"'
+      - name: releaseType
+        label: Release Type
+        type: string
+        description: 'e.g. "Slow & Steady"'
+      - name: bestFor
+        label: Best For
+        type: text
+        description: "Target use cases and grower types."
+      - name: glowColor
+        label: Card Glow Color (Tailwind class)
+        type: string
+        description: 'e.g. "bg-amber-900/20" — controls card hover glow on site.'
+      - name: body
+        label: Product Description
+        type: rich-text
+
+  # ─── Testimonials ─────────────────────────────────────────────────────────
+  - name: testimonials
+    label: Testimonials
+    type: collection
+    path: src/content/testimonials
+    filename: "{fields.name|slugify}.md"
+    fields:
+      - name: name
+        label: Customer Name
+        type: string
+        required: true
+      - name: role
+        label: Role / Description
+        type: string
+        required: true
+        description: 'e.g. "Home Gardener", "Local Farmer"'
+      - name: rating
+        label: Rating (1-5)
+        type: number
+        required: true
+        default: 5
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+        description: "Lower number = shown first."
+      - name: body
+        label: Testimonial Text
+        type: rich-text
+
+settings:
+  branch: main
