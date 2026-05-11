@@ -1,10 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { History, Award, BookOpen } from 'lucide-react';
 import { ourStoryConfig } from '../lib/site-config';
+import { siteImages } from '../lib/blog-images';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   History, Award, BookOpen,
 };
+
+function getOptimizedSrc(path: string): string {
+  const filename = path.split('/').pop() || '';
+  return siteImages[filename]?.src ?? path;
+}
 
 export function OurStory() {
   if (!ourStoryConfig.mainTitle) return null;
@@ -39,7 +45,7 @@ export function OurStory() {
       <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-gold-500/5 to-transparent" />
 
       <div className="container-custom relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 overflow-hidden">
           {/* Left Content */}
           <div>
             <div className="slide-in-left mb-10">
@@ -47,7 +53,7 @@ export function OurStory() {
               <span className="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">
                 {ourStoryConfig.subtitle}
               </span>
-              <h2 className="font-serif text-h1 text-white has-bar">{ourStoryConfig.mainTitle}</h2>
+              <h2 className="font-serif text-[2rem] sm:text-[2.75rem] lg:text-h1 text-white has-bar">{ourStoryConfig.mainTitle}</h2>
             </div>
 
             {ourStoryConfig.introText && (
@@ -83,12 +89,12 @@ export function OurStory() {
             {/* Tab Content */}
             <div className="fade-up" style={{ transitionDelay: '0.2s' }}>
               {activeTabData && (
-                <div className="p-6 bg-white/5 rounded-lg border border-white/10 transition-all duration-300">
-                  <h3 className="font-serif text-h5 text-white mb-4">{activeTabData.content.title}</h3>
-                  <p className="text-white/75 leading-relaxed mb-4">{activeTabData.content.description}</p>
+                <div className="p-4 sm:p-6 bg-white/5 rounded-lg border border-white/10 transition-all duration-300">
+                  <h3 className="font-serif text-base sm:text-h5 text-white mb-4">{activeTabData.content.title}</h3>
+                  <p className="text-white/75 leading-relaxed mb-4 text-sm sm:text-base">{activeTabData.content.description}</p>
                   <div className="flex items-center gap-3 text-gold-500">
-                    <div className="w-8 h-px bg-gold-500" />
-                    <span className="text-sm font-medium">{activeTabData.content.highlight}</span>
+                    <div className="w-8 h-px bg-gold-500 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm font-medium">{activeTabData.content.highlight}</span>
                   </div>
                 </div>
               )}
@@ -99,12 +105,12 @@ export function OurStory() {
               <div className="fade-up mt-8" style={{ transitionDelay: '0.25s' }}>
                 <div className="relative">
                   <div className="absolute top-3 left-0 right-0 h-px bg-gold-500/30" />
-                  <div className="flex justify-between overflow-x-auto gap-2">
+                  <div className="flex justify-between overflow-x-auto gap-2 pb-3">
                     {ourStoryConfig.timeline.map((event) => (
-                      <div key={event.year} className="relative flex flex-col items-center flex-shrink-0 min-w-[70px]">
+                      <div key={event.year} className="relative flex flex-col items-center flex-shrink-0 min-w-[60px]">
                         <div className="w-2.5 h-2.5 rounded-full bg-[#141414] border-2 border-gold-500 z-10" />
-                        <span className="font-serif text-sm text-gold-500 mt-2">{event.year}</span>
-                        <span className="text-[11px] text-white/60 mt-0.5 text-center whitespace-nowrap">{event.event}</span>
+                        <span className="font-serif text-xs sm:text-sm text-gold-500 mt-2">{event.year}</span>
+                        <span className="text-[10px] text-white/60 mt-0.5 text-center max-w-[70px] leading-tight">{event.event}</span>
                       </div>
                     ))}
                   </div>
@@ -114,11 +120,11 @@ export function OurStory() {
 
             {/* Founder Quote */}
             {ourStoryConfig.quote.text && (
-              <div className="fade-up mt-8 flex items-center gap-6" style={{ transitionDelay: '0.3s' }}>
+              <div className="fade-up mt-8 flex items-start sm:items-center gap-4 sm:gap-6" style={{ transitionDelay: '0.3s' }}>
                 {ourStoryConfig.founderPhoto && (
-                  <div className="w-24 h-24 rounded-lg overflow-hidden border-2 border-gold-500/30 shadow-lg flex-shrink-0">
+                  <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-lg overflow-hidden border-2 border-gold-500/30 shadow-lg flex-shrink-0">
                     <img
-                      src={ourStoryConfig.founderPhoto}
+                      src={getOptimizedSrc(ourStoryConfig.founderPhoto)}
                       alt={ourStoryConfig.founderPhotoAlt}
                       loading="lazy"
                       className="w-full h-full object-cover sepia"
@@ -127,11 +133,11 @@ export function OurStory() {
                 )}
                 <div>
                   {ourStoryConfig.quote.prefix && (
-                    <p className="eyebrow mb-3">
+                    <p className="eyebrow mb-2 sm:mb-3">
                       &ldquo;{ourStoryConfig.quote.prefix}&rdquo;
                     </p>
                   )}
-                  <p className="text-white/70 text-sm italic">"{ourStoryConfig.quote.text}"</p>
+                  <p className="text-white/70 text-xs sm:text-sm italic">"{ourStoryConfig.quote.text}"</p>
                   {ourStoryConfig.quote.attribution && (
                     <p className="text-gold-500 text-xs mt-2">— {ourStoryConfig.quote.attribution}</p>
                   )}
@@ -142,7 +148,7 @@ export function OurStory() {
 
           {/* Right Image */}
           <div className="slide-in-right relative" style={{ transitionDelay: '0.15s' }}>
-            <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
+            <div className="relative aspect-video sm:aspect-[3/2] lg:aspect-[4/5] rounded-lg overflow-hidden">
               {ourStoryConfig.tabs.map((tab) => (
                 <div
                   key={tab.id}
@@ -151,7 +157,7 @@ export function OurStory() {
                   }`}
                 >
                   <img
-                    src={tab.image}
+                    src={getOptimizedSrc(tab.image)}
                     alt={`${tab.name} - ${ourStoryConfig.mainTitle}`}
                     loading="lazy"
                     className="w-full h-full object-cover"
@@ -162,20 +168,20 @@ export function OurStory() {
 
               {/* Year Badge */}
               {ourStoryConfig.yearBadge && (
-                <div className="absolute top-6 right-6 w-24 h-24 rounded-full bg-black/40 backdrop-blur-sm border border-gold-500/40 flex items-center justify-center">
+                <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-black/40 backdrop-blur-sm border border-gold-500/40 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="font-serif text-2xl text-gold-400">{ourStoryConfig.yearBadge}</div>
-                    <div className="text-[10px] text-white/70 uppercase tracking-wider">{ourStoryConfig.yearBadgeLabel}</div>
+                    <div className="font-serif text-lg sm:text-2xl text-gold-400">{ourStoryConfig.yearBadge}</div>
+                    <div className="text-[8px] sm:text-[10px] text-white/70 uppercase tracking-wider">{ourStoryConfig.yearBadgeLabel}</div>
                   </div>
                 </div>
               )}
 
               {/* Bottom Info */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <div className="flex items-center justify-between">
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="flex items-center justify-between gap-2">
                   <div>
-                    {ourStoryConfig.openingHoursLabel && <p className="text-gold-400 text-sm">{ourStoryConfig.openingHoursLabel}</p>}
-                    {ourStoryConfig.openingHours && <p className="text-white text-lg">{ourStoryConfig.openingHours}</p>}
+                    {ourStoryConfig.openingHoursLabel && <p className="text-gold-400 text-xs sm:text-sm">{ourStoryConfig.openingHoursLabel}</p>}
+                    {ourStoryConfig.openingHours && <p className="text-white text-sm sm:text-lg leading-tight">{ourStoryConfig.openingHours}</p>}
                   </div>
                   {ourStoryConfig.ctaButtonText && (
                     <button
@@ -183,7 +189,7 @@ export function OurStory() {
                         const element = document.querySelector('#contact');
                         if (element) element.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="btn-primary rounded-sm text-sm px-6"
+                      className="btn-primary rounded-sm text-xs sm:text-sm px-3 sm:px-6 flex-shrink-0"
                       aria-label={ourStoryConfig.ctaButtonText}
                     >
                       {ourStoryConfig.ctaButtonText}
@@ -192,6 +198,9 @@ export function OurStory() {
                 </div>
               </div>
             </div>
+
+            {/* Decorative border — hidden on mobile to prevent overflow */}
+            <div className="hidden sm:block absolute -top-4 -right-4 w-full h-full border border-gold-500/20 rounded-lg -z-10"></div>
           </div>
         </div>
       </div>
