@@ -3,7 +3,7 @@ title: "Blood Money: How Slaughterhouse Waste Became Garden Gold"
 excerpt: "Blood meal — dried, powdered blood from slaughterhouses — is the fastest-acting organic nitrogen fertilizer available. The story of how Chicago's Union Stock Yards turned a disposal problem into agriculture's best emergency nitrogen source."
 date: "March 14, 2025"
 category: "Ingredients"
-image: "/images/daleys-cavern.png"
+image: "daleys-cavern.png"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["blood meal", "nitrogen", "organic fertilizer", "fast-acting", "deer repellent"]
@@ -83,4 +83,4 @@ Blood meal is just the cycle moving faster than usual.
 
 ---
 
-*Sources: Wikipedia — Blood meal · Wikipedia — Union Stock Yards · National Renderers Association · University of Minnesota Extension*
+*Sources: [Wikipedia — Blood meal](https://en.wikipedia.org/wiki/Blood_meal) · [Wikipedia — Union Stock Yards](https://en.wikipedia.org/wiki/Union_Stock_Yards) · [National Renderers Association](https://www.nationalrenderers.org/) · [University of Minnesota Extension](https://extension.umn.edu/)*

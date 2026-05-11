@@ -3,7 +3,7 @@ title: "The Bone Business: From Burial Grounds to Growing Grounds"
 excerpt: "Bone meal — finely ground animal bones — is one of humanity's oldest fertilizers and remains the gold standard organic phosphorus source. Seven thousand years of empirical farming have been correct. The science just took a while to explain why."
 date: "March 18, 2025"
 category: "Ingredients"
-image: "/images/daleys-bone-meal.png"
+image: "daleys-bone-meal.png"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["bone meal", "phosphorus", "calcium", "organic fertilizer", "root development", "fruiting"]
@@ -77,4 +77,4 @@ The bones become the soil. The soil becomes the food. The cycle is older than ag
 
 ---
 
-*Sources: Wikipedia — Bone meal · Wikipedia — Phosphorus · Wikipedia — Hydroxyapatite · University of Massachusetts Extension · Royal Horticultural Society*
+*Sources: [Wikipedia — Bone meal](https://en.wikipedia.org/wiki/Bone_meal) · [Wikipedia — Phosphorus](https://en.wikipedia.org/wiki/Phosphorus) · [Wikipedia — Hydroxyapatite](https://en.wikipedia.org/wiki/Hydroxyapatite) · [University of Massachusetts Extension](https://ag.umass.edu/) · [Royal Horticultural Society](https://www.rhs.org.uk/)*

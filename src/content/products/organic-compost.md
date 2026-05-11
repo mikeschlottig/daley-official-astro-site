@@ -2,7 +2,7 @@
 name: "Premium Organic Compost"
 subtitle: "Soil Life Injector"
 badge: "100% Organic"
-image: "/images/worm-castings.jpg"
+image: "worm-castings.jpg"
 glowColor: "bg-amber-950/20"
 category: "amendments"
 featured: false

@@ -141,7 +141,7 @@ const pageDescription = "Professional-grade organic soil mixes, fertilizers, and
               <div class={i % 2 === 1 ? 'order-2 lg:order-1' : ''}>
                 <div class="relative rounded-lg overflow-hidden">
                   <img
-                    src={product.data.image}
+                    src={`/images/${product.data.image}`}
                     alt={product.data.name}
                     class="w-full aspect-[4/3] object-cover"
                     loading="lazy"
@@ -253,7 +253,7 @@ const pageDescription = "Professional-grade organic soil mixes, fertilizers, and
         {landscaping.map(product => (
           <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center fade-up max-w-5xl mx-auto">
             <div class="relative rounded-lg overflow-hidden">
-              <img src={product.data.image} alt={product.data.name} class="w-full aspect-[4/3] object-cover" loading="lazy"/>
+              <img src={`/images/${product.data.image}`} alt={product.data.name} class="w-full aspect-[4/3] object-cover" loading="lazy"/>
               <div class="absolute inset-0 ring-1 ring-white/10 rounded-lg"></div>
               {product.data.badge && (
                 <span class="absolute top-4 left-4 px-3 py-1 bg-gold-500 text-[#141414] text-xs font-bold uppercase tracking-wider rounded-full">{product.data.badge}</span>
@@ -301,7 +301,7 @@ const pageDescription = "Professional-grade organic soil mixes, fertilizers, and
           {amendments.map(product => (
             <div class="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-gold-500/30 transition-all duration-300 group">
               <div class="relative">
-                <img src={product.data.image} alt={product.data.name} class="w-full h-48 object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy"/>
+                <img src={`/images/${product.data.image}`} alt={product.data.name} class="w-full h-48 object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy"/>
                 {product.data.badge && (
                   <span class="absolute top-3 left-3 px-2.5 py-1 bg-gold-500/90 text-[#141414] text-xs font-bold uppercase tracking-wider rounded-full">{product.data.badge}</span>
                 )}
@@ -358,7 +358,7 @@ const pageDescription = "Professional-grade organic soil mixes, fertilizers, and
           {fertilizers.map(product => (
             <div class="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-gold-500/30 transition-all duration-300">
               <div class="relative">
-                <img src={product.data.image} alt={product.data.name} class="w-full h-56 object-cover" loading="lazy"/>
+                <img src={`/images/${product.data.image}`} alt={product.data.name} class="w-full h-56 object-cover" loading="lazy"/>
                 <div class="absolute top-4 left-4">
                   <span class="px-3 py-1.5 bg-gold-500 text-[#141414] text-sm font-black rounded-full tracking-wider">
                     NPK {product.data.npk}

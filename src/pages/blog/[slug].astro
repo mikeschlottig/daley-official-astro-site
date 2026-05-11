@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
+import { siteImages } from '../../lib/blog-images';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -37,13 +39,16 @@ const productNames: Record<string, {name: string; url: string}> = {
   'bloom-blend': { name: 'Bloom Blend (2-7-7)', url: '/products#fertilizers' },
 };
 
+const heroImage = siteImages[post.data.image];
+const heroSrc = heroImage?.src ?? `/images/${post.data.image}`;
+
 // JSON-LD Article schema for GEO / AI search
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": post.data.title,
   "description": post.data.excerpt,
-  "image": `https://daleyorganics.com${post.data.ogImage ?? post.data.image}`,
+  "image": `https://daleyorganics.com${post.data.ogImage ?? heroSrc}`,
   "datePublished": post.data.date,
   "author": {
     "@type": "Person",
@@ -73,7 +78,7 @@ const articleSchema = {
   title={`${post.data.title} | Daley Organics Blog`}
   description={post.data.excerpt}
   keywords={post.data.tags?.join(', ') ?? `${post.data.category}, organic gardening, soil science, Grants Pass Oregon`}
-  ogImage={post.data.ogImage ?? post.data.image}
+  ogImage={post.data.ogImage ?? heroSrc}
   canonical={`https://daleyorganics.com/blog/${post.id}`}
 >
   <!-- Article JSON-LD -->
@@ -98,11 +103,18 @@ const articleSchema = {
 
   <!-- Hero image -->
   <div class="relative pt-[112px] h-[42vh] min-h-[280px] max-h-[420px] overflow-hidden">
-    <img
-      src={post.data.image}
-      alt={post.data.title}
-      class="w-full h-full object-cover"
-    />
+    {heroImage ? (
+      <Image
+        src={heroImage}
+        alt={post.data.title}
+        width={1200}
+        height={500}
+        loading="eager"
+        class="w-full h-full object-cover"
+      />
+    ) : (
+      <img src={heroSrc} alt={post.data.title} class="w-full h-full object-cover" />
+    )}
     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
     <div class="absolute bottom-0 left-0 right-0 p-8">
       <div class="max-w-4xl mx-auto">
@@ -228,7 +240,11 @@ const articleSchema = {
             {related.map((p) => (
               <a href={`/blog/${p.id}`} class="group bg-stone-900/50 border border-stone-800 rounded-xl overflow-hidden hover:border-stone-700 transition-colors block">
                 <div class="relative aspect-[3/2] overflow-hidden">
-                  <img src={p.data.image} alt={p.data.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                  {siteImages[p.data.image] ? (
+                    <Image src={siteImages[p.data.image]} alt={p.data.title} loading="lazy" width={400} height={267} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <img src={`/images/${p.data.image}`} alt={p.data.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  )}
                 </div>
                 <div class="p-4">
                   <p class="text-stone-500 text-xs mb-2">{p.data.date}</p>

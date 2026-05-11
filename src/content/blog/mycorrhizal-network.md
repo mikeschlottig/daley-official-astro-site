@@ -3,7 +3,7 @@ title: "The Mycorrhizae Mafia: The Underground Network That Controls Your Garden
 excerpt: "Mycorrhizal fungi have been running a 400-million-year partnership with plants — trading phosphorus and water for sugar. Learn why most gardeners accidentally destroy it and how to rebuild it."
 date: "April 1, 2025"
 category: "Soil Science"
-image: "/images/daleys-mycorrhizal-highway.png"
+image: "daleys-mycorrhizal-highway.png"
 author: "Cameron Daley"
 readingTime: "7 min read"
 tags: ["mycorrhizae", "soil biology", "fungal networks", "organic gardening", "root health"]
@@ -86,4 +86,4 @@ The network is running. All you have to do is stop breaking it.
 
 ---
 
-*Sources: Wikipedia — Mycorrhiza · Wikipedia — Mycorrhizal network · Wikipedia — Suzanne Simard · New Phytologist Foundation · USDA ARS — Mycorrhizal Research*
+*Sources: [Wikipedia — Mycorrhiza](https://en.wikipedia.org/wiki/Mycorrhiza) · [Wikipedia — Mycorrhizal network](https://en.wikipedia.org/wiki/Mycorrhizal_network) · [Wikipedia — Suzanne Simard](https://en.wikipedia.org/wiki/Suzanne_Simard) · [New Phytologist Foundation](https://www.newphytologist.org/) · [USDA ARS](https://www.ars.usda.gov/)*

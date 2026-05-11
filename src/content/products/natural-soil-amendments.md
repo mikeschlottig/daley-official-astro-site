@@ -2,7 +2,7 @@
 name: "Natural Soil Amendments"
 subtitle: "Structure Optimizer"
 badge: "Custom Blend"
-image: "/images/rock-dust.jpg"
+image: "rock-dust.jpg"
 glowColor: "bg-slate-800/20"
 category: "amendments"
 featured: false

@@ -1,4 +1,5 @@
 # Daley Organics — Site Editing Guide
+
 > Astro v6 + React Islands + Cloudflare Pages
 > Last updated: 2026-04-11
 
@@ -6,19 +7,19 @@
 
 ## Quick Reference
 
-| Task | File(s) to Edit |
-|------|----------------|
-| Change any text/copy | `src/lib/site-config.ts` |
-| Change nav links or CTA | `src/lib/site-config.ts` → `navigationConfig` |
-| Change colors / fonts | `tailwind.config.cjs` + `src/styles/global.css` |
-| Add a blog post | New `.md` in `src/content/blog/` |
-| Add a product | New `.md` in `src/content/products/` |
-| Add a testimonial | New `.md` in `src/content/testimonials/` |
-| Add a new page | New `.astro` in `src/pages/` |
-| Change SEO / JSON-LD | `src/layouts/BaseLayout.astro` |
-| Change social links | `src/lib/site-config.ts` → `footerConfig.socialLinks` |
-| Change directory badges | `src/lib/site-config.ts` → `directoryLinks` |
-| Change address / phone | `src/lib/site-config.ts` + `src/layouts/BaseLayout.astro` |
+| Task                    | File(s) to Edit                                           |
+| ----------------------- | --------------------------------------------------------- |
+| Change any text/copy    | `src/lib/site-config.ts`                                  |
+| Change nav links or CTA | `src/lib/site-config.ts` → `navigationConfig`             |
+| Change colors / fonts   | `tailwind.config.cjs` + `src/styles/global.css`           |
+| Add a blog post         | New `.md` in `src/content/blog/`                          |
+| Add a product           | New `.md` in `src/content/products/`                      |
+| Add a testimonial       | New `.md` in `src/content/testimonials/`                  |
+| Add a new page          | New `.astro` in `src/pages/`                              |
+| Change SEO / JSON-LD    | `src/layouts/BaseLayout.astro`                            |
+| Change social links     | `src/lib/site-config.ts` → `footerConfig.socialLinks`     |
+| Change directory badges | `src/lib/site-config.ts` → `directoryLinks`               |
+| Change address / phone  | `src/lib/site-config.ts` + `src/layouts/BaseLayout.astro` |
 
 ---
 
@@ -52,6 +53,7 @@ pnpm preview      # serves dist/ locally
 - `directoryLinks` — the trust badge strip (Yelp, BBB, Yellow Pages, etc.)
 
 **Example — change the hero subtitle:**
+
 ```ts
 // src/lib/site-config.ts
 export const heroConfig = {
@@ -83,14 +85,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ```
 
 3. Add to navigation in `src/lib/site-config.ts`:
-```ts
-navLinks: [
-  // ...existing links
-  { name: "New Page", href: "/your-page-name", icon: "Sprout" },
-],
-```
+   
+   ```ts
+   navLinks: [
+   // ...existing links
+   { name: "New Page", href: "/your-page-name", icon: "Sprout" },
+   ],
+   ```
 
 The Navigation component automatically handles both:
+
 - Hash anchors (`#section`) → smooth scroll
 - Page routes (`/page`) → full navigation
 
@@ -99,6 +103,7 @@ The Navigation component automatically handles both:
 ## 4. Internal Routing & Link Types
 
 ### Hash anchors (same-page scroll)
+
 Use `href="#section-id"` — the Navigation and Footer `scrollToSection` functions handle these automatically.
 
 ```astro
@@ -108,6 +113,7 @@ Use `href="#section-id"` — the Navigation and Footer `scrollToSection` functio
 ```
 
 ### Page routes (different page)
+
 Use `href="/page-name"` — Navigation's `handleNavLink()` detects the `/` prefix and does `window.location.href`.
 
 ```astro
@@ -115,11 +121,13 @@ Use `href="/page-name"` — Navigation's `handleNavLink()` detects the `/` prefi
 ```
 
 ### Page routes with section anchors
+
 ```astro
 <a href="/products#pickup">Pickup Instructions</a>
 ```
 
 ### External links — always add `target="_blank" rel="noopener noreferrer"`:
+
 ```astro
 <a href="https://yelp.com/..." target="_blank" rel="noopener noreferrer">Yelp</a>
 ```
@@ -138,10 +146,12 @@ Fonts are loaded in `src/layouts/BaseLayout.astro` via Google Fonts, and configu
 | `font-script` | Qwitcher Grypen | Preloader brand mark only |
 
 **To change the serif font:**
+
 1. Update the Google Fonts URL in `BaseLayout.astro`
 2. Update `fontFamily.serif` in `tailwind.config.cjs`
 
 **To change the sans-serif font:**
+
 1. Update the Google Fonts URL
 2. Update `fontFamily.sans`
 
@@ -166,6 +176,7 @@ colors: {
 ```
 
 The `btn-primary` style (the gold CTA button) is in `src/styles/global.css`:
+
 ```css
 .btn-primary {
   background-color: var(--gold-500);
@@ -174,6 +185,7 @@ The `btn-primary` style (the gold CTA button) is in `src/styles/global.css`:
 ```
 
 **To standardize gold usage:**
+
 - Buttons: `btn-primary` class (auto uses gold-500)
 - Eyebrows: `eyebrow` class (auto uses gold-500)
 - Borders/accents: `border-gold-500/30`, `text-gold-400`
@@ -182,14 +194,14 @@ The `btn-primary` style (the gold CTA button) is in `src/styles/global.css`:
 
 ## 7. Typography Classes Reference
 
-| Class | Description |
-|-------|-------------|
-| `font-serif text-h1` | Main section heading (~4-5xl) |
-| `font-serif text-h5` | Sub-heading (~xl) |
-| `eyebrow` | Section eyebrow — bold tracked uppercase gold sans-serif |
-| `eyebrow-hero` | Hero banner eyebrow — larger, black weight |
-| `text-gold-500 text-xs uppercase tracking-[0.2em]` | Subtitle under eyebrow |
-| `font-script` | Script/calligraphy — **Preloader only** |
+| Class                                              | Description                                              |
+| -------------------------------------------------- | -------------------------------------------------------- |
+| `font-serif text-h1`                               | Main section heading (~4-5xl)                            |
+| `font-serif text-h5`                               | Sub-heading (~xl)                                        |
+| `eyebrow`                                          | Section eyebrow — bold tracked uppercase gold sans-serif |
+| `eyebrow-hero`                                     | Hero banner eyebrow — larger, black weight               |
+| `text-gold-500 text-xs uppercase tracking-[0.2em]` | Subtitle under eyebrow                                   |
+| `font-script`                                      | Script/calligraphy — **Preloader only**                  |
 
 ---
 
@@ -214,6 +226,7 @@ Paragraph text. [Link to our Fertilizer Blend](/products#catalog) for more.
 ```
 
 **Blog post SEO tips:**
+
 - Title: include "Grants Pass" or "Rogue Valley" for local SEO
 - Answer a specific long-tail question (e.g., "best fertilizer for tomatoes in Southern Oregon")
 - Link back to a product in every post
@@ -247,10 +260,12 @@ Product description here.
 Business info appears in multiple places. Update all at once:
 
 **`src/lib/site-config.ts`:**
+
 - `contactFormConfig.contactInfo` — contact section cards
 - `footerConfig.contactItems` — footer contact strip
 
 **`src/layouts/BaseLayout.astro`:**
+
 - `localBusinessSchema.address` — JSON-LD structured data
 - `localBusinessSchema.telephone`
 - `localBusinessSchema.geo` — latitude/longitude
@@ -273,6 +288,8 @@ npx wrangler pages deploy dist/ --project-name=daley-organics
 
 The site is pure static (`output: 'static'`). No Cloudflare Workers adapter needed.
 `wrangler.toml` is configured for the project name `daley-organics`.
+
+# Workers Project - NOT PAGES
 
 ---
 

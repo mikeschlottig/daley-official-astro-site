@@ -2,7 +2,7 @@
 name: "Daley's Bloom"
 subtitle: "Flowering & Fruiting Fertilizer"
 badge: "2-7-7"
-image: "/images/flower-garden.jpg"
+image: "flower-garden.jpg"
 glowColor: "bg-rose-900/20"
 category: "fertilizer"
 featured: false

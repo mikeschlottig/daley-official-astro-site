@@ -58,8 +58,8 @@ export function Navigation() {
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <button
-          onClick={() => scrollToSection('#hero')}
+        <a
+          href="/"
           className="flex items-center gap-3 group"
           aria-label={navigationConfig.brandName}
         >
@@ -68,7 +68,7 @@ export function Navigation() {
             <span className="font-serif text-xl text-white tracking-wide">{navigationConfig.brandName}</span>
             <span className="text-[10px] text-gold-400 tracking-widest uppercase">{navigationConfig.tagline}</span>
           </div>
-        </button>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8" role="menubar">
@@ -121,7 +121,7 @@ export function Navigation() {
         {/* CTA Button */}
         {navigationConfig.ctaButtonText && (
           <button
-            onClick={() => scrollToSection('#contact')}
+            onClick={() => handleNavLink('/#contact')}
             className="hidden lg:block btn-primary rounded"
             aria-label={navigationConfig.ctaButtonText}
           >
@@ -196,7 +196,7 @@ export function Navigation() {
 
           {navigationConfig.ctaButtonText && (
             <button
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => handleNavLink('/#contact')}
               className="btn-primary rounded mt-6 text-center"
               role="menuitem"
             >

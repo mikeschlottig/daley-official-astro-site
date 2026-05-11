@@ -3,7 +3,7 @@ title: "Understanding N-P-K: The Building Blocks of Fertilizer"
 excerpt: "A beginner's guide to nitrogen, phosphorus, and potassium and how they support plant growth."
 date: "March 5, 2025"
 category: "Education"
-image: "/images/bat-guano.jpg"
+image: "bat-guano.jpg"
 author: "Cameron Daley"
 readingTime: "5 min read"
 tags: ["NPK", "fertilizer", "nitrogen", "phosphorus", "potassium", "soil science"]

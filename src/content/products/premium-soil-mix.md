@@ -2,7 +2,7 @@
 name: "Premium Soil Mix"
 subtitle: "The Foundation Blend"
 badge: "Foundation"
-image: "/images/compost-hands.jpg"
+image: "compost-hands.jpg"
 glowColor: "bg-green-900/20"
 category: "premium-media"
 featured: true

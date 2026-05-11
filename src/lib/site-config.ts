@@ -53,12 +53,12 @@ export const navigationConfig: NavigationConfig = {
   brandSubname: "Organics",
   tagline: "Feed the Microbes. Grow More.",
   navLinks: [
-    { name: "Home", href: "#home", icon: "Home" },
+    { name: "Home", href: "/", icon: "Home" },
     { name: "Products", href: "/products", icon: "Sprout" },
     { name: "Ingredients", href: "/ingredients", icon: "Leaf" },
     { name: "Blog", href: "/blog", icon: "Newspaper" },
     { name: "Research", href: "/research", icon: "BookOpen" },
-    { name: "Contact", href: "#contact", icon: "Mail" },
+    { name: "Contact", href: "/#contact", icon: "Mail" },
   ],
   ctaButtonText: "Schedule Bulk Pickup",
 };
@@ -322,7 +322,7 @@ export const ourStoryConfig: OurStoryConfig = {
   mainTitle: "The Daley Story",
   introText: "Born and raised in the Rogue Valley, Cameron Daley founded Daley Organics with a vision: to bring prosperity and opportunity to the area while promoting sustainability through organic agriculture.",
   timeline: [
-    { year: "2018", event: "Daley Organics founded in Grants Pass" },
+    { year: "2014", event: "Daley Organics founded in Grants Pass" },
     { year: "2019", event: "First soil mix formula perfected" },
     { year: "2020", event: "Expanded to 25+ ingredient blends" },
     { year: "2021", event: "Served 500+ local gardeners" },
@@ -367,7 +367,7 @@ export const ourStoryConfig: OurStoryConfig = {
   openingHours: "Monday - Saturday: 9:00 AM - 5:00 PM",
   openingHoursLabel: "Visit Our Location",
   ctaButtonText: "Get Directions",
-  yearBadge: "2018",
+  yearBadge: "2014",
   yearBadgeLabel: "Founded",
   quote: {
     prefix: "Our Commitment",

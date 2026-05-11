@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import bannerImage from '../assets/images/banner-image.png';
 import { Preloader } from '../components/Preloader';
 import { Hero } from '../components/Hero';
 import { ProductShowcase } from '../components/ProductShowcase';
@@ -27,7 +29,7 @@ import { siteConfig } from '../lib/site-config';
 
       <!-- Banner image: between hero and product showcase -->
       <div class="w-full">
-        <img src="/images/banner-image.png" alt="Daley Organics" class="w-full object-cover" />
+        <Image src={bannerImage} alt="Daley Organics" width={1920} height={600} loading="lazy" class="w-full object-cover" />
       </div>
 
       <!-- Interactive product showcase with tab switching -->

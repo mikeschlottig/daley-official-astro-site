@@ -3,7 +3,7 @@ title: "Remineralize Your Soil with Glacial Rock Dust"
 excerpt: "How adding trace minerals can revitalize tired soil and boost plant immunity."
 date: "February 28, 2025"
 category: "Ingredients"
-image: "/images/rock-dust.jpg"
+image: "rock-dust.jpg"
 author: "Cameron Daley"
 readingTime: "4 min read"
 tags: ["glacial rock dust", "remineralization", "trace minerals", "soil health"]

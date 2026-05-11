@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import { newsConfig } from '../lib/site-config';
+import storyImageSrc from '../assets/images/farm-landscape.jpg';
+import { siteImages } from '../lib/blog-images';
 
 const articles = (await getCollection('blog')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
@@ -38,18 +41,25 @@ const testimonials = (await getCollection('testimonials')).sort(
     {articles.length > 0 && (
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {articles.map((article, index) => (
-          <article
-            class="fade-up group cursor-pointer"
+          <a
+            href={`/blog/${article.id}`}
+            class="fade-up group cursor-pointer block"
             style={`transition-delay: ${0.1 + index * 0.1}s`}
           >
             <!-- Image -->
             <div class="relative aspect-[3/2] rounded-lg overflow-hidden mb-5">
-              <img
-                src={article.data.image}
-                alt={`${article.data.title} - ${article.data.category}`}
-                loading="lazy"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              {siteImages[article.data.image] ? (
+                <Image
+                  src={siteImages[article.data.image]}
+                  alt={`${article.data.title} - ${article.data.category}`}
+                  loading="lazy"
+                  width={600}
+                  height={400}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              ) : (
+                <img src={`/images/${article.data.image}`} alt={`${article.data.title} - ${article.data.category}`} loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              )}
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
               <!-- Category Badge -->
@@ -95,7 +105,7 @@ const testimonials = (await getCollection('testimonials')).sort(
                 </span>
               )}
             </div>
-          </article>
+          </a>
         ))}
       </div>
     )}
@@ -175,10 +185,12 @@ const testimonials = (await getCollection('testimonials')).sort(
             <div class="relative aspect-[4/5] rounded-lg overflow-hidden">
               {newsConfig.storyImage && (
                 <>
-                  <img
-                    src={newsConfig.storyImage}
+                  <Image
+                    src={storyImageSrc}
                     alt={newsConfig.storyImageCaption}
                     loading="lazy"
+                    width={800}
+                    height={1000}
                     class="w-full h-full object-cover"
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>

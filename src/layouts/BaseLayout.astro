@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import { Navigation } from '../components/Navigation';
+import { Footer } from '../components/Footer';
+import { ScrollToTop } from '../components/ScrollToTop';
 
 interface Props {
   title?: string;
@@ -26,7 +29,7 @@ const localBusinessSchema = {
   "url": "https://daleyorganics.com",
   "telephone": "+15414410510",
   "email": "macmonk@live.com",
-  "foundingDate": "2018",
+  "foundingDate": "2014",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "8470 Monument Dr",
@@ -123,6 +126,9 @@ const localBusinessSchema = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(localBusinessSchema)} />
   </head>
   <body>
+    <Navigation client:load />
     <slot />
+    <Footer client:visible />
+    <ScrollToTop client:load />
   </body>
 </html>

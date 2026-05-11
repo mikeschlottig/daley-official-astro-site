@@ -3,7 +3,7 @@ title: "The Power of Kelp: Ocean Nutrition for Your Garden"
 excerpt: "Discover how kelp meal provides over 70 micronutrients and natural growth hormones for healthier plants."
 date: "March 15, 2025"
 category: "Ingredients"
-image: "/images/kelp-meal.jpg"
+image: "kelp-meal.jpg"
 featured: true
 author: "Cameron Daley"
 readingTime: "4 min read"

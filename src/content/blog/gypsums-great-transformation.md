@@ -3,7 +3,7 @@ title: "Gypsum's Great Transformation: From Egyptian Pyramids to Perfect Soil St
 excerpt: "The mineral that built the pyramids also builds perfect soil structure. Gypsum's unique ability to break up clay without changing pH makes it the most underrated amendment in organic gardening."
 date: "March 28, 2025"
 category: "Soil Science"
-image: "/images/daleys-angel-of-gypsum.png"
+image: "daleys-angel-of-gypsum.png"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["gypsum", "clay soil", "calcium", "soil structure", "sulfur"]
@@ -82,4 +82,4 @@ But the basic observation — spread this white powder on soil and things grow b
 
 ---
 
-*Sources: Wikipedia — Gypsum · Wikipedia — Sodic soil · USDA NRCS — Gypsum · Ohio State University Extension*
+*Sources: [Wikipedia — Gypsum](https://en.wikipedia.org/wiki/Gypsum) · [Wikipedia — Sodic soil](https://en.wikipedia.org/wiki/Alkali_soil) · [USDA NRCS](https://www.nrcs.usda.gov/) · [Ohio State University Extension](https://ohioline.osu.edu/)*

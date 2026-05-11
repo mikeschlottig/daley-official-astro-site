@@ -3,7 +3,7 @@ title: "Why Worm Castings Are Called Black Gold"
 excerpt: "Learn why worm castings are one of the most potent organic fertilizers available to home gardeners."
 date: "March 10, 2025"
 category: "Education"
-image: "/images/worm-castings.jpg"
+image: "worm-castings.jpg"
 featured: true
 author: "Cameron Daley"
 readingTime: "4 min read"

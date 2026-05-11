@@ -2,7 +2,7 @@
 name: "Daley Organics Grow Blend"
 subtitle: "Vegetative Growth Fertilizer"
 badge: "5-4-2"
-image: "/images/fertilizer-blend.jpg"
+image: "fertilizer-blend.jpg"
 glowColor: "bg-emerald-900/20"
 category: "fertilizer"
 featured: false

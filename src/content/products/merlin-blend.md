@@ -2,7 +2,7 @@
 name: "Merlin Blend"
 subtitle: "High-Volume Garden & Landscape"
 badge: "Best Value"
-image: "/images/farm-landscape.jpg"
+image: "farm-landscape.jpg"
 glowColor: "bg-stone-800/20"
 category: "landscaping"
 featured: true

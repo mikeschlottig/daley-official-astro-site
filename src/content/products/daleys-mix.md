@@ -2,7 +2,7 @@
 name: "Daley's Mix"
 subtitle: "The Elite Professional Blend"
 badge: "Best Seller"
-image: "/images/soil-mix.jpg"
+image: "soil-mix.jpg"
 glowColor: "bg-amber-900/20"
 category: "premium-media"
 featured: true

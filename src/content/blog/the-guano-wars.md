@@ -3,7 +3,7 @@ title: "The Guano Wars: When Bird Poop Was Worth More Than Gold"
 excerpt: "In the mid-1800s, seabird guano was the world's most valuable fertilizer and a strategic resource nations went to war over. The story of Peru's Chincha Islands — and why seabird guano is still one of the best organic fertilizers on Earth."
 date: "March 22, 2025"
 category: "Ingredients"
-image: "/images/daleys-seabird-guano.png"
+image: "daleys-seabird-guano.png"
 author: "Cameron Daley"
 readingTime: "7 min read"
 tags: ["guano", "seabird guano", "organic fertilizer", "phosphorus", "nitrogen", "soil history"]
@@ -95,4 +95,4 @@ The cormorant has no idea. It's just doing what cormorants do.
 
 ---
 
-*Sources: Wikipedia — Guano · Wikipedia — Guano Islands Act · Wikipedia — War of the Pacific · Smithsonian Magazine · USDA*
+*Sources: [Wikipedia — Guano](https://en.wikipedia.org/wiki/Guano) · [Wikipedia — Guano Islands Act](https://en.wikipedia.org/wiki/Guano_Islands_Act) · [Wikipedia — War of the Pacific](https://en.wikipedia.org/wiki/War_of_the_Pacific) · [Smithsonian Magazine](https://www.smithsonianmag.com/) · [USDA](https://www.usda.gov/)*

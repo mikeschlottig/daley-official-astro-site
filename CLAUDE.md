@@ -41,7 +41,24 @@ Move typed `const` declarations to the frontmatter (`---` block) instead.
 - `src/styles/global.css` — global styles
 
 ## Build
-Build wrapper: `run-build.cmd` (sets Volta PATH). Dev server HMR works fine for verification.
+Build via pnpm: `pnpm run build` — use this, NOT direct node invocation (node swallows all output).
+Build wrapper `run-build.cmd` also works. Dev server HMR works fine for verification.
+
+## Image Optimization
+`sharp` must be installed (`pnpm add sharp`) — without it, Astro silently falls back to public/ paths and no WebP conversion happens. Already installed.
+
+Images live in TWO places intentionally:
+- `src/assets/images/` — processed by Sharp → `/_astro/*.hash.webp` in dist
+- `public/images/` — React components use these as string paths (site-config.ts); keep them here
+
+### Image map pattern (REQUIRED for content collections)
+`image()` schema helper + `../../` relative paths in frontmatter does NOT work with the Content Layer API glob loader. Use `z.string()` + the static image map instead:
+
+- Schema: `image: z.string()` (NOT `image: image()`)  
+- Frontmatter: just the filename, e.g. `image: "daleys-cavern.png"`
+- Import map: `src/lib/blog-images.ts` — static imports keyed by filename
+- In components: `import { siteImages } from '../lib/blog-images'` then `<Image src={siteImages[post.data.image]} />`
+- Adding a new content image: add it to `src/assets/images/`, add import + key to `blog-images.ts`
 
 ## GEO/SEO Patterns
 - Blog posts: TLDR box rendered BEFORE `<Content />` — AI crawlers read it first

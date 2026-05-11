@@ -2,7 +2,7 @@
 name: "Professional Potting Mix"
 subtitle: "Container Specialist"
 badge: "Container Grade"
-image: "/images/happy-gardener.jpg"
+image: "happy-gardener.jpg"
 glowColor: "bg-teal-900/20"
 category: "amendments"
 featured: false
