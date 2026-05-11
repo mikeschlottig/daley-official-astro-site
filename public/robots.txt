@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://daleyorganics.com/sitemap-index.xml
+
+# AI/LLM overview
+# https://daleyorganics.com/llms.txt

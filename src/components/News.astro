@@ -1,0 +1,223 @@
+---
+import { getCollection, render } from 'astro:content';
+import { newsConfig } from '../lib/site-config';
+
+const articles = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const testimonials = (await getCollection('testimonials')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section id="news" class="section-padding relative overflow-hidden">
+  <!-- Decorative blurs -->
+  <div class="absolute left-0 top-1/4 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl"></div>
+  <div class="absolute right-0 bottom-1/4 w-48 h-48 bg-gold-500/5 rounded-full blur-3xl"></div>
+
+  <div class="container-custom relative">
+    <!-- Section Header -->
+    <div class="fade-up flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+      <div>
+        <span class="eyebrow">{newsConfig.scriptText}</span>
+        <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">{newsConfig.subtitle}</span>
+        <h2 class="font-serif text-h1 text-white has-bar">{newsConfig.mainTitle}</h2>
+      </div>
+      {newsConfig.viewAllText && (
+        <a href="/blog" class="btn-dark rounded-sm flex items-center gap-2 w-fit" aria-label={newsConfig.viewAllText}>
+          {newsConfig.viewAllText}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      )}
+    </div>
+
+    <!-- Blog Articles Grid -->
+    {articles.length > 0 && (
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {articles.map((article, index) => (
+          <article
+            class="fade-up group cursor-pointer"
+            style={`transition-delay: ${0.1 + index * 0.1}s`}
+          >
+            <!-- Image -->
+            <div class="relative aspect-[3/2] rounded-lg overflow-hidden mb-5">
+              <img
+                src={article.data.image}
+                alt={`${article.data.title} - ${article.data.category}`}
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <!-- Category Badge -->
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 bg-gold-500/90 text-white text-xs rounded-sm">
+                  {article.data.category}
+                </span>
+              </div>
+
+              <!-- Hover Overlay -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div>
+              <div class="flex items-center gap-2 text-white/60 text-sm mb-3">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>{article.data.date}</span>
+              </div>
+
+              <h3 class="font-serif text-h5 text-white mb-3 group-hover:text-gold-400 transition-colors">
+                {article.data.title}
+              </h3>
+
+              <p class="text-white/70 text-sm leading-relaxed mb-4 line-clamp-3">
+                {article.data.excerpt}
+              </p>
+
+              {newsConfig.readMoreText && (
+                <span class="inline-flex items-center gap-2 text-gold-500 text-sm group-hover:gap-3 transition-all duration-300">
+                  {newsConfig.readMoreText}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+
+    <!-- Testimonials Section -->
+    {testimonials.length > 0 && (
+      <div class="mt-24" id="testimonials">
+        <div class="fade-up text-center mb-12">
+          <span class="eyebrow">{newsConfig.testimonialsScriptText}</span>
+          <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">{newsConfig.testimonialsSubtitle}</span>
+          <h2 class="font-serif text-h2 text-white">{newsConfig.testimonialsMainTitle}</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {testimonials.map(async (testimonial, index) => {
+            const { Content } = await render(testimonial);
+            return (
+              <div
+                class="scale-in p-8 bg-white/5 rounded-lg border border-white/10 relative"
+                style={`transition-delay: ${0.1 + index * 0.1}s`}
+              >
+                <!-- Quote icon -->
+                <svg class="w-8 h-8 text-gold-500/30 absolute top-6 right-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                  {Array.from({ length: testimonial.data.rating }).map((_, i) => (
+                    <svg class="w-4 h-4 text-gold-500 fill-gold-500" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </div>
+                <div class="text-white/80 leading-relaxed mb-6 italic prose prose-invert prose-sm max-w-none">
+                  <Content />
+                </div>
+                <div>
+                  <p class="text-white font-medium text-sm">{testimonial.data.name}</p>
+                  <p class="text-white/50 text-xs">{testimonial.data.role}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    )}
+
+    <!-- Story Section -->
+    {newsConfig.storyTitle && (
+      <div class="fade-up mt-24 pt-20 border-t border-white/10" style="transition-delay: 0.1s">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Content -->
+          <div class="slide-in-left">
+            <span class="eyebrow">{newsConfig.storyScriptText}</span>
+            <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">{newsConfig.storySubtitle}</span>
+            <h2 class="font-serif text-h2 text-white mb-6">{newsConfig.storyTitle}</h2>
+            <div class="space-y-4 text-white/75 leading-relaxed">
+              {newsConfig.storyParagraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+
+            {newsConfig.storyTimeline.length > 0 && (
+              <div class="mt-8 grid grid-cols-3 gap-4">
+                {newsConfig.storyTimeline.map((item) => (
+                  <div class="text-center p-4 bg-white/5 rounded-lg border border-white/10">
+                    <div class="font-serif text-2xl text-gold-500 mb-1">{item.value}</div>
+                    <div class="text-xs text-white/60">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <!-- Image -->
+          <div class="slide-in-right relative">
+            <div class="relative aspect-[4/5] rounded-lg overflow-hidden">
+              {newsConfig.storyImage && (
+                <>
+                  <img
+                    src={newsConfig.storyImage}
+                    alt={newsConfig.storyImageCaption}
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </>
+              )}
+            </div>
+
+            {newsConfig.storyQuote.text && (
+              <div class="absolute bottom-6 left-6 right-6 p-6 bg-black/60 backdrop-blur-sm rounded-lg">
+                {newsConfig.storyQuote.prefix && (
+                  <p class="eyebrow mb-3">{newsConfig.storyQuote.prefix}</p>
+                )}
+                <p class="text-white italic text-sm leading-relaxed mb-2">"{newsConfig.storyQuote.text}"</p>
+                {newsConfig.storyQuote.attribution && (
+                  <p class="text-gold-400 text-xs">— {newsConfig.storyQuote.attribution}</p>
+                )}
+              </div>
+            )}
+
+            <div class="absolute -top-4 -right-4 w-full h-full border border-gold-500/20 rounded-lg -z-10"></div>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<script>
+  // Scroll animation observer for static Astro component
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
+  );
+
+  document.querySelectorAll('#news .fade-up, #news .slide-in-left, #news .slide-in-right, #news .scale-in').forEach(
+    (el) => observer.observe(el)
+  );
+</script>

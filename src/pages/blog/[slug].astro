@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const allPosts = await getCollection('blog');
+const related = allPosts
+  .filter(p => p.id !== post.id && p.data.category === post.data.category)
+  .slice(0, 3);
+
+// Category colors
+const categoryColors: Record<string, string> = {
+  'Education': 'text-blue-400 bg-blue-400/10 border-blue-400/20',
+  'Ingredients': 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
+  'Research': 'text-purple-400 bg-purple-400/10 border-purple-400/20',
+  'Soil Science': 'text-amber-400 bg-amber-400/10 border-amber-400/20',
+  'Growing Tips': 'text-green-400 bg-green-400/10 border-green-400/20',
+};
+const catClass = categoryColors[post.data.category] ?? 'text-gold-400 bg-gold-400/10 border-gold-400/20';
+
+// Related product lookup (defined here to avoid TS annotations in template)
+const productNames: Record<string, {name: string; url: string}> = {
+  'daleys-mix': { name: "Daley's Mix", url: '/products#cat-a' },
+  'premium-soil-mix': { name: 'Premium Soil Mix', url: '/products#cat-a' },
+  'merlin-blend': { name: 'Merlin Blend', url: '/products#cat-c' },
+  'grow-blend': { name: 'Grow Blend (5-4-2)', url: '/products#fertilizers' },
+  'bloom-blend': { name: 'Bloom Blend (2-7-7)', url: '/products#fertilizers' },
+};
+
+// JSON-LD Article schema for GEO / AI search
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.excerpt,
+  "image": `https://daleyorganics.com${post.data.ogImage ?? post.data.image}`,
+  "datePublished": post.data.date,
+  "author": {
+    "@type": "Person",
+    "name": post.data.author ?? "Cameron Daley",
+    "url": "https://daleyorganics.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Daley Organics",
+    "url": "https://daleyorganics.com",
+    "logo": { "@type": "ImageObject", "url": "https://daleyorganics.com/favicon.svg" }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://daleyorganics.com/blog/${post.id}`
+  },
+  "keywords": post.data.tags?.join(', ') ?? post.data.category,
+  "articleSection": post.data.category,
+  "about": {
+    "@type": "Thing",
+    "name": "Organic Soil Science"
+  }
+};
+---
+
+<BaseLayout
+  title={`${post.data.title} | Daley Organics Blog`}
+  description={post.data.excerpt}
+  keywords={post.data.tags?.join(', ') ?? `${post.data.category}, organic gardening, soil science, Grants Pass Oregon`}
+  ogImage={post.data.ogImage ?? post.data.image}
+  canonical={`https://daleyorganics.com/blog/${post.id}`}
+>
+  <!-- Article JSON-LD -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Back nav -->
+  <div class="fixed top-[72px] left-0 right-0 z-20 bg-black/80 backdrop-blur-sm border-b border-stone-800">
+    <div class="max-w-4xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/blog" class="flex items-center gap-2 text-stone-400 hover:text-white transition-colors text-sm">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        All Articles
+      </a>
+      <div class="flex items-center gap-3 text-xs text-stone-500">
+        {post.data.readingTime && <span>{post.data.readingTime}</span>}
+        <span>·</span>
+        <span>{post.data.date}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero image -->
+  <div class="relative pt-[112px] h-[42vh] min-h-[280px] max-h-[420px] overflow-hidden">
+    <img
+      src={post.data.image}
+      alt={post.data.title}
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-8">
+      <div class="max-w-4xl mx-auto">
+        <span class={`text-xs font-bold border rounded-full px-3 py-1 mb-4 inline-block ${catClass}`}>
+          {post.data.category}
+        </span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+          {post.data.title}
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article body -->
+  <div class="bg-stone-950 pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- Meta row -->
+      <div class="flex flex-wrap items-center gap-4 py-6 border-b border-stone-800 mb-8">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-gold-500/20 border border-gold-500/30 flex items-center justify-center">
+            <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <span class="text-stone-300 text-sm font-medium">{post.data.author ?? 'Cameron Daley'}</span>
+        </div>
+        <span class="text-stone-600">·</span>
+        <span class="text-stone-500 text-sm">{post.data.date}</span>
+        {post.data.readingTime && (
+          <>
+            <span class="text-stone-600">·</span>
+            <span class="text-stone-500 text-sm">{post.data.readingTime}</span>
+          </>
+        )}
+        {post.data.tags && post.data.tags.slice(0, 3).map((tag: string) => (
+          <span class="text-xs text-stone-500 bg-stone-800 border border-stone-700 rounded px-2 py-0.5">{tag}</span>
+        ))}
+      </div>
+
+      <!-- TLDR Box — GEO critical: AI search reads this first -->
+      {post.data.tldr && post.data.tldr.length > 0 && (
+        <div class="bg-amber-950/30 border border-amber-800/40 rounded-2xl p-7 mb-10">
+          <div class="flex items-center gap-2 mb-4">
+            <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <span class="text-gold-400 font-bold text-sm uppercase tracking-widest">TL;DR — Key Takeaways</span>
+          </div>
+          <ul class="space-y-3">
+            {post.data.tldr.map((point) => (
+              <li class="flex items-start gap-3 text-sm text-amber-100/80 leading-relaxed">
+                <svg class="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <!-- Article content -->
+      <div class="prose prose-invert prose-lg max-w-none
+        prose-headings:font-serif prose-headings:text-white
+        prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-stone-800 prose-h2:pb-3
+        prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-gold-300
+        prose-p:text-stone-300 prose-p:leading-relaxed
+        prose-a:text-gold-400 prose-a:no-underline hover:prose-a:text-gold-300
+        prose-strong:text-white
+        prose-ul:text-stone-300 prose-li:marker:text-gold-500
+        prose-ol:text-stone-300
+        prose-blockquote:border-gold-500/50 prose-blockquote:bg-stone-900/50 prose-blockquote:rounded-r-xl prose-blockquote:py-1 prose-blockquote:text-stone-300
+        prose-code:text-gold-300 prose-code:bg-stone-800 prose-code:px-1.5 prose-code:rounded
+        prose-img:rounded-xl prose-img:border prose-img:border-stone-800
+      ">
+        <Content />
+      </div>
+
+      <!-- Related Products -->
+      {post.data.relatedProducts && post.data.relatedProducts.length > 0 && (
+        <div class="mt-16 pt-10 border-t border-stone-800">
+          <p class="eyebrow">Used In Our Blends</p>
+          <h3 class="text-xl font-serif font-bold text-white mb-6">Find These Ingredients In</h3>
+          <div class="flex flex-wrap gap-4">
+            {post.data.relatedProducts.map((productId) => {
+              const product = productNames[productId];
+              if (!product) return null;
+              return (
+                <a href={product.url} class="flex items-center gap-2 bg-stone-900 border border-stone-700 hover:border-gold-500/40 rounded-xl px-5 py-3 text-stone-200 hover:text-gold-300 transition-all text-sm font-medium group">
+                  <svg class="w-3.5 h-3.5 text-gold-500 opacity-70 group-hover:opacity-100" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+                  {product.name}
+                  <svg class="w-3.5 h-3.5 opacity-40 group-hover:opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <!-- Ingredient Library CTA -->
+      <div class="mt-12 bg-stone-900/60 border border-stone-800 rounded-2xl p-7 flex flex-col md:flex-row items-start md:items-center gap-5">
+        <div class="flex-1">
+          <p class="text-white font-semibold mb-1">Want the full science behind every ingredient?</p>
+          <p class="text-stone-400 text-sm">Our ingredient library covers all 26 amendments with full descriptions and product cross-references.</p>
+        </div>
+        <a href="/ingredients" class="flex-shrink-0 inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors border border-stone-700 text-sm">
+          Ingredient Library
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Related articles -->
+      {related.length > 0 && (
+        <div class="mt-16">
+          <p class="eyebrow">Keep Reading</p>
+          <h3 class="text-xl font-serif font-bold text-white mb-6">Related Articles</h3>
+          <div class="grid md:grid-cols-3 gap-5">
+            {related.map((p) => (
+              <a href={`/blog/${p.id}`} class="group bg-stone-900/50 border border-stone-800 rounded-xl overflow-hidden hover:border-stone-700 transition-colors block">
+                <div class="relative aspect-[3/2] overflow-hidden">
+                  <img src={p.data.image} alt={p.data.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                </div>
+                <div class="p-4">
+                  <p class="text-stone-500 text-xs mb-2">{p.data.date}</p>
+                  <h4 class="font-serif font-bold text-white text-sm leading-snug group-hover:text-gold-300 transition-colors">{p.data.title}</h4>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</BaseLayout>

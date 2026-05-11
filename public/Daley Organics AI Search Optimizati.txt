@@ -1,0 +1,79 @@
+Daley Organics AI Search Optimization
+
+This is a goldmine of technical data. By moving this level of detail onto your website, you are perfectly positioning yourself for **AI Overviews** (SGE) and **Google’s EEAT** (Experience, Expertise, Authoritativeness, Trustworthiness) standards.
+
+Since you are transitioning from a single-page scroller to a more robust multi-page architecture, here is your structured enhancement list.
+
+-----
+
+## 1\. Global Navigation & Brand Identity
+
+  * **Primary CTA Update:** Change the main header button from "Order Now" to **"Schedule Bulk Pickup."**
+      * *Why:* It qualifies the lead immediately. You aren't shipping small bags; you are a bulk provider.
+  * **Typography Overhaul:**
+      * Scrub all cursive/script fonts.
+      * Replace with the **Bold Sans-Serif** used in your "Premium Organic Soil Solutions" header.
+      * **Pro Tip:** Use **All-Caps** for the "Eyebrow" text (the small text above main headlines) to maintain that high-end, structured look.
+  * **Sticky "Request" Button:** Ensure the "Schedule Bulk Pickup" button remains visible as users navigate the new, longer pages.
+
+-----
+
+## 2\. The New "Products" Page (`/products`)
+
+Instead of a simple list, organize your products by **Use Case** so customers can self-identify their needs.
+
+### **Category A: Premium Growing Media (The High-End Blends)**
+	**Call for up-to date pricing and availability**
+	**Bulk Discounts Available for 10+ yards of soil and 2000 lb totes of Fertilizer**
+
+  * **Daley’s Mix:** Market this as the "Elite Professional Blend."
+      * *Feature:* Highlight the **10lbs of extra Bat Guano**. This is a major selling point for serious growers.
+  * **Premium Soil Mix:** Market this as the "Foundation Blend."
+      * *Comparison:* Use a small table to show the difference between Daley's Mix and Premium Soil Mix (e.g., Fertilizer weight, specific amendments).
+
+### **Category B: Soil Builders & Amendments**
+
+  * **Premium Organic Compost:** The "Soil Life Injector."
+  * **Natural Soil Amendments:** The "Structure Optimizer."
+  * **Professional Potting Mix:** The "Container Specialist."
+
+### **Category C: Landscaping & Utility**
+
+  * **Merlin Mulch Blend  Blend:** Market this as the "High-Volume/General Garden Blend."
+      * *SEO Note:* Use keywords like "Affordable bulk soil Grants Pass" or "Landscaping soil" for this specific product.
+
+-----
+
+## 3\. The "Ingredients Library" (The SEO Powerhouse)
+
+Don't just list these on the product page; create a dedicated **Interactive Library** at `/ingredients`. This is your **Content Pillar**.
+
+  * **The Grid Layout:** Use a visual grid of icons or high-quality photos of the raw ingredients (e.g., a photo of Kelp Meal, a photo of Glacial Rock Dust).
+  * **The "Science of Soil" Toggle:** For each ingredient, include the description you provided.
+      * *AI Search Tip:* Use "H3" headers for every ingredient name. When someone asks an AI "What are the benefits of Glacial Rock Dust in soil?", your site will be the authoritative source.
+  * **Cross-Linking:** At the bottom of the [Kelp Meal](https://www.google.com/search?q=http://localhost:4321/) description, add a link: *"Find this in: Daley's Mix & Premium Soil Mix."*
+
+-----
+
+## 4\. The Blog vs. Product Page Strategy
+
+To balance these effectively, follow the **"Technical vs. Tactical"** rule:
+
+| Content Type | **Products Page (Technical)** | **Blog (Tactical/Advice)** |
+| :--- | :--- | :--- |
+| **Topic Example** | 20 lbs of 8-3-1 Bat Guano" | "When is the best time to fertilize tomatoes in Oregon?" |
+| **Focus** | Specifications, N-P-K ratios, pH levels. | Seasonal timing, pest management, weather tips. |
+| **AI Intent** | "Where to buy organic soil with mycorrhiza?" | "How to fix poor drainage in my garden?" |
+| **The Hook** | "Buy the best ingredients." | "Learn how to use these ingredients like a pro." |
+
+-----
+
+## 5\. Conversion & Logistics Enhancements
+
+  * **The "Bulk Logistics" Section:** Since you are "Pickup Only," add a clear section on the products page (or a dedicated page) explaining:
+      * **Vehicle Requirements:** "How much can a standard F-150 hold?"
+      * **Tote Options:** Explain the "2-yard tote" process.
+      * **Loading:** Mention that you provide the equipment to load their trucks/trailers.
+  * **Ingredient Callouts on Product Blocks:** On the [Daley's Mix](https://www.google.com/search?q=http://localhost:4321/) block, instead of just a "Learn More" button, add a small row of icons representing the "Enhanced With" section (e.g., icons for Mycorrhiza, Kelp, and Guano).
+
+-----

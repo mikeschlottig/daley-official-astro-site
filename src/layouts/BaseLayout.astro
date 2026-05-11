@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Daley Organics - Premium Organic Soil Solutions | Grant Pass, Oregon",
+  description = "Premium organic soil and fertilizer blends for healthier plants and a sustainable future. Born and raised in the Rogue Valley, committed to bringing prosperity through sustainable agriculture.",
+  keywords = "organic soil mix Grants Pass Oregon, bulk organic fertilizer Rogue Valley, Daley's Mix premium growing media, organic compost Southern Oregon, worm castings, bat guano, kelp meal, mycorrhiza, glacial rock dust, organic gardening Grants Pass, soil amendments Oregon, bulk soil pickup Grants Pass",
+  ogImage = "/images/hero-garden.jpg",
+  canonical = "https://daleyorganics.com",
+} = Astro.props;
+
+// LocalBusiness JSON-LD structured data for local SEO
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Daley Organics",
+  "description": description,
+  "url": "https://daleyorganics.com",
+  "telephone": "+15414410510",
+  "email": "macmonk@live.com",
+  "foundingDate": "2018",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8470 Monument Dr",
+    "addressLocality": "Grants Pass",
+    "addressRegion": "OR",
+    "postalCode": "97526",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.5432168,
+    "longitude": -123.3884123
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/people/Daley-Organics/100035320282815/",
+    "https://www.instagram.com/dirtydaley/",
+    "https://www.google.com/search?q=daley+organics+grants+pass+or",
+    "https://www.yelp.com/biz/daley-organics-grants-pass",
+    "https://www.bbb.org/us/or/grants-pass/profile/soil/daley-organics-llc-1296-1000172000",
+    "https://www.yellowpages.com/grants-pass-or/mip/daley-organics-575888243",
+    "https://www.chamberofcommerce.com/business-directory/oregon/grants-pass/mulch-supplier/2026684095-daley-organics"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Organic Soil & Fertilizer Products",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Daley's Mix — Elite Professional Blend", "description": "Premium organic growing media with 21 amendments plus complete fertilizer blend" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Premium Soil Mix — Foundation Blend", "description": "Professional-grade organic soil with 20 amendments and complete fertilizer blend" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Merlin Blend — Landscape Mix", "description": "High-volume organic soil for landscaping, yard top-dressing, and large garden projects" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Grow Blend Fertilizer 5-4-2", "description": "Organic fertilizer that feeds soil microbiology for vegetative growth" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Bloom Blend Fertilizer 2-7-7", "description": "High-phosphorus organic fertilizer for flowering and fruiting" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Premium Organic Compost", "description": "100% organic compost for soil rehabilitation and garden bed establishment" } }
+    ]
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.5432168,
+      "longitude": -123.3884123
+    },
+    "geoRadius": "80467"
+  },
+  "image": "https://daleyorganics.com/images/hero-garden.jpg",
+  "priceRange": "$$"
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph (Facebook / Instagram link previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`https://daleyorganics.com${ogImage}`} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Daley Organics" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://daleyorganics.com${ogImage}`} />
+
+    <!-- Geo tags for local SEO -->
+    <meta name="geo.region" content="US-OR" />
+    <meta name="geo.placename" content="Grants Pass, Oregon" />
+    <meta name="geo.position" content="42.5432168;-123.3884123" />
+    <meta name="ICBM" content="42.5432168, -123.3884123" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- LocalBusiness Structured Data -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(localBusinessSchema)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,537 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../lib/site-config';
+
+const pageTitle = "Organic Soil Ingredients — What's Inside Daley Organics Mixes";
+const pageDescription = "Explore every ingredient in Daley Organics soil mixes and fertilizer blends. From worm castings to mycorrhiza, learn how each organic amendment feeds the biology that feeds your plants.";
+
+// Ingredient data with product cross-references
+const baseMedia = [
+  {
+    name: "Coco Fiber",
+    slug: "coco-fiber",
+    function: "Aeration & Water Retention",
+    description: "Provides excellent water retention, holding significantly more water than sandy soil, which reduces watering frequency and improves drought resilience. Its fibrous, porous texture creates air pockets, improving aeration, preventing compaction, and encouraging healthy root development. Coco fiber is pH neutral and supports enhanced nutrient retention and delivery to plants.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Structural", "Water Retention", "pH Neutral"]
+  },
+  {
+    name: "Peat Moss",
+    slug: "peat-moss",
+    function: "Moisture & Structure",
+    description: "Enhances moisture retention significantly, proving especially valuable in sandy soils and potting mixes. It improves soil structure by loosening clay and adding cohesiveness to sand, increasing aeration and reducing compaction. Peat moss is naturally acidic, which helps lower soil pH for acid-loving plants.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Structural", "Water Retention", "Slightly Acidic"]
+  },
+  {
+    name: "Perlite",
+    slug: "perlite",
+    function: "Drainage & Aeration",
+    description: "A lightweight, porous volcanic glass that creates air pockets in the soil, preventing compaction and facilitating oxygen movement to roots. This improves aeration, promotes strong root growth, and enhances nutrient uptake. It also improves drainage while retaining a modest amount of moisture, balancing hydration without waterlogging.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Volcanic", "Drainage", "Root Aeration"]
+  },
+  {
+    name: "Pumice",
+    slug: "pumice",
+    function: "Drainage & Trace Minerals",
+    description: "A porous volcanic rock that significantly improves drainage and aeration by creating air pockets and preventing compaction. Its sponge-like structure also absorbs and retains excess water, releasing it gradually as the soil dries. Pumice contains trace minerals that are slowly released, providing micro-nutritional support to plants over time.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Volcanic", "Trace Minerals", "Long-Lasting"]
+  },
+  {
+    name: "Premium Compost",
+    slug: "premium-compost",
+    function: "Organic Matter & Microbial Life",
+    description: "Adds essential organic matter, which improves soil structure, aeration, and water infiltration by promoting stable soil aggregates. It is rich in slow-release macro and micronutrients, enhancing the soil's capacity to retain nutrients. Compost also increases microbial diversity and abundance, fostering beneficial organisms that cycle nutrients and suppress pathogens.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Organic Matter", "Microbial", "Slow Release"]
+  }
+];
+
+const fertilizerBlend = [
+  {
+    name: "Worm Castings",
+    slug: "worm-castings",
+    function: "Bioavailable Nutrients & Microbial Inoculant",
+    description: "Nutrient-rich fertilizer containing readily available essential nutrients (N, P, K, Ca, S, Mg) and concentrated nitrates. They improve soil structure, aeration, and water retention, while introducing beneficial microbes and humic acid for enhanced nutrient absorption. Worm castings boost germination, seedling growth, and plant resistance to diseases, pests, and environmental stresses.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["NPK", "Microbial", "Humic Acid"]
+  },
+  {
+    name: "Sea Bird Guano",
+    slug: "sea-bird-guano",
+    function: "Phosphorus & Biostimulant",
+    description: "Rich in phosphorus, potassium, carbon, and nitrogen, plus silica and chitin, stimulating vigorous root, flower, and foliage growth. It supplies readily available and slow-release nutrients. Seabird guano acts as a biostimulant, increasing microbial activity, improving water retention, and enhancing nutrient cycling.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Phosphorus", "Biostimulant", "Chitin"]
+  },
+  {
+    name: "Bat Guano",
+    slug: "bat-guano",
+    function: "NPK + Micronutrients",
+    description: "A potent organic fertilizer high in nitrogen, phosphorus, and potassium, with micronutrients like boron, calcium, and iron. It improves soil texture, balances moisture, stimulates soil microflora, acts as a slow-release fertilizer, and may aid in flushing soil toxins. Daley's Mix includes an additional 10 lbs of 8-3-1 high-phosphorus bat guano per yard for enhanced flowering and yield.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["NPK", "Micronutrients", "Slow Release"],
+    note: "Daley's Mix includes extra 8-3-1 bat guano"
+  },
+  {
+    name: "Kelp Meal",
+    slug: "kelp-meal",
+    function: "Micronutrients & Growth Hormones",
+    description: "A rich source of over 70 micronutrients and trace minerals, plus natural growth hormones that stimulate root growth and nutrient uptake. It improves soil structure and moisture retention, supports microbial activity, boosts plant immunity, and increases stress resistance.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["70+ Minerals", "Growth Hormones", "Immunity"]
+  },
+  {
+    name: "Fish Bone Meal",
+    slug: "fish-bone-meal",
+    function: "Phosphorus & Calcium",
+    description: "A good source of phosphorus, essential for robust root development, flowering, and fruit production. It also provides calcium for strong plant cell walls. As a slow-release fertilizer, it provides nutrients over about three months, promoting strong root growth and vibrant blooms.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Phosphorus", "Calcium", "Slow Release"]
+  },
+  {
+    name: "Fish Meal",
+    slug: "fish-meal",
+    function: "Nitrogen & Amino Acids",
+    description: "A concentrated source of nitrogen and amino acids derived from whole fish. It breaks down quickly in the soil, delivering fast-available nutrients while stimulating microbial activity. Fish meal improves overall plant vigor and is especially effective during the vegetative growth phase when nitrogen demand is highest.",
+    foundIn: ["daleys-mix"],
+    products: ["Daley's Mix"],
+    tags: ["Nitrogen", "Amino Acids", "Fast Acting"],
+    exclusive: true
+  },
+  {
+    name: "Feather Meal",
+    slug: "feather-meal",
+    function: "Slow-Release Nitrogen",
+    description: "A slow-release nitrogen source, providing a steady supply for lush, green, leafy growth throughout the season. It also improves soil structure and supports microorganisms as it breaks down, enhancing soil fertility and nutrient availability over time.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Nitrogen", "Slow Release", "Season-Long"]
+  },
+  {
+    name: "Greensand",
+    slug: "greensand",
+    function: "Potassium & Trace Elements",
+    description: "A mineral amendment providing potassium and over 25 trace elements with a slow, gentle release over years. It improves soil structure and water retention in both clay and sandy soils and enhances cation exchange capacity.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Potassium", "25+ Trace Elements", "CEC"]
+  },
+  {
+    name: "Alfalfa Meal",
+    slug: "alfalfa-meal",
+    function: "Growth Hormone & Earthworm Attractor",
+    description: "Contains macro and micronutrients, plus a growth hormone (triacontanol) that stimulates growth, branching, and fruit size. It conditions soil, attracts earthworms and beneficial microbes, and contains saponins that can help repel pests.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Triacontanol", "Earthworms", "Pest Repellent"]
+  },
+  {
+    name: "Soybean Meal",
+    slug: "soybean-meal",
+    function: "Sustained Nitrogen",
+    description: "A high-nitrogen organic source that releases nutrients slowly, providing a sustained supply for lush foliage. It improves soil structure and drainage and increases organic matter by feeding soil microbes.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Nitrogen", "Slow Release", "Soil Building"]
+  },
+  {
+    name: "Blood Meal",
+    slug: "blood-meal",
+    function: "Rapid Nitrogen Boost",
+    description: "A concentrated, rapid organic nitrogen source essential for vegetative growth and chlorophyll production. It stimulates compost decomposition and can help repel herbivores like deer and rabbits.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Nitrogen", "Fast Acting", "Deer Deterrent"]
+  },
+  {
+    name: "Bone Meal",
+    slug: "bone-meal",
+    function: "Phosphorus & Root Development",
+    description: "Primarily a source of phosphorus for robust root development and calcium for strengthening plant cell walls. It's a slow-release fertilizer beneficial for root vegetables and seedling establishment.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Phosphorus", "Calcium", "Seedling Establishment"]
+  },
+  {
+    name: "Oyster Shell",
+    slug: "oyster-shell",
+    function: "Calcium & pH Balancer",
+    description: "Primarily calcium carbonate, acting as a liming material to raise soil pH and neutralize acidity. It improves nutrient balance by increasing calcium and stimulates microbial biomass and enzyme activities.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Calcium", "pH Balance", "Microbial Enzyme"]
+  },
+  {
+    name: "Crab Meal",
+    slug: "crab-meal",
+    function: "Chitin & Nematode Defense",
+    description: "A source of slow-release nitrogen, phosphorus, and high levels of calcium. It contains chitin, which feeds microbes that consume soil insects and root-damaging nematodes and helps fight root rot and mildew.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Chitin", "Nematode Defense", "Root Protection"]
+  },
+  {
+    name: "Shrimp Meal",
+    slug: "shrimp-meal",
+    function: "Fast-Release N+P & Calcium",
+    description: "A balanced organic fertilizer rich in nitrogen and phosphorus, with nutrients rapidly available due to quick breakdown. It also contains significant calcium which improves cell wall strength and can improve soil structure.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Nitrogen", "Phosphorus", "Fast Available"]
+  },
+  {
+    name: "K-Mag Trio",
+    slug: "k-mag-trio",
+    function: "Potassium + Magnesium + Sulfur",
+    description: "A balanced, low-chloride, pH-neutral fertilizer providing potassium, magnesium, and sulfur. Potassium is vital for water regulation, magnesium for chlorophyll production, and sulfur for protein synthesis. It supports overall crop vigor and is safe for salt-sensitive plants.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["K+Mg+S", "pH Neutral", "Low Chloride"]
+  },
+  {
+    name: "Gypsum",
+    slug: "gypsum",
+    function: "Calcium, Sulfur & Soil Structure",
+    description: "Provides plant-available calcium and sulfur and improves soil structure. Calcium ions help hold soil particles together, reducing surface crusting and improving aggregation, especially in sodic or high clay soils.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Calcium", "Sulfur", "Clay Improvement"]
+  },
+  {
+    name: "Dolomite Lime",
+    slug: "dolomite-lime",
+    function: "pH Correction & Magnesium Supply",
+    description: "Used to raise soil pH in acidic soils and supply magnesium and calcium. It neutralizes acidity and provides essential magnesium for chlorophyll production and calcium for cell wall development.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["pH Correction", "Magnesium", "Calcium"]
+  },
+  {
+    name: "Humic Acids",
+    slug: "humic-acids",
+    function: "Microbial Amplifier (Leonardite Shale)",
+    description: "Derived from Leonardite Shale, humic acids significantly increase the activities of soil microflora, serving as a food source for microbes. This enhances biological activity, improves fertilizer efficiency, soil structure, and water retention. Think of humic acids as a force multiplier for every other amendment in the blend.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Leonardite Shale", "Microflora", "Fertilizer Efficiency"]
+  },
+  {
+    name: "Mycorrhiza",
+    slug: "mycorrhiza",
+    function: "Root Symbiosis (Rhizophagus Intradices)",
+    description: "A beneficial fungus (Rhizophagus Intradices) that forms a symbiosis with roots, enhancing nutrient uptake — especially phosphorus, nitrogen, and potassium. It improves water absorption, increases resistance to environmental stresses, improves soil structure, and boosts plant growth. Mycorrhizal networks effectively extend the root system many times over.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Fungal Symbiosis", "Phosphorus Uptake", "Stress Resistance"]
+  },
+  {
+    name: "Glacial Rock Dust",
+    slug: "glacial-rock-dust",
+    function: "Broad-Spectrum Remineralization",
+    description: "A natural mineral product for remineralizing soil with a broad spectrum of trace minerals and micronutrients lost through modern agriculture. It improves soil vitality, plant health, structure, moisture retention, drainage, and can help raise pH in acidic soils. Glacial rock dust is the long-game ingredient — building soil mineral wealth for seasons to come.",
+    foundIn: ["daleys-mix", "premium-soil-mix"],
+    products: ["Daley's Mix", "Premium Soil Mix"],
+    tags: ["Remineralization", "Trace Minerals", "Long-Term"]
+  }
+];
+
+const totalIngredients = baseMedia.length + fertilizerBlend.length;
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords="organic soil ingredients, worm castings benefits, mycorrhiza soil, kelp meal fertilizer, bat guano organic, humic acids soil, greensand garden, organic soil amendments Grants Pass Oregon"
+>
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 bg-gradient-to-b from-black via-stone-950 to-stone-950 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,109,50,0.08),transparent_60%)]"></div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+      <p class="eyebrow">Ingredient Library</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+        What's Inside<br class="hidden md:block" />
+        <span class="text-gold-400">Every Blend We Make</span>
+      </h1>
+      <p class="text-stone-300 text-lg md:text-xl max-w-3xl mx-auto mb-4">
+        We don't use fillers. Every ingredient earns its place — chosen for what it feeds in the soil, not just what it delivers to the plant.
+      </p>
+      <p class="text-stone-400 text-base max-w-2xl mx-auto mb-10">
+        <span class="text-gold-400 font-semibold">The philosophy:</span> Fertilizer that feeds the microbiology in your soil. Feeding the microbes, nematodes, and fungi that feed your plants.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <div class="bg-stone-900/80 border border-stone-800 rounded-xl px-5 py-3 text-center">
+          <div class="text-2xl font-bold text-gold-400">{totalIngredients}</div>
+          <div class="text-xs text-stone-400 uppercase tracking-widest mt-0.5">Total Ingredients</div>
+        </div>
+        <div class="bg-stone-900/80 border border-stone-800 rounded-xl px-5 py-3 text-center">
+          <div class="text-2xl font-bold text-gold-400">100%</div>
+          <div class="text-xs text-stone-400 uppercase tracking-widest mt-0.5">Certified Organic</div>
+        </div>
+        <div class="bg-stone-900/80 border border-stone-800 rounded-xl px-5 py-3 text-center">
+          <div class="text-2xl font-bold text-gold-400">21</div>
+          <div class="text-xs text-stone-400 uppercase tracking-widest mt-0.5">Amendments in Daley's Mix</div>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/products" class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-black font-bold px-6 py-3 rounded-xl transition-colors text-sm">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          See Full Product Lineup
+        </a>
+        <a href="#base-media" class="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm border border-stone-700">
+          Browse All Ingredients
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick-jump index -->
+  <section class="bg-stone-950 border-y border-stone-800 py-6 sticky top-16 z-30">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-wrap gap-3 items-center justify-center text-sm">
+        <span class="text-stone-500 text-xs uppercase tracking-wider">Jump to:</span>
+        <a href="#base-media" class="text-stone-300 hover:text-gold-400 transition-colors border border-stone-700 hover:border-gold-500/40 rounded-lg px-3 py-1.5">Base Media</a>
+        <a href="#fertilizer-blend" class="text-stone-300 hover:text-gold-400 transition-colors border border-stone-700 hover:border-gold-500/40 rounded-lg px-3 py-1.5">Fertilizer Blend</a>
+        <a href="#found-in" class="text-stone-300 hover:text-gold-400 transition-colors border border-stone-700 hover:border-gold-500/40 rounded-lg px-3 py-1.5">Found In Chart</a>
+        <a href="/products" class="text-gold-400 hover:text-gold-300 transition-colors font-semibold">→ View Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section A: Base Media -->
+  <section id="base-media" class="bg-stone-950 pt-20 pb-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="eyebrow">Part One</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Base Media Components</h2>
+        <p class="text-stone-400 text-base max-w-2xl">
+          The physical foundation of every mix — chosen for structure, drainage, and biological compatibility. These five components create the environment where chemistry and biology can thrive.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {baseMedia.map((ingredient) => (
+          <article id={ingredient.slug} class="fade-up bg-stone-900/50 border border-stone-800 rounded-2xl p-7 hover:border-stone-700 transition-colors group">
+            <div class="flex flex-col md:flex-row md:items-start gap-5">
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 class="text-xl font-bold text-white group-hover:text-gold-300 transition-colors">{ingredient.name}</h3>
+                  <span class="text-xs font-semibold text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-full px-2.5 py-0.5">{ingredient.function}</span>
+                </div>
+                <p class="text-stone-300 text-sm leading-relaxed mb-4">{ingredient.description}</p>
+                <div class="flex flex-wrap gap-2">
+                  {ingredient.tags.map((tag: string) => (
+                    <span class="text-xs text-stone-400 bg-stone-800/80 border border-stone-700 rounded-md px-2 py-0.5">{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <div class="md:w-52 flex-shrink-0">
+                <div class="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2">Found in</div>
+                <div class="flex flex-col gap-1.5">
+                  {ingredient.products.map((product: string, i: number) => (
+                    <a href={`/products#${ingredient.foundIn[i]}`} class="flex items-center gap-2 text-xs font-medium text-stone-300 hover:text-gold-400 bg-stone-800/60 hover:bg-stone-800 border border-stone-700 hover:border-gold-500/30 rounded-lg px-3 py-2 transition-all group/link">
+                      <svg class="w-3 h-3 text-gold-500 opacity-70 group-hover/link:opacity-100" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+                      {product}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section B: Fertilizer Blend -->
+  <section id="fertilizer-blend" class="bg-black pt-20 pb-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="eyebrow">Part Two</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">The Fertilizer Blend</h2>
+        <p class="text-stone-400 text-base max-w-2xl mb-6">
+          {fertilizerBlend.length} organic amendments selected for biological synergy — not just raw NPK numbers. Each ingredient feeds a different layer of the soil food web, creating the cascade of microbial activity that makes organic growing so effective long-term.
+        </p>
+        <div class="bg-amber-950/30 border border-amber-800/30 rounded-xl p-5 max-w-2xl">
+          <p class="text-amber-200/80 text-sm leading-relaxed">
+            <span class="font-semibold text-amber-300">Why so many ingredients?</span> Because healthy soil isn't fed from a single source. Fungi, bacteria, nematodes, and protozoa each require different food. A complete amendment blend feeds the whole ecosystem — and a thriving ecosystem feeds your plants.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        {fertilizerBlend.map((ingredient) => (
+          <article id={ingredient.slug} class="fade-up bg-stone-900/40 border border-stone-800 rounded-2xl p-7 hover:border-stone-700 transition-colors group">
+            <div class="flex flex-col md:flex-row md:items-start gap-5">
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 class="text-xl font-bold text-white group-hover:text-gold-300 transition-colors">{ingredient.name}</h3>
+                  <span class="text-xs font-semibold text-gold-400 bg-gold-500/10 border border-gold-500/20 rounded-full px-2.5 py-0.5">{ingredient.function}</span>
+                  {ingredient.exclusive && (
+                    <span class="text-xs font-bold text-amber-300 bg-amber-400/10 border border-amber-400/20 rounded-full px-2.5 py-0.5">Daley's Mix Exclusive</span>
+                  )}
+                </div>
+                {ingredient.note && (
+                  <p class="text-amber-400/70 text-xs mb-2 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    {ingredient.note}
+                  </p>
+                )}
+                <p class="text-stone-300 text-sm leading-relaxed mb-4">{ingredient.description}</p>
+                <div class="flex flex-wrap gap-2">
+                  {ingredient.tags.map((tag: string) => (
+                    <span class="text-xs text-stone-400 bg-stone-800/80 border border-stone-700 rounded-md px-2 py-0.5">{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <div class="md:w-52 flex-shrink-0">
+                <div class="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2">Found in</div>
+                <div class="flex flex-col gap-1.5">
+                  {ingredient.products.map((product: string, i: number) => (
+                    <a href={`/products#${ingredient.foundIn[i]}`} class="flex items-center gap-2 text-xs font-medium text-stone-300 hover:text-gold-400 bg-stone-800/60 hover:bg-stone-800 border border-stone-700 hover:border-gold-500/30 rounded-lg px-3 py-2 transition-all group/link">
+                      <svg class="w-3 h-3 text-gold-500 opacity-70 group-hover/link:opacity-100" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+                      {product}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Reference Chart -->
+  <section id="found-in" class="bg-stone-950 py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-10">
+        <p class="eyebrow">Quick Reference</p>
+        <h2 class="text-3xl font-serif font-bold text-white mb-3">Ingredient Comparison</h2>
+        <p class="text-stone-400 text-sm">Which amendments are in which blends, at a glance.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-stone-800">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-stone-900 border-b border-stone-800">
+              <th class="text-left text-stone-400 font-semibold text-xs uppercase tracking-wider px-5 py-4">Ingredient</th>
+              <th class="text-center text-stone-400 font-semibold text-xs uppercase tracking-wider px-5 py-4">Daley's Mix</th>
+              <th class="text-center text-stone-400 font-semibold text-xs uppercase tracking-wider px-5 py-4">Premium Soil Mix</th>
+              <th class="text-left text-stone-400 font-semibold text-xs uppercase tracking-wider px-5 py-4 hidden md:table-cell">Primary Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...baseMedia, ...fertilizerBlend].map((ingredient, idx) => (
+              <tr class={`border-b border-stone-800/50 hover:bg-stone-900/50 transition-colors ${idx % 2 === 0 ? 'bg-stone-900/20' : 'bg-transparent'}`}>
+                <td class="px-5 py-3">
+                  <a href={`#${ingredient.slug}`} class="text-stone-200 hover:text-gold-400 transition-colors font-medium">{ingredient.name}</a>
+                </td>
+                <td class="px-5 py-3 text-center">
+                  {ingredient.foundIn.includes('daleys-mix') ? (
+                    <span class="text-emerald-400">
+                      <svg class="w-4 h-4 inline-block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    </span>
+                  ) : (
+                    <span class="text-stone-700">—</span>
+                  )}
+                </td>
+                <td class="px-5 py-3 text-center">
+                  {ingredient.foundIn.includes('premium-soil-mix') ? (
+                    <span class="text-emerald-400">
+                      <svg class="w-4 h-4 inline-block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    </span>
+                  ) : (
+                    <span class="text-stone-700">—</span>
+                  )}
+                </td>
+                <td class="px-5 py-3 text-stone-500 text-xs hidden md:table-cell">{ingredient.function}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy CTA -->
+  <section class="bg-black py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="eyebrow">Why It Matters</p>
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
+        The Biology Comes First
+      </h2>
+      <p class="text-stone-300 text-lg max-w-2xl mx-auto mb-4">
+        Synthetic fertilizers feed the plant directly — bypassing the soil food web entirely. Organic amendments like these feed the microbes, fungi, nematodes, and protozoa that have evolved over millions of years to deliver nutrients in exactly the form your plants need.
+      </p>
+      <p class="text-stone-400 text-base max-w-2xl mx-auto mb-10">
+        When you see {fertilizerBlend.length} amendments in a blend, you're looking at {fertilizerBlend.length} different food sources for {fertilizerBlend.length} different layers of a living ecosystem. That's what makes our mixes work — not chemistry, but biology.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/products" class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-black font-bold px-7 py-3.5 rounded-xl transition-colors">
+          Shop Our Mixes
+        </a>
+        <a href="/#contact" class="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-7 py-3.5 rounded-xl transition-colors border border-stone-700">
+          Ask Us a Soil Question
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Teaser -->
+  <section class="bg-stone-950 py-16 border-t border-stone-900">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="eyebrow">Go Deeper</p>
+          <h3 class="text-2xl font-serif font-bold text-white">Read Our Growing Guides</h3>
+          <p class="text-stone-400 text-sm mt-2 max-w-md">Practical articles on soil biology, amendment timing, and what actually works in Rogue Valley growing conditions.</p>
+        </div>
+        <a href="/#news" class="flex-shrink-0 inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors border border-stone-700 text-sm">
+          Browse the Blog
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-up-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.06, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .fade-up-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

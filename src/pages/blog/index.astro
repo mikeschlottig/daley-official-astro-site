@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const featuredPost = allPosts.find(p => p.data.featured) ?? allPosts[0];
+const otherPosts = allPosts.filter(p => p.id !== featuredPost.id);
+
+// Category colors
+const categoryColors: Record<string, string> = {
+  'Education': 'text-blue-400 bg-blue-400/10 border-blue-400/20',
+  'Ingredients': 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20',
+  'Research': 'text-purple-400 bg-purple-400/10 border-purple-400/20',
+  'Soil Science': 'text-amber-400 bg-amber-400/10 border-amber-400/20',
+  'Growing Tips': 'text-green-400 bg-green-400/10 border-green-400/20',
+};
+const categoryClass = (cat: string) => categoryColors[cat] ?? 'text-gold-400 bg-gold-400/10 border-gold-400/20';
+---
+
+<BaseLayout
+  title="Growing Guides & Soil Science Blog | Daley Organics"
+  description="Practical growing guides, soil science deep-dives, and organic gardening tips from Daley Organics in Grants Pass, Oregon. Learn about mycorrhiza, worm castings, fertilizer timing, and more."
+  keywords="organic gardening blog, soil science articles, worm castings guide, kelp meal benefits, mycorrhiza soil, organic fertilizer tips, Grants Pass Oregon gardening"
+>
+  <!-- Hero -->
+  <section class="relative pt-32 pb-16 bg-gradient-to-b from-black via-stone-950 to-stone-950 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,109,50,0.07),transparent_60%)]"></div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="eyebrow">Growing Knowledge</p>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+          The Daley Organics <span class="text-gold-400">Blog</span>
+        </h1>
+        <p class="text-stone-400 text-lg max-w-2xl">
+          Soil science made practical. From ingredient deep-dives to seasonal growing guides — everything we know about building living soil in the Rogue Valley.
+        </p>
+      </div>
+
+      <!-- Featured Post -->
+      {featuredPost && (
+        <a href={`/blog/${featuredPost.id}`} class="group block mb-16">
+          <div class="grid md:grid-cols-2 gap-0 bg-stone-900/60 border border-stone-800 rounded-2xl overflow-hidden hover:border-stone-700 transition-colors">
+            <div class="relative aspect-[4/3] md:aspect-auto overflow-hidden">
+              <img
+                src={featuredPost.data.image}
+                alt={featuredPost.data.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent to-stone-900/30 md:bg-gradient-to-l"></div>
+              <div class="absolute top-5 left-5">
+                <span class={`text-xs font-bold border rounded-full px-3 py-1 ${categoryClass(featuredPost.data.category)}`}>
+                  {featuredPost.data.category}
+                </span>
+              </div>
+              {featuredPost.data.featured && (
+                <div class="absolute top-5 right-5">
+                  <span class="text-xs font-bold text-gold-400 bg-gold-400/15 border border-gold-400/30 rounded-full px-3 py-1">
+                    Featured
+                  </span>
+                </div>
+              )}
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 text-stone-500 text-sm mb-4">
+                <span>{featuredPost.data.date}</span>
+                {featuredPost.data.readingTime && (
+                  <>
+                    <span>·</span>
+                    <span>{featuredPost.data.readingTime}</span>
+                  </>
+                )}
+              </div>
+              <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mb-4 group-hover:text-gold-300 transition-colors leading-snug">
+                {featuredPost.data.title}
+              </h2>
+              <p class="text-stone-400 leading-relaxed mb-6">{featuredPost.data.excerpt}</p>
+              {featuredPost.data.tldr && (
+                <div class="mb-6 space-y-1.5">
+                  {featuredPost.data.tldr.slice(0, 2).map((point: string) => (
+                    <div class="flex items-start gap-2 text-sm text-stone-300">
+                      <svg class="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      {point}
+                    </div>
+                  ))}
+                </div>
+              )}
+              <span class="inline-flex items-center gap-2 text-gold-400 font-semibold text-sm group-hover:gap-3 transition-all">
+                Read Article
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      )}
+    </div>
+  </section>
+
+  <!-- All Posts Grid -->
+  <section class="bg-stone-950 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+        <div>
+          <p class="eyebrow">All Articles</p>
+          <h2 class="text-2xl font-serif font-bold text-white">{otherPosts.length + 1} Posts & Counting</h2>
+        </div>
+        <p class="text-stone-500 text-sm">20+ more articles coming soon</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {otherPosts.map((post) => (
+          <a href={`/blog/${post.id}`} class="group bg-stone-900/50 border border-stone-800 rounded-xl overflow-hidden hover:border-stone-700 transition-colors block">
+            <div class="relative aspect-[3/2] overflow-hidden">
+              <img
+                src={post.data.image}
+                alt={post.data.title}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute top-4 left-4">
+                <span class={`text-xs font-bold border rounded-full px-2.5 py-0.5 ${categoryClass(post.data.category)}`}>
+                  {post.data.category}
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-stone-500 text-xs mb-3">
+                <span>{post.data.date}</span>
+                {post.data.readingTime && (
+                  <>
+                    <span>·</span>
+                    <span>{post.data.readingTime}</span>
+                  </>
+                )}
+              </div>
+              <h3 class="font-serif text-lg font-bold text-white mb-2 group-hover:text-gold-300 transition-colors leading-snug">
+                {post.data.title}
+              </h3>
+              <p class="text-stone-400 text-sm leading-relaxed line-clamp-3 mb-4">
+                {post.data.excerpt}
+              </p>
+              {post.data.tags && (
+                <div class="flex flex-wrap gap-1.5">
+                  {post.data.tags.slice(0, 3).map((tag: string) => (
+                    <span class="text-xs text-stone-500 bg-stone-800 border border-stone-700 rounded px-2 py-0.5">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Research Report CTA -->
+      <div class="bg-gradient-to-r from-stone-900 to-amber-950/30 border border-amber-900/30 rounded-2xl p-8 md:p-10">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div class="flex-1">
+            <p class="eyebrow">Deep Research</p>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Soil Science & the Organic Paradigm</h3>
+            <p class="text-stone-400 text-sm leading-relaxed max-w-xl">
+              A 15-section peer-reviewed research report covering CEC, calcium science, mycorrhizal networks, synthetic vs. organic systems, and the future of soil ecology. Includes 27 original blueprint diagrams.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              {['Soil Chemistry', 'Mycorrhizal Biology', 'Calcium Science', 'Nutritional Density', 'Regenerative Ag'].map(tag => (
+                <span class="text-xs text-amber-400/70 bg-amber-400/10 border border-amber-400/20 rounded-full px-2.5 py-1">{tag}</span>
+              ))}
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <a href="/research" class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-black font-bold px-6 py-3 rounded-xl transition-colors text-sm">
+              Read the Report
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to products -->
+  <section class="bg-black py-12 border-t border-stone-900">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="text-white font-semibold">Ready to put this knowledge to work?</p>
+        <p class="text-stone-400 text-sm">Browse our soil mixes and fertilizer blends — built on everything we know about living soil.</p>
+      </div>
+      <a href="/products" class="flex-shrink-0 inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors border border-stone-700 text-sm">
+        View Products
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

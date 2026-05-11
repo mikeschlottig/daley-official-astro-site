@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Preloader } from '../components/Preloader';
+import { Hero } from '../components/Hero';
+import { ProductShowcase } from '../components/ProductShowcase';
+import { GardenCarousel } from '../components/GardenCarousel';
+import { OurStory } from '../components/OurStory';
+import News from '../components/News.astro';
+import { ContactForm } from '../components/ContactForm';
+import { siteConfig } from '../lib/site-config';
+---
+
+<BaseLayout
+  title={siteConfig.title}
+  description={siteConfig.description}
+  keywords={siteConfig.keywords}
+  ogImage={siteConfig.ogImage}
+  canonical={siteConfig.canonical}
+>
+  <!-- Preloader: locks scroll, fires preloader:complete event when done -->
+  <Preloader client:load />
+
+  <div class="min-h-screen bg-[#141414]">
+    <main>
+      <!-- Hero: waits for preloader:complete event to start animations -->
+      <Hero client:load />
+
+      <!-- Banner image: between hero and product showcase -->
+      <div class="w-full">
+        <img src="/images/banner-image.png" alt="Daley Organics" class="w-full object-cover" />
+      </div>
+
+      <!-- Interactive product showcase with tab switching -->
+      <ProductShowcase client:visible />
+
+      <!-- Auto-advancing garden photo carousel -->
+      <GardenCarousel client:visible />
+
+      <!-- Our Story with tab content switching -->
+      <OurStory client:visible />
+
+      <!-- Blog + Testimonials: static Astro — zero JS shipped for this section -->
+      <News />
+
+      <!-- Contact form with submission state -->
+      <ContactForm client:visible />
+    </main>
+  </div>
+</BaseLayout>

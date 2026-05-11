@@ -1,0 +1,506 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allProducts = (await getCollection('products')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const premiumMedia   = allProducts.filter(p => p.data.category === 'premium-media');
+const amendments     = allProducts.filter(p => p.data.category === 'amendments');
+const landscaping    = allProducts.filter(p => p.data.category === 'landscaping');
+const fertilizers    = allProducts.filter(p => p.data.category === 'fertilizer');
+
+const pageTitle       = "Organic Soil Products | Daley Organics – Grants Pass, Oregon";
+const pageDescription = "Professional-grade organic soil mixes, fertilizers, and amendments made in the Rogue Valley. Daley's Mix ($140/yd), Premium Soil Mix ($130/yd), Merlin Blend ($55/yd). Bulk pickup only. Call (541) 441-0510.";
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords="Daley's Mix Grants Pass, organic soil Rogue Valley, bulk fertilizer Oregon, worm castings Southern Oregon, organic soil mix pickup Grants Pass, Grow Blend 5-4-2, landscaping soil Grants Pass OR"
+>
+
+  <!-- ── Sticky Top Bar ── -->
+  <div class="sticky top-[72px] z-40 bg-[#141414]/95 backdrop-blur-md border-b border-white/10">
+    <div class="container-custom py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-white/60 hover:text-gold-400 transition-colors text-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+      <div class="hidden sm:flex items-center gap-6 text-xs text-white/50">
+        <a href="#cat-a" class="hover:text-gold-400 transition-colors">Premium Blends</a>
+        <a href="#cat-b" class="hover:text-gold-400 transition-colors">Amendments</a>
+        <a href="#cat-c" class="hover:text-gold-400 transition-colors">Landscaping</a>
+        <a href="#fertilizers" class="hover:text-gold-400 transition-colors">Fertilizers</a>
+        <a href="#pickup" class="hover:text-gold-400 transition-colors">Pickup Info</a>
+      </div>
+      <a href="tel:+15414410510" class="btn-primary rounded-sm text-sm px-5 py-2 inline-flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/></svg>
+        Schedule Bulk Pickup
+      </a>
+    </div>
+  </div>
+
+  <main class="bg-[#141414] min-h-screen">
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="section-padding pt-20 pb-16 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image:radial-gradient(circle at 1px 1px,#d2a855 1px,transparent 0);background-size:32px 32px;"></div>
+      <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-gold-500/4 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="container-custom relative text-center">
+        <span class="eyebrow">The Catalog</span>
+        <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-6 block">Grants Pass, Oregon · Rogue Valley · Pickup Only</span>
+        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
+          Professional Grade<br/>
+          <span class="text-gold-400">Soil Solutions</span>
+        </h1>
+        <p class="text-white/65 max-w-2xl mx-auto text-lg leading-relaxed mb-4">
+          Every blend is built with measurable inputs — actual N-P-K values, specific amendment ratios, and
+          known release cycles. No marketing fluff. Just soil science designed for Southern Oregon.
+        </p>
+        <p class="text-white/45 text-sm mb-10 italic">Call for up-to-date pricing and availability · Bulk discounts on 10+ yards and 2,000 lb fertilizer totes</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#cat-a" class="btn-primary rounded-sm inline-flex items-center gap-2">
+            View Products
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="#pickup" class="px-8 py-3 text-sm font-medium border border-gold-500/40 text-gold-400 rounded-sm hover:bg-gold-500/10 transition-colors">
+            Pickup Instructions
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CATEGORY A — Premium Growing Media
+    ============================================================ -->
+    <section id="cat-a" class="section-padding border-t border-white/8">
+      <div class="container-custom">
+
+        <div class="text-center mb-4 fade-up">
+          <span class="eyebrow">Category A</span>
+          <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">Premium Growing Media · The High-End Blends</span>
+          <h2 class="font-serif text-h1 text-white mb-3">Premium Growing Media</h2>
+          <p class="text-white/55 max-w-xl mx-auto">Our two flagship blends — built on the same premium base, differentiated by the extra performance boost in Daley's Mix. Both include our complete fertilizer blend.</p>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="fade-up max-w-3xl mx-auto mb-16 mt-10 rounded-lg overflow-hidden border border-white/10">
+          <div class="bg-white/5 px-6 py-4 border-b border-white/10">
+            <p class="text-xs text-gold-500 font-bold uppercase tracking-widest text-center">Side-by-Side Comparison</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left px-6 py-3 text-white/50 font-medium">Feature</th>
+                  <th class="px-6 py-3 text-gold-400 font-bold text-center">Daley's Mix<br/><span class="text-white/40 font-normal text-xs">$140/yd · $300/tote</span></th>
+                  <th class="px-6 py-3 text-white font-bold text-center border-l border-white/10">Premium Soil Mix<br/><span class="text-white/40 font-normal text-xs">$130/yd · $280/tote</span></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5">
+                <tr>
+                  <td class="px-6 py-3 text-white/60">Base Texture</td>
+                  <td class="px-6 py-3 text-center text-white">Lighter (coco + bio fiber)</td>
+                  <td class="px-6 py-3 text-center text-white border-l border-white/10">Standard premium</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-white/60">Organic Amendments</td>
+                  <td class="px-6 py-3 text-center text-gold-400 font-semibold">21 (incl. Fish Meal)</td>
+                  <td class="px-6 py-3 text-center text-white border-l border-white/10">20</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-white/60">Fertilizer Included</td>
+                  <td class="px-6 py-3 text-center text-gold-400 font-semibold">20 lbs + 10 lbs 8-3-1 Bat Guano</td>
+                  <td class="px-6 py-3 text-center text-white border-l border-white/10">20 lbs</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-white/60">Mycorrhiza</td>
+                  <td class="px-6 py-3 text-center text-green-400">✓ Included</td>
+                  <td class="px-6 py-3 text-center text-green-400 border-l border-white/10">✓ Included</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-white/60">Best For</td>
+                  <td class="px-6 py-3 text-center text-white text-xs">Serious growers, high-yield gardens</td>
+                  <td class="px-6 py-3 text-center text-white text-xs border-l border-white/10">Home gardens, raised beds</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Product Cards — Daley's Mix + Premium Soil Mix -->
+        <div class="space-y-20">
+          {premiumMedia.map((product, i) => (
+            <div class={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start fade-up`}>
+
+              <div class={i % 2 === 1 ? 'order-2 lg:order-1' : ''}>
+                <div class="relative rounded-lg overflow-hidden">
+                  <img
+                    src={product.data.image}
+                    alt={product.data.name}
+                    class="w-full aspect-[4/3] object-cover"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 ring-1 ring-white/10 rounded-lg"></div>
+                  {product.data.badge && (
+                    <span class="absolute top-4 left-4 px-3 py-1 bg-gold-500 text-[#141414] text-xs font-bold uppercase tracking-wider rounded-full">
+                      {product.data.badge}
+                    </span>
+                  )}
+                </div>
+
+                <!-- Ingredient Callout Icons -->
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {['Mycorrhiza', 'Kelp Meal', 'Bat Guano', 'Worm Castings', 'Glacial Rock Dust'].map(key => (
+                    <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-white/50 text-xs">
+                      {key}
+                    </span>
+                  ))}
+                  {product.data.name === "Daley's Mix" && (
+                    <span class="px-2.5 py-1 bg-gold-500/15 border border-gold-500/40 rounded-full text-gold-400 text-xs font-semibold">
+                      + 10 lbs 8-3-1 Bat Guano
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div class={i % 2 === 1 ? 'order-1 lg:order-2' : ''}>
+                <h2 class="font-serif text-4xl md:text-5xl text-white mb-1">{product.data.name}</h2>
+                <p class="text-gold-400 text-sm font-bold uppercase tracking-widest mb-4">{product.data.subtitle}</p>
+
+                {product.data.price && (
+                  <div class="flex gap-4 mb-6">
+                    <div class="px-4 py-2 bg-gold-500/10 border border-gold-500/30 rounded-lg text-center">
+                      <p class="text-gold-400 font-bold text-lg">{product.data.price}</p>
+                    </div>
+                    {product.data.totePrice && (
+                      <div class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-center">
+                        <p class="text-white font-semibold">{product.data.totePrice}</p>
+                        <p class="text-white/40 text-xs">2-yard tote</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <!-- Spec Table -->
+                <div class="bg-white/5 rounded-lg border border-white/10 overflow-hidden mb-6">
+                  <div class="px-4 py-2.5 border-b border-white/10">
+                    <p class="text-xs text-gold-500 font-bold uppercase tracking-widest">Specifications</p>
+                  </div>
+                  <div class="divide-y divide-white/5 text-sm">
+                    {product.data.fertilizerIncluded && (
+                      <div class="flex justify-between px-4 py-2.5">
+                        <span class="text-white/55">Fertilizer Included</span>
+                        <span class="text-gold-400 font-semibold text-right max-w-[55%]">{product.data.fertilizerIncluded}</span>
+                      </div>
+                    )}
+                    <div class="flex justify-between px-4 py-2.5">
+                      <span class="text-white/55">Release Type</span>
+                      <span class="text-white font-medium">{product.data.releaseType}</span>
+                    </div>
+                    <div class="flex justify-between px-4 py-2.5">
+                      <span class="text-white/55">Season</span>
+                      <span class="text-white font-medium">{product.data.season}</span>
+                    </div>
+                    {product.data.bestFor && (
+                      <div class="flex justify-between px-4 py-2.5">
+                        <span class="text-white/55">Best For</span>
+                        <span class="text-white text-right max-w-[55%]">{product.data.bestFor}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <!-- Components if available -->
+                {product.data.components && (
+                  <div class="mb-6">
+                    <p class="text-xs text-white/40 uppercase tracking-widest mb-2">Base Components</p>
+                    <div class="flex flex-wrap gap-2">
+                      {product.data.components.map(c => (
+                        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded text-white/60 text-xs">{c}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <a href="tel:+15414410510" class="btn-primary rounded-sm inline-flex items-center gap-2 group">
+                  Schedule Bulk Pickup
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CATEGORY C — Landscaping (Merlin Blend)  [shown before B — best value draw]
+    ============================================================ -->
+    <section id="cat-c" class="section-padding border-t border-white/8 bg-white/[0.015]">
+      <div class="container-custom">
+        <div class="text-center mb-12 fade-up">
+          <span class="eyebrow">Category C</span>
+          <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">Landscaping & Utility · High Volume</span>
+          <h2 class="font-serif text-h1 text-white">Landscaping & Utility</h2>
+        </div>
+
+        {landscaping.map(product => (
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center fade-up max-w-5xl mx-auto">
+            <div class="relative rounded-lg overflow-hidden">
+              <img src={product.data.image} alt={product.data.name} class="w-full aspect-[4/3] object-cover" loading="lazy"/>
+              <div class="absolute inset-0 ring-1 ring-white/10 rounded-lg"></div>
+              {product.data.badge && (
+                <span class="absolute top-4 left-4 px-3 py-1 bg-gold-500 text-[#141414] text-xs font-bold uppercase tracking-wider rounded-full">{product.data.badge}</span>
+              )}
+            </div>
+            <div>
+              <h3 class="font-serif text-4xl md:text-5xl text-white mb-1">{product.data.name}</h3>
+              <p class="text-gold-400 text-sm font-bold uppercase tracking-widest mb-4">{product.data.subtitle}</p>
+              {product.data.price && (
+                <div class="inline-block px-4 py-2 bg-gold-500/10 border border-gold-500/30 rounded-lg mb-6">
+                  <p class="text-gold-400 font-bold text-xl">{product.data.price}</p>
+                </div>
+              )}
+              <div class="bg-white/5 rounded-lg border border-white/10 overflow-hidden mb-6">
+                <div class="divide-y divide-white/5 text-sm">
+                  {product.data.components && product.data.components.map(c => (
+                    <div class="px-4 py-2.5 text-white/65">{c}</div>
+                  ))}
+                </div>
+              </div>
+              <p class="text-white/60 text-sm mb-6 italic">For projects requiring 10+ yards, bulk pricing is available — call ahead.</p>
+              <div class="flex gap-3">
+                <a href="tel:+15414410510" class="btn-primary rounded-sm inline-flex items-center gap-2">Schedule Pickup</a>
+                <a href="#pickup" class="px-5 py-3 text-sm border border-white/20 text-white/60 rounded-sm hover:border-gold-500/40 hover:text-gold-400 transition-colors">Pickup Info</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CATEGORY B — Soil Builders & Amendments
+    ============================================================ -->
+    <section id="cat-b" class="section-padding border-t border-white/8">
+      <div class="container-custom">
+        <div class="text-center mb-12 fade-up">
+          <span class="eyebrow">Category B</span>
+          <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">Soil Builders & Amendments · Structure + Biology</span>
+          <h2 class="font-serif text-h1 text-white">Soil Builders & Amendments</h2>
+          <p class="text-white/55 max-w-xl mx-auto mt-3">Targeted amendments for specific soil problems. Call for up-to-date pricing and availability.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 fade-up">
+          {amendments.map(product => (
+            <div class="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-gold-500/30 transition-all duration-300 group">
+              <div class="relative">
+                <img src={product.data.image} alt={product.data.name} class="w-full h-48 object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy"/>
+                {product.data.badge && (
+                  <span class="absolute top-3 left-3 px-2.5 py-1 bg-gold-500/90 text-[#141414] text-xs font-bold uppercase tracking-wider rounded-full">{product.data.badge}</span>
+                )}
+              </div>
+              <div class="p-6">
+                <h3 class="font-serif text-xl text-white mb-1">{product.data.name}</h3>
+                <p class="text-gold-400 text-xs font-bold uppercase tracking-widest mb-3">{product.data.subtitle}</p>
+                <p class="text-white/60 text-sm leading-relaxed mb-4">{product.data.bestFor}</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-white/40 text-xs">Call for pricing</span>
+                  <a href="tel:+15414410510" class="text-gold-400 text-sm hover:text-gold-300 transition-colors font-medium">(541) 441-0510 →</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FERTILIZERS — Grow Blend + Bloom
+    ============================================================ -->
+    <section id="fertilizers" class="section-padding border-t border-white/8 bg-white/[0.015]">
+      <div class="container-custom">
+        <div class="text-center mb-6 fade-up">
+          <span class="eyebrow">The Fertilizer Line</span>
+          <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">Microbe-First Nutrition Science</span>
+          <h2 class="font-serif text-h1 text-white mb-4">Feed the Soil. Feed the Plant.</h2>
+          <p class="text-white/65 max-w-2xl mx-auto leading-relaxed">
+            Conventional fertilizers feed the plant directly — a shortcut that depletes soil over time.
+            Our fertilizers feed the <strong class="text-white">microbes, nematodes, and fungi</strong> that build a living soil ecosystem.
+            When the biology thrives, your plants access more nutrition than any synthetic could deliver.
+          </p>
+        </div>
+
+        <!-- Full Spectrum Callout -->
+        <div class="fade-up max-w-2xl mx-auto mt-8 mb-14 p-5 bg-gold-500/8 border border-gold-500/25 rounded-lg text-center">
+          <p class="text-gold-300 text-sm leading-relaxed">
+            <strong class="text-gold-400">Full Spectrum Nutrition</strong> — Both blends contain the complete range of essential plant nutrients:
+            cations, anions, micronutrients, and an optimized Calcium to Magnesium ratio for maximum uptake.
+            Plus Mycorrhizal fungi and worm castings in every batch.
+          </p>
+        </div>
+
+        <!-- Bulk Discount Banner -->
+        <div class="fade-up max-w-2xl mx-auto mb-14 p-4 bg-white/5 border border-white/10 rounded-lg text-center">
+          <p class="text-white/60 text-sm">
+            <strong class="text-white">Bulk Discounts Available</strong> on 2,000 lb fertilizer totes.
+            Call ahead for pricing: <a href="tel:+15414410510" class="text-gold-400 hover:text-gold-300">(541) 441-0510</a>
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 fade-up">
+          {fertilizers.map(product => (
+            <div class="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-gold-500/30 transition-all duration-300">
+              <div class="relative">
+                <img src={product.data.image} alt={product.data.name} class="w-full h-56 object-cover" loading="lazy"/>
+                <div class="absolute top-4 left-4">
+                  <span class="px-3 py-1.5 bg-gold-500 text-[#141414] text-sm font-black rounded-full tracking-wider">
+                    NPK {product.data.npk}
+                  </span>
+                </div>
+                {product.data.badge && (
+                  <span class="absolute top-4 right-4 px-2.5 py-1 bg-[#141414]/80 border border-white/20 text-white/70 text-xs font-bold uppercase tracking-wider rounded-full">
+                    {product.data.badge}
+                  </span>
+                )}
+              </div>
+              <div class="p-6">
+                <h3 class="font-serif text-2xl text-white mb-1">{product.data.name}</h3>
+                <p class="text-gold-400 text-xs font-bold uppercase tracking-widest mb-4">{product.data.subtitle}</p>
+                <div class="grid grid-cols-2 gap-3 mb-5 text-xs">
+                  <div class="bg-white/5 rounded px-3 py-2">
+                    <p class="text-white/40 mb-0.5">Best For</p>
+                    <p class="text-white/80">{product.data.bestFor?.split(',').slice(0,2).join(', ')}</p>
+                  </div>
+                  <div class="bg-white/5 rounded px-3 py-2">
+                    <p class="text-white/40 mb-0.5">Season</p>
+                    <p class="text-white/80">{product.data.season}</p>
+                  </div>
+                </div>
+                <a href="tel:+15414410510" class="w-full btn-primary rounded-sm flex items-center justify-center gap-2 text-sm">
+                  Call for Pricing · (541) 441-0510
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BULK PICKUP PROTOCOL
+    ============================================================ -->
+    <section id="pickup" class="section-padding border-t border-white/8">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12 fade-up">
+            <span class="eyebrow">How It Works</span>
+            <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">Pickup Only · No Delivery</span>
+            <h2 class="font-serif text-h1 text-white">Bulk Pickup Protocol</h2>
+          </div>
+
+          <div class="space-y-5 fade-up">
+
+            <div class="flex gap-5 p-6 bg-white/5 rounded-lg border border-white/10 hover:border-gold-500/20 transition-colors">
+              <div class="w-11 h-11 rounded-full bg-gold-500 flex items-center justify-center flex-shrink-0 font-black text-[#141414] text-lg">1</div>
+              <div>
+                <h3 class="font-serif text-xl text-white mb-1">Call Ahead</h3>
+                <p class="text-white/65 mb-2 text-sm">Always call before arriving so we can prepare your order and load you efficiently.</p>
+                <a href="tel:+15414410510" class="text-gold-400 font-bold text-lg hover:text-gold-300 transition-colors">(541) 441-0510</a>
+                <p class="text-white/40 text-xs mt-0.5">Monday – Saturday · 9AM – 5PM</p>
+              </div>
+            </div>
+
+            <div class="flex gap-5 p-6 bg-white/5 rounded-lg border border-white/10 hover:border-gold-500/20 transition-colors">
+              <div class="w-11 h-11 rounded-full bg-gold-500 flex items-center justify-center flex-shrink-0 font-black text-[#141414] text-lg">2</div>
+              <div>
+                <h3 class="font-serif text-xl text-white mb-1">Find Us</h3>
+                <p class="text-white font-semibold mb-1">8470 Monument Dr, Grants Pass, OR 97526</p>
+                <a href="https://www.google.com/maps/place/Daley+Organics/@42.5432168,-123.3884123,17z" target="_blank" rel="noopener noreferrer" class="text-gold-400 text-sm hover:text-gold-300 transition-colors inline-flex items-center gap-1">
+                  Open in Google Maps
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex gap-5 p-6 bg-white/5 rounded-lg border border-white/10 hover:border-gold-500/20 transition-colors">
+              <div class="w-11 h-11 rounded-full bg-gold-500 flex items-center justify-center flex-shrink-0 font-black text-[#141414] text-lg">3</div>
+              <div>
+                <h3 class="font-serif text-xl text-white mb-3">When You Arrive</h3>
+                <ul class="space-y-2 text-white/65 text-sm">
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Stay to the left near the fence once you pull in</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Drive up to the office building</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>We'll get you loaded up and taken care of</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex gap-5 p-6 bg-white/5 rounded-lg border border-white/10 hover:border-gold-500/20 transition-colors">
+              <div class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-serif text-xl text-white mb-1">Vehicle & Load Info</h3>
+                <p class="text-white/65 text-sm leading-relaxed">A standard pickup truck (F-150, Silverado, etc.) holds approximately <strong class="text-white">1–1.5 yards</strong> of soil. A tandem-axle trailer handles <strong class="text-white">4–6 yards</strong>. We provide loading equipment — just bring a suitable vehicle for your order size.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INGREDIENTS BRIDGE
+    ============================================================ -->
+    <section class="section-padding border-t border-white/8 bg-white/[0.015]">
+      <div class="container-custom text-center">
+        <span class="eyebrow">Explore Our Ingredients</span>
+        <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">The Science Behind Every Blend</span>
+        <h2 class="font-serif text-h1 text-white mb-4">25+ Organic Ingredients</h2>
+        <p class="text-white/60 max-w-xl mx-auto mb-10 leading-relaxed">
+          Every amendment we use is in our formulas for a specific, measurable reason.
+          Our Ingredients Library explains the science — from Mycorrhizal fungi to Glacial Rock Dust to Leonardite Shale.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/ingredients" class="btn-primary rounded-sm inline-flex items-center gap-2">
+            Explore the Ingredient Library
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/#news" class="px-8 py-3 text-sm font-medium border border-gold-500/40 text-gold-400 rounded-sm hover:bg-gold-500/10 transition-colors">
+            Read the Blog
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BOTTOM CTA
+    ============================================================ -->
+    <section class="section-padding border-t border-white/8">
+      <div class="container-custom text-center">
+        <h2 class="font-serif text-4xl md:text-5xl text-white mb-3">Ready to build your soil?</h2>
+        <p class="text-white/55 mb-8 max-w-md mx-auto">Call ahead. We'll have your order ready when you arrive.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="tel:+15414410510" class="btn-primary rounded-sm inline-flex items-center gap-2 text-base px-10 py-4">Call (541) 441-0510</a>
+          <a href="/#contact" class="px-10 py-4 text-base font-medium border border-gold-500/40 text-gold-400 rounded-sm hover:bg-gold-500/10 transition-colors">Send a Message</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script is:inline>
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.08, rootMargin: '0px 0px -6% 0px' }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+
+</BaseLayout>

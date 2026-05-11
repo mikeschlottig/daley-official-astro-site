@@ -1,0 +1,576 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Soil Science & the Organic Paradigm | Research Report | Daley Organics";
+const pageDescription = "A comprehensive 15-section whitepaper on soil science through the lens of organic agriculture — covering CEC, calcium signaling, mycorrhizal networks, nutritional density, and the future of soil ecology. 60+ peer-reviewed references, 27 original blueprints.";
+
+// All 15 content sections (excluding cover and AI page)
+const sections = [
+  {
+    id: "living-soil",
+    title: "The Living Soil Matrix",
+    section: "Introduction",
+    color: "emerald",
+    tldr: "Soil is a dynamic ecosystem of bacteria, fungi, protozoa, nematodes, and arthropods — not an inert substrate. The rhizosphere is the most biologically active zone on Earth.",
+    content: [
+      { h2: "Soil as a Living System" },
+      { p: "Soil is far more than an inert growing medium — it is a dynamic, living ecosystem teeming with billions of microorganisms per gram. Bacteria, fungi, protozoa, nematodes, and arthropods form complex food webs that drive nutrient cycling, disease suppression, and plant growth. Understanding soil as a biological system is the first step toward truly sustainable agriculture." },
+      { p: "Modern soil science recognizes that the rhizosphere — the narrow zone of soil directly influenced by plant roots — is a hotspot of biological activity. Root exudates feed microbial communities, which in turn solubilize minerals, fix atmospheric nitrogen, produce growth hormones, and protect against pathogens. This symbiotic relationship has evolved over 400 million years of land plant colonization." },
+      { h2: "From Reductionism to Holism" },
+      { p: "Conventional agronomy has historically treated soil as a chemical substrate — analyzing NPK levels, applying synthetic inputs, and measuring yield responses. The organic paradigm offers a corrective lens, emphasizing systemic relationships, biological complexity, and long-term soil stewardship." },
+      { quote: '"The health of soil, plant, animal, and human is one and indivisible." — Sir Albert Howard, 1940' },
+    ],
+    blueprints: [
+      { src: "/blueprints/rooted/page1_img1.png", caption: "Soil Health Framework Overview" },
+      { src: "/blueprints/biological/page2_img2.png", caption: "Soil Microbial Ecosystem Map" },
+    ],
+  },
+  {
+    id: "electrochemistry",
+    title: "Electrochemistry of Soil",
+    section: "Soil Chemistry",
+    color: "amber",
+    tldr: "Cation Exchange Capacity (CEC) determines how much nutrition soil can hold. High-CEC soils (clay + organic matter) hold and release nutrients efficiently. Low-CEC sandy soils lose nutrients rapidly.",
+    content: [
+      { h2: "Cation Exchange Capacity (CEC)" },
+      { p: "CEC is measured in milliequivalents per 100 grams (meq/100g) and varies dramatically — from under 3 meq/100g in sandy soils to over 50 meq/100g in clay and organic soils. Humus contributes approximately 100-300 meq/100g per percent of organic carbon — making organic matter the single most important CEC booster." },
+      { h2: "Exchangeable Cations" },
+      { p: "The major exchangeable cations are calcium (Ca²⁺), magnesium (Mg²⁺), potassium (K⁺), sodium (Na⁺), and hydrogen (H⁺). Their relative proportions — expressed as base saturation percentages — profoundly influence soil structure, nutrient availability, and plant nutrition." },
+      { table: {
+        title: "Nutrient Classification by Ionic Behavior",
+        headers: ["Nutrient", "Form in Soil", "Mobility", "Leaching Risk"],
+        rows: [
+          ["Nitrogen (N)", "NO₃⁻, NH₄⁺", "High (NO₃⁻)", "High (NO₃⁻)"],
+          ["Phosphorus (P)", "H₂PO₄⁻, HPO₄²⁻", "Low-Medium", "Low"],
+          ["Potassium (K)", "K⁺", "Medium", "Moderate"],
+          ["Calcium (Ca)", "Ca²⁺", "Low", "Low"],
+          ["Magnesium (Mg)", "Mg²⁺", "Low-Medium", "Low-Moderate"],
+          ["Iron (Fe)", "Fe²⁺, Fe³⁺", "Very Low", "Very Low"],
+        ],
+      }},
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page3_img3.png", caption: "Cation Exchange Mechanism — Molecular-Level Soil Chemistry" },
+      { src: "/blueprints/rooted/page2_img2.png", caption: "Ion Exchange Visualization" },
+    ],
+  },
+  {
+    id: "synthetic-fallacy",
+    title: "Fallacy of Synthetic Over-Reliance",
+    section: "Critical Analysis",
+    color: "red",
+    tldr: "Synthetic N fertilizers lose 50-70% to the environment. Decades of synthetic use reduce microbial biomass 40-60%, deplete organic matter, and create compaction. The true cost is 2-3x the input price when externalities are included.",
+    content: [
+      { h2: "The Promise and Peril of Synthetic Inputs" },
+      { p: "The mid-20th century Green Revolution dramatically increased caloric production but also initiated a cascade of unintended ecological consequences. Synthetic nitrogen fertilizers now account for ~50% of nitrogen fixed annually on Earth — yet crops utilize only 30-50% of applied nitrogen, with the remainder lost through leaching, volatilization, and runoff." },
+      { h2: "Soil Degradation Under Conventional Management" },
+      { bullets: [
+        "Organic matter depletion: Conventional tillage has reduced soil organic carbon by 30-50% in many cropped soils",
+        "Biological suppression: Broad-spectrum pesticides reduce microbial biomass and diversity by 40-60%",
+        "Physical degradation: Loss of soil structure, increased compaction, reduced water infiltration",
+        "Chemical imbalance: Disruption of base saturation ratios and progressive acidification",
+      ]},
+      { quote: '"We are not farming to maximize yield; we are mining our soils to produce commodity surpluses. The balance sheet is catching up with us." — Dr. Rattan Lal, World Food Prize Laureate' },
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page4_img4.png", caption: "Synthetic Impact Cascade — Degradation Pathway Diagram" },
+      { src: "/blueprints/rooted/page3_img3.png", caption: "Conventional vs. Biological Soil Comparison" },
+    ],
+  },
+  {
+    id: "regenerative",
+    title: "Regenerative & Organic Counter-Approach",
+    section: "Regenerative Agriculture",
+    color: "teal",
+    tldr: "Organic systems show 60-100% higher microbial biomass, 25-50% improved water infiltration, and net positive carbon sequestration vs. conventional. Regenerative systems achieve 200-400% higher microbial biomass and 50-200% improved infiltration.",
+    content: [
+      { h2: "Principles of Regenerative Agriculture" },
+      { p: "Regenerative agriculture seeks to restore the inherent soil functions — biological nutrient cycling, water regulation, disease suppression, and carbon sequestration — that make external inputs unnecessary. Five core principles: minimize soil disturbance, maintain soil cover, maximize root networks, maximize biodiversity, and integrate livestock." },
+      { table: {
+        title: "Agricultural System Comparison",
+        headers: ["Parameter", "Conventional", "Organic", "Regenerative"],
+        rows: [
+          ["Soil Organic Matter", "Declining (-0.1%/yr)", "Stable to increasing", "Increasing (+0.3%/yr)"],
+          ["Microbial Biomass", "Baseline", "60-100% higher", "200-400% higher"],
+          ["Water Infiltration", "Baseline", "Improved 25-50%", "Improved 50-200%"],
+          ["Carbon Sequestration", "Net negative", "+0.3 t/ha/yr", "+0.5 t/ha/yr"],
+          ["Biodiversity Index", "1.2x baseline", "2.5x baseline", "3-5x baseline"],
+        ],
+      }},
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page5_img5.png", caption: "Regenerative Cycle — Closed-Loop Nutrient Flow" },
+      { src: "/blueprints/rooted/page4_img4.png", caption: "Organic System Architecture Blueprint" },
+    ],
+  },
+  {
+    id: "nutritional-density",
+    title: "Nutritional Density & Human Health",
+    section: "Nutrition & Health",
+    color: "orange",
+    tldr: "USDA data shows statistically significant nutrient declines across 43 garden crops from 1950-1999. Organic crops show 18-69% higher antioxidant concentrations, 48% lower cadmium, and 4x lower pesticide residue incidence.",
+    content: [
+      { h2: "The Dilution Effect" },
+      { p: "Landmark studies analyzing USDA food composition data found statistically significant declines in protein, calcium, phosphorus, iron, riboflavin, and ascorbic acid across 43 garden crops between 1950 and 1999. This 'dilution effect' is attributed to selection for yield over nutritional quality, harvest of immature crops, and soil mineral depletion." },
+      { bullets: [
+        "Calcium: 68% of Americans fail to meet the RDA; soil depletion is a contributing factor",
+        "Magnesium: Estimated 50% deficiency rate in developed nations; correlated with soil CEC decline",
+        "Zinc: 2 billion people worldwide have inadequate zinc intake; soil pH and phosphorus levels affect availability",
+        "Iron: Anemia affects 1.6 billion people; soil carbonate and phosphate levels modulate iron uptake",
+      ]},
+      { h2: "Organic Nutritional Advantages" },
+      { p: "Meta-analyses comparing organic and conventional foods find consistent nutritional advantages for organic production: 18-69% higher antioxidants, 48% lower cadmium, and 4x lower pesticide residue incidence — attributed to healthy soil biology, balanced mineral availability, and absence of synthetic growth stimulants." },
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page6_img6.png", caption: "Nutritional Pathway — Soil to Human Mineral Transfer" },
+      { src: "/blueprints/rooted/page5_img5.png", caption: "Nutrient Density Comparison Chart" },
+    ],
+  },
+  {
+    id: "calcium-centrality",
+    title: "Centrality of Calcium",
+    section: "Calcium Science",
+    color: "amber",
+    tldr: "Calcium is the dominant exchangeable cation in most agricultural soils (60-80% of CEC). It governs soil structure, water infiltration, root penetration, and modulates availability of potassium, magnesium, and micronutrients.",
+    content: [
+      { h2: "Calcium: The Master Mineral" },
+      { p: "Calcium occupies a unique central position in soil science. As the dominant exchangeable cation (typically 60-80% of CEC), calcium governs soil structure through clay flocculation, aggregate stability, and porosity. It also modulates the availability of virtually every other nutrient through competitive exchange and pH effects." },
+      { bullets: [
+        "Cell wall integrity: Calcium cross-links pectin molecules, providing rigidity and pathogen resistance",
+        "Membrane stability: Calcium bridges phospholipid head groups, maintaining membrane selectivity",
+        "Signal transduction: Cytosolic Ca²⁺ spikes function as intracellular signals coordinating stress responses",
+        "Enzyme activation: Over 30 enzymes require calcium as a cofactor, including α-amylase and ATPase",
+        "Root architecture: Calcium influences root elongation, lateral root formation, and root hair development",
+      ]},
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page7_img7.png", caption: "Plant Cellular Calcium Dynamics" },
+      { src: "/blueprints/biological/page8_img8.png", caption: "Calcium Structural Role — Cell Wall Cross-Linking Model" },
+      { src: "/blueprints/rooted/page6_img6.png", caption: "Calcium Soil Architecture Impact" },
+    ],
+  },
+  {
+    id: "calcium-signaling",
+    title: "Calcium as Second Messenger",
+    section: "Calcium Science",
+    color: "amber",
+    tldr: "Plants use calcium as a universal signaling molecule — different stimuli (touch, cold, pathogens) generate distinct calcium 'signatures' that trigger specific responses through 127+ calcium-sensing proteins.",
+    content: [
+      { h2: "The Calcium Signature Hypothesis" },
+      { p: "Different stimuli generate distinct spatiotemporal patterns of cytosolic Ca²⁺ elevation — 'calcium signatures' — which are decoded by specific calcium sensors to produce appropriate downstream responses. Touch stimuli produce rapid, localized Ca²⁺ waves; cold shock triggers sustained cytosolic elevation; pathogen attack induces oscillatory Ca²⁺ spikes." },
+      { h2: "Nitrogen-Calcium Synergy" },
+      { p: "Nitrogen metabolism generates organic acids that chelate calcium, enhancing its uptake and translocation. Adequate calcium promotes healthy root systems and membrane integrity, which improves nitrogen use efficiency. Balanced N-Ca nutrition (targeting ~10:1 N:Ca ratio in leaf tissue) produces superior outcomes: firmer fruit, enhanced disease resistance, and more efficient nitrogen utilization." },
+      { p: "The Arabidopsis genome encodes 7 CaMs, 50 CMLs, 34 CDPKs, 10 CBLs, and 26 CIPKs — collectively comprising over 127 calcium-sensing proteins that decode calcium signatures into specific physiological responses." },
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page9_img9.png", caption: "Calcium Signal Cascade — From Stimulus to Gene Expression" },
+      { src: "/blueprints/rooted/page7_img7.png", caption: "N-Ca Synergy Interaction Model" },
+    ],
+  },
+  {
+    id: "ca-mg-ratio",
+    title: "The Ca:Mg Ratio Debate",
+    section: "Calcium Science",
+    color: "amber",
+    tldr: "Academic consensus: absolute levels of Ca and Mg matter more than their ratio, provided both are above deficiency thresholds. However, extreme ratios (>20:1 or <2:1) indicate management problems. Ideal ratio varies by soil type: sandy soils 3-5:1, heavy clays 7-10:1.",
+    content: [
+      { h2: "Historical Context" },
+      { p: "The ideal Ca:Mg ratio has been debated for 80+ years. The original theory (1940s) proposed 6.5:1 as ideal. Subsequent research (1980s-present) found crop yields are primarily determined by absolute amounts, not ratios — provided both nutrients are above deficiency thresholds." },
+      { table: {
+        title: "Soil Management Paradigm Comparison",
+        headers: ["Approach", "Ca:Mg Target", "pH Target", "Philosophy"],
+        rows: [
+          ["Albrecht/Bear (1940s)", "6.5:1 (ideal)", "6.5-7.0", "Ratio-driven"],
+          ["Sufficiency Level (1980s+)", "No target", "Crop-specific", "Deficiency prevention"],
+          ["Biological (2000s+)", "2-15:1 (flexible)", "5.5-6.5 (biological optimum)", "System health"],
+        ],
+      }},
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page10_img10.png", caption: "Ca:Mg Ratio Effects — Soil Structure and Plant Response" },
+      { src: "/blueprints/rooted/page8_img8.png", caption: "Base Saturation Target Zones" },
+    ],
+  },
+  {
+    id: "bioavailability",
+    title: "Nutritional Bioavailability",
+    section: "Nutrition & Health",
+    color: "orange",
+    tldr: "Calcium bioavailability varies dramatically by source. Leafy greens (low-oxalate) absorb at 40-50%. Dairy absorbs at 30-35%. Calcium carbonate requires stomach acid. Soil mineral status directly determines which calcium forms reach edible plant tissue.",
+    content: [
+      { h2: "Comparative Calcium Sources" },
+      { table: {
+        title: "Calcium Source Bioavailability Comparison",
+        headers: ["Source", "Ca Content", "Absorption %", "Best Use"],
+        rows: [
+          ["Calcium Carbonate (limestone)", "40%", "22-27%", "Cost-effective supplement"],
+          ["Calcium Citrate", "21%", "25-35%", "Low-acid individuals"],
+          ["Dairy (milk)", "12% by weight", "30-35%", "Dietary staple"],
+          ["Leafy Greens (kale)", "1-2% by weight", "40-50% (low oxalate)", "Whole food nutrition"],
+          ["Bone Meal", "30%", "20-25%", "Organic soil amendment"],
+          ["Gypsum (CaSO₄)", "23%", "Moderate", "Sodic soil remediation"],
+          ["Dolomite Lime", "22% (with Mg)", "Moderate", "Mg-deficient soils"],
+        ],
+      }},
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page11_img11.png", caption: "Calcium Bioavailability — Absorption Pathways Comparison" },
+      { src: "/blueprints/rooted/page9_img9.png", caption: "Mineral Source Application Guide" },
+    ],
+  },
+  {
+    id: "plant-immunity",
+    title: "Plant Immunity & Nutrient Balance",
+    section: "Plant Biology",
+    color: "emerald",
+    tldr: "Plants have a two-layer immune system (PTI + ETI). Calcium is essential for hypersensitive response. Silicon, potassium, and micronutrients (Zn, Mn, Cu) are critical immune cofactors. Nutritional balance is a primary organic disease management strategy.",
+    content: [
+      { h2: "The Plant Immune System" },
+      { p: "Plants possess a sophisticated multi-layered immune system. Pattern-triggered immunity (PTI) is activated when plant receptors detect conserved microbial molecules — producing callose deposition, reactive oxygen species (ROS) burst, and expression of defense-related genes. Effector-triggered immunity (ETI) produces a stronger, faster response culminating in the hypersensitive response (HR)." },
+      { bullets: [
+        "Calcium: Essential for callose deposition, ROS signaling, and hypersensitive response — calcium-deficient plants show dramatically increased disease susceptibility",
+        "Silicon: Deposited in cell walls as phytoliths, creating a physical barrier to pathogen penetration",
+        "Potassium: Regulates stomatal aperture (preventing pathogen entry) and activates defense enzymes",
+        "Micronutrients (Zn, Mn, Cu, B): Cofactors for antioxidant enzymes that regulate ROS-mediated defense signaling",
+      ]},
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page12_img12.png", caption: "Plant Immune System — PTI and ETI Defense Layers" },
+      { src: "/blueprints/rooted/page10_img10.png", caption: "Nutrient-Disease Resistance Matrix" },
+    ],
+  },
+  {
+    id: "mycorrhiza",
+    title: "The Mycorrhizal Paradigm",
+    section: "Fungal Ecology",
+    color: "emerald",
+    tldr: "Mycorrhizal fungi associate with 80%+ of vascular plant species. Hyphae extend 25cm from roots, accessing soil volumes orders of magnitude larger than roots alone. AMF can supply 80% of plant phosphorus demand. Colonization induces systemic resistance against pathogens.",
+    content: [
+      { h2: "Ancient Symbiosis" },
+      { p: "Arbuscular mycorrhizal fungi (AMF) form the most widespread terrestrial symbiosis on Earth, associating with over 80% of vascular plant species. This ancient partnership (400-450 million years) was instrumental in land colonization. The fungi provide enhanced nutrient uptake (especially phosphorus, zinc, and copper), improved water relations, and pathogen protection — while receiving up to 20% of plant photosynthate." },
+      { bullets: [
+        "Phosphorus uptake: AMF hyphae access 60-100x more soil volume than roots; can supply 80% of plant P demand",
+        "Water relations: Mycorrhizal plants show 20-50% improved drought tolerance",
+        "Soil structure: Glomalin-related soil protein (GRSP) contributes 27% of total soil carbon in some ecosystems",
+        "Disease protection: AMF colonization induces systemic resistance against foliar and root pathogens",
+      ]},
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page13_img13.png", caption: "Root-Fungal Interface Architecture" },
+      { src: "/blueprints/rooted/page11_img11.png", caption: "Mycorrhizal Hyphal Extension Model" },
+      { src: "/blueprints/biological/page14_img14.png", caption: "Common Mycelial Network Communication" },
+    ],
+  },
+  {
+    id: "common-mycelial-networks",
+    title: "CMN Mechanisms & Mother Trees",
+    section: "Fungal Ecology",
+    color: "emerald",
+    tldr: "Common Mycelial Networks (CMNs) connect multiple plants, enabling carbon transfer from canopy dominants to shaded seedlings, nutrient sharing between nitrogen-fixing and non-fixing plants, and defense signal propagation. Mother trees preferentially allocate carbon to their own offspring through CMNs.",
+    content: [
+      { h2: "Common Mycelial Networks (CMNs)" },
+      { p: "CMNs facilitate carbon transfer from canopy dominants to shaded seedlings, nutrient sharing between nitrogen-fixing and non-fixing plants, water redistribution, chemical signaling, and stress warning transmission — where herbivore attack signals prime defenses in neighboring plants." },
+      { h2: "The Mother Tree Hypothesis" },
+      { p: "Pioneering research by Dr. Suzanne Simard identified 'mother trees' — large, old-growth individuals that serve as hub nodes in forest CMNs. These trees allocate carbon preferentially to their own offspring (seedlings sharing the same maternal parent), demonstrating kin recognition mediated through mycorrhizal networks." },
+      { table: {
+        title: "Ecological Metrics Across Management Systems",
+        headers: ["Metric", "Old-Growth Forest", "Managed Forest", "Monoculture Cropland", "Regenerative Agroforestry"],
+        rows: [
+          ["Mycorrhizal Colonization", "75-95%", "30-60%", "5-25%", "50-80%"],
+          ["Soil Carbon (t/ha)", "120-200+", "60-100", "20-50", "80-140"],
+          ["Hyphal Length (m/g soil)", "50-150", "15-50", "5-20", "30-100"],
+          ["Network Connectivity", "0.85-0.95", "0.40-0.65", "0.10-0.30", "0.65-0.85"],
+        ],
+      }},
+    ],
+    blueprints: [
+      { src: "/blueprints/rooted/page12_img12.png", caption: "Forest Network Connectivity Map" },
+      { src: "/blueprints/biological/page15_img15.png", caption: "Mother Tree Carbon Transfer Schematic" },
+    ],
+  },
+  {
+    id: "future-soil-ecology",
+    title: "Future of Soil Ecology",
+    section: "Future Outlook",
+    color: "teal",
+    tldr: "Soils contain 2,500 gigatons of organic carbon — more than 3x the atmosphere. Regenerative practices could sequester 1-3 gigatons CO₂/year (10-25% of annual fossil fuel emissions). Emerging tech: metagenomics, edaphic remote sensing, synthetic biology, nanofertilizers.",
+    content: [
+      { h2: "Emerging Technologies in Soil Science" },
+      { bullets: [
+        "Metagenomics and metatranscriptomics: Characterizing which organisms are present and what genes they express in situ",
+        "Edaphic remote sensing: Satellite and drone platforms mapping soil organic carbon, moisture, and compaction at field scale",
+        "Synthetic biology: Engineering microbial inoculants with enhanced nutrient-solubilizing or disease-suppressive capabilities",
+        "Nanofertilizers: Controlled-release nanoparticle formulations improving nutrient use efficiency by 30-50%",
+        "Digital soil mapping: AI-driven predictive models integrating multi-source data for high-resolution soil property maps",
+      ]},
+      { h2: "Climate Change and Soil Carbon" },
+      { p: "Soils represent the largest terrestrial carbon reservoir — approximately 2,500 gigatons of organic carbon, more than three times the carbon in the atmosphere. Regenerative practices could sequester 1-3 gigatons of CO₂ equivalent per year globally, representing 10-25% of current annual fossil fuel emissions." },
+    ],
+    blueprints: [
+      { src: "/blueprints/biological/page14_img14.png", caption: "Integrated Monitoring Framework" },
+    ],
+  },
+  {
+    id: "conclusion",
+    title: "Conclusion & Key Findings",
+    section: "Synthesis",
+    color: "slate",
+    tldr: "Soil biology is the foundation of plant nutrition, human health, and ecological resilience. The organic paradigm — which prioritizes biological complexity over chemical simplicity — is validated by 60+ peer-reviewed sources. Managing soil as a living system is the path forward.",
+    content: [
+      { h2: "Synthesis and Key Findings" },
+      { bullets: [
+        "Soil electrochemistry — particularly CEC and base saturation — fundamentally governs nutrient availability, soil structure, and plant nutrition",
+        "Synthetic input over-reliance has produced measurable soil degradation, nutritional dilution in crops, and significant environmental externalities",
+        "Calcium is the single most important mineral in soil management — dominant cation, structural component, and critical signaling molecule",
+        "Mycorrhizal fungi represent an ancient essential symbiosis that dramatically extends plant access to soil resources",
+        "The nutritional quality of food is directly linked to soil health, creating a clear pathway from soil management to human health outcomes",
+      ]},
+      { quote: '"Essentially, all life depends upon the soil... There can be no life without soil and no soil without life; they have evolved together." — Charles E. Kellogg, USDA Yearbook of Agriculture, 1938' },
+    ],
+    blueprints: [],
+  },
+];
+
+const colorMap: Record<string, { badge: string; border: string; bg: string; dot: string }> = {
+  emerald: { badge: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20', border: 'border-emerald-800/30', bg: 'bg-emerald-950/10', dot: 'bg-emerald-400' },
+  amber: { badge: 'text-amber-400 bg-amber-400/10 border-amber-400/20', border: 'border-amber-800/30', bg: 'bg-amber-950/10', dot: 'bg-amber-400' },
+  teal: { badge: 'text-teal-400 bg-teal-400/10 border-teal-400/20', border: 'border-teal-800/30', bg: 'bg-teal-950/10', dot: 'bg-teal-400' },
+  orange: { badge: 'text-orange-400 bg-orange-400/10 border-orange-400/20', border: 'border-orange-800/30', bg: 'bg-orange-950/10', dot: 'bg-orange-400' },
+  red: { badge: 'text-red-400 bg-red-400/10 border-red-400/20', border: 'border-red-800/30', bg: 'bg-red-950/10', dot: 'bg-red-400' },
+  slate: { badge: 'text-stone-400 bg-stone-400/10 border-stone-600/30', border: 'border-stone-700/30', bg: 'bg-stone-900/20', dot: 'bg-stone-400' },
+};
+
+// JSON-LD for the research report
+const reportSchema = {
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Soil Science and the Organic Paradigm",
+  "description": pageDescription,
+  "author": { "@type": "Person", "name": "Cameron Daley" },
+  "publisher": { "@type": "Organization", "name": "Daley Organics", "url": "https://daleyorganics.com" },
+  "datePublished": "2026-04-01",
+  "keywords": "soil science, organic agriculture, CEC, calcium, mycorrhiza, soil biology, regenerative agriculture",
+  "about": [
+    { "@type": "Thing", "name": "Soil Science" },
+    { "@type": "Thing", "name": "Organic Agriculture" },
+    { "@type": "Thing", "name": "Mycorrhizal Fungi" },
+  ],
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://daleyorganics.com/research" },
+  "citation": [
+    "Howard, A. (1940). An Agricultural Testament. Oxford University Press.",
+    "Brady, N.C. & Weil, R.R. (2016). The Nature and Properties of Soils (15th ed.). Pearson.",
+    "Simard, S.W. et al. (1997). Net transfer of carbon between ectomycorrhizal tree species. Nature, 388, 579-582.",
+    "Davis, D.R. et al. (2004). Changes in USDA food composition data for 43 garden crops, 1950-1999. JACN, 23(6).",
+  ],
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords="soil science whitepaper, organic agriculture research, CEC soil, calcium signaling plants, mycorrhizal networks, nutritional density organic food, regenerative agriculture Oregon"
+  canonical="https://daleyorganics.com/research"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(reportSchema)} />
+
+  <!-- Back nav -->
+  <div class="fixed top-16 left-0 right-0 z-20 bg-black/80 backdrop-blur-sm border-b border-stone-800">
+    <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/blog" class="flex items-center gap-2 text-stone-400 hover:text-white transition-colors text-sm">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Blog
+      </a>
+      <span class="text-stone-500 text-xs">Research Report · April 2026 · 60+ References · 27 Blueprints</span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 bg-gradient-to-b from-black via-stone-950 to-stone-950 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,109,50,0.08),transparent_60%)]"></div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <p class="eyebrow">Research Report</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+        Soil Science &<br class="hidden md:block"/>
+        <span class="text-gold-400">The Organic Paradigm</span>
+      </h1>
+      <p class="text-stone-300 text-lg max-w-2xl mx-auto mb-8">
+        A comprehensive whitepaper on how soil biology, electrochemistry, calcium, and mycorrhizal networks interact — and why organic management produces superior long-term outcomes.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <div class="bg-stone-900/80 border border-stone-800 rounded-xl px-4 py-3 text-center">
+          <div class="text-xl font-bold text-gold-400">15</div>
+          <div class="text-xs text-stone-400 uppercase tracking-widest">Sections</div>
+        </div>
+        <div class="bg-stone-900/80 border border-stone-800 rounded-xl px-4 py-3 text-center">
+          <div class="text-xl font-bold text-gold-400">60+</div>
+          <div class="text-xs text-stone-400 uppercase tracking-widest">References</div>
+        </div>
+        <div class="bg-stone-900/80 border border-stone-800 rounded-xl px-4 py-3 text-center">
+          <div class="text-xl font-bold text-gold-400">27</div>
+          <div class="text-xs text-stone-400 uppercase tracking-widest">Blueprints</div>
+        </div>
+        <div class="bg-stone-900/80 border border-stone-800 rounded-xl px-4 py-3 text-center">
+          <div class="text-xl font-bold text-gold-400">~35</div>
+          <div class="text-xs text-stone-400 uppercase tracking-widest">Min Read</div>
+        </div>
+      </div>
+
+      <!-- Cover blueprint -->
+      <div class="rounded-2xl overflow-hidden border border-stone-700 max-w-2xl mx-auto">
+        <img src="/blueprints/biological/page1_img1.png" alt="Biological Soil Intelligence — Framework Overview" class="w-full" loading="eager"/>
+        <p class="bg-stone-900 text-stone-400 text-xs text-center py-2 px-4">Biological Soil Intelligence — Framework Overview</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="bg-stone-950 py-12 border-y border-stone-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow mb-4">Table of Contents</p>
+      <div class="grid md:grid-cols-2 gap-2">
+        {sections.map((section, idx) => {
+          const c = colorMap[section.color] ?? colorMap.slate;
+          return (
+            <a href={`#${section.id}`} class="flex items-center gap-3 p-3 rounded-xl hover:bg-stone-900/60 transition-colors group">
+              <span class="text-stone-600 text-xs w-5 text-right flex-shrink-0">{String(idx + 1).padStart(2, '0')}</span>
+              <div class={`w-2 h-2 rounded-full flex-shrink-0 ${c.dot}`}></div>
+              <span class="text-stone-300 group-hover:text-white text-sm transition-colors">{section.title}</span>
+              <span class={`ml-auto text-xs border rounded-full px-2 py-0.5 flex-shrink-0 hidden md:block ${c.badge}`}>{section.section}</span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Content sections -->
+  <div class="bg-stone-950 pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      {sections.map((section, idx) => {
+        const c = colorMap[section.color] ?? colorMap.slate;
+        return (
+          <article id={section.id} class="py-16 border-b border-stone-900 last:border-0">
+            <!-- Section header -->
+            <div class="flex items-start gap-4 mb-8">
+              <span class="text-stone-700 font-mono text-lg mt-1 w-8 flex-shrink-0">{String(idx + 1).padStart(2, '0')}</span>
+              <div>
+                <span class={`text-xs font-bold border rounded-full px-2.5 py-0.5 mb-3 inline-block ${c.badge}`}>{section.section}</span>
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-white">{section.title}</h2>
+              </div>
+            </div>
+
+            <!-- TL;DR box -->
+            <div class={`rounded-xl border p-5 mb-8 ${c.border} ${c.bg}`}>
+              <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span class="text-gold-400 text-xs font-bold uppercase tracking-widest">TL;DR</span>
+              </div>
+              <p class="text-stone-300 text-sm leading-relaxed">{section.tldr}</p>
+            </div>
+
+            <!-- Content blocks -->
+            <div class="space-y-5 text-stone-300">
+              {section.content.map((block) => {
+                if ('h2' in block) return <h3 class="text-xl font-serif font-bold text-white mt-8 mb-3 pb-2 border-b border-stone-800">{block.h2}</h3>;
+                if ('h3' in block) return <h4 class="text-lg font-serif font-semibold text-gold-300 mt-6 mb-2">{block.h3}</h4>;
+                if ('p' in block) return <p class="leading-relaxed text-stone-300">{block.p}</p>;
+                if ('quote' in block) return (
+                  <blockquote class="border-l-2 border-gold-500/50 pl-5 py-1 bg-stone-900/40 rounded-r-xl my-6">
+                    <p class="text-stone-300 italic text-sm leading-relaxed">{block.quote}</p>
+                  </blockquote>
+                );
+                if ('bullets' in block) return (
+                  <ul class="space-y-2">
+                    {block.bullets.map((b) => (
+                      <li class="flex items-start gap-3 text-sm leading-relaxed">
+                        <svg class="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                );
+                if ('table' in block) return (
+                  <div class="overflow-x-auto rounded-xl border border-stone-800 my-6">
+                    {block.table.title && <div class="bg-stone-900 px-4 py-2.5 text-xs font-semibold text-stone-400 uppercase tracking-wider border-b border-stone-800">{block.table.title}</div>}
+                    <table class="w-full text-sm">
+                      <thead class="bg-stone-900/50">
+                        <tr>
+                          {block.table.headers.map((h) => (
+                            <th class="text-left text-stone-400 font-semibold text-xs px-4 py-3">{h}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {block.table.rows.map((row, ri) => (
+                          <tr class={`border-t border-stone-800/50 ${ri % 2 === 0 ? 'bg-stone-900/20' : ''}`}>
+                            {row.map((cell) => (
+                              <td class="text-stone-300 text-xs px-4 py-3">{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                );
+                return null;
+              })}
+            </div>
+
+            <!-- Blueprint images -->
+            {section.blueprints.length > 0 && (
+              <div class={`mt-8 grid gap-4 ${section.blueprints.length === 1 ? 'grid-cols-1' : 'md:grid-cols-2'}`}>
+                {section.blueprints.map((bp) => (
+                  <figure class="rounded-xl overflow-hidden border border-stone-800">
+                    <img src={bp.src} alt={bp.caption} loading="lazy" class="w-full"/>
+                    <figcaption class="bg-stone-900 text-stone-500 text-xs text-center py-2 px-3">{bp.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
+          </article>
+        );
+      })}
+    </div>
+  </div>
+
+  <!-- References -->
+  <section class="bg-black py-16 border-t border-stone-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">References</p>
+      <h2 class="text-2xl font-serif font-bold text-white mb-8">Recommended Literature</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-sm font-bold text-stone-400 uppercase tracking-wider mb-4">Foundational Texts</h3>
+          <ul class="space-y-3 text-sm text-stone-400">
+            <li>Howard, A. (1940). <em class="text-stone-300">An Agricultural Testament.</em> Oxford University Press.</li>
+            <li>Brady, N.C. & Weil, R.R. (2016). <em class="text-stone-300">The Nature and Properties of Soils</em> (15th ed.). Pearson.</li>
+            <li>Magdoff, F. & van Es, H. (2021). <em class="text-stone-300">Building Soils for Better Crops</em> (4th ed.). SARE.</li>
+            <li>Marschner, H. (2012). <em class="text-stone-300">Mineral Nutrition of Higher Plants</em> (3rd ed.). Academic Press.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-stone-400 uppercase tracking-wider mb-4">Peer-Reviewed Research</h3>
+          <ul class="space-y-3 text-sm text-stone-400">
+            <li>Simard et al. (1997). Net transfer of carbon between ectomycorrhizal tree species. <em class="text-stone-300">Nature</em>, 388, 579-582.</li>
+            <li>Davis et al. (2004). Changes in USDA food composition data 1950-1999. <em class="text-stone-300">JACN</em>, 23(6), 669-682.</li>
+            <li>Barański et al. (2014). Higher antioxidant concentrations in organically grown crops. <em class="text-stone-300">Brit. J. Nutrition</em>, 112(5).</li>
+            <li>Kopittke & Menzies (2007). Review of the basic cation saturation ratio. <em class="text-stone-300">SSSAJ</em>, 71(1), 259-265.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-stone-950 py-16 border-t border-stone-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-serif font-bold text-white mb-4">Put the Science to Work</h2>
+      <p class="text-stone-400 text-sm mb-8 max-w-xl mx-auto">Every product we sell is built on these principles. See what goes into our blends — and why it's there.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/ingredients" class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-black font-bold px-6 py-3 rounded-xl transition-colors text-sm">Ingredient Library</a>
+        <a href="/products" class="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors border border-stone-700 text-sm">View Products</a>
+        <a href="/blog" class="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors border border-stone-700 text-sm">More Articles</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
