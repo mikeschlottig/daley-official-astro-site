@@ -58,6 +58,13 @@ export function ProductShowcase() {
             {productShowcaseConfig.subtitle}
           </span>
           <h2 className="font-serif text-h1 text-white">{productShowcaseConfig.mainTitle}</h2>
+          {productShowcaseConfig.intro?.length > 0 && (
+            <div className="max-w-3xl mx-auto mt-6 space-y-4">
+              {productShowcaseConfig.intro.map((para, i) => (
+                <p key={i} className="text-white/75 leading-relaxed">{para}</p>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Product Tabs */}

@@ -18,7 +18,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   title: "Daley Organics - Premium Organic Soil Solutions | Grants Pass, Oregon",
-  description: "Premium organic soil and fertilizer blends for healthier plants and a sustainable future. Born and raised in the Rogue Valley, committed to bringing prosperity through sustainable agriculture.",
+  description: "Discover premium organic soil, compost, mulch, and the best fertilizer in Oregon at Daley Organics in Grants Pass. Feed the microbes. Grow Bigger. Grow Better.",
   language: "en",
   keywords: "organic fertilizer, soil mix, worm castings, compost, Grants Pass, Oregon, Rogue Valley, sustainable gardening, organic gardening, bat guano, kelp meal",
   ogImage: "/images/hero-garden.jpg",
@@ -144,6 +144,7 @@ export interface ProductShowcaseConfig {
   scriptText: string;
   subtitle: string;
   mainTitle: string;
+  intro: string[];
   products: Product[];
   features: ProductFeature[];
   quote: ProductQuote;
@@ -153,6 +154,10 @@ export const productShowcaseConfig: ProductShowcaseConfig = {
   scriptText: "Our Signature Blends",
   subtitle: "PREMIUM ORGANIC SOLUTIONS",
   mainTitle: "The Daley Difference",
+  intro: [
+    "For the last 12 years, gardeners and farmers throughout the Rogue Valley have counted on Daley's premium soil and compost blends to grow everything from potent herbal medicine to the best organic tomatoes and produce on the West Coast.",
+    "At up to 30 lbs of organic fertilizer per yard, and 3x the ingredient diversity of leading premium organic blends such as Mother Earth's Organic Fertilizer — sold at the Grange Co-op and Depot — Daley Organics doesn't just compete, it dominates on plant vigor, growth rate, bio-synthesis, BRIX levels, and nutrient density. Not to mention price. If you live in Medford or Ashland, or are passing through on vacation to raft the Rogue River, do yourself a favor and come by Daley Organics on Monument Drive. We're technically in Grants Pass, but essentially in Merlin — a mile or so past North Valley High School. Your flowers will never bloom brighter.",
+  ],
   products: [
     {
       id: "daleys-mix",

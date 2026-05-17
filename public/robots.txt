@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://daleyorganics.com/sitemap-index.xml
+Sitemap: https://daleyorganics.com/sitemap.xml
 
 # AI/LLM overview
 # https://daleyorganics.com/llms.txt
