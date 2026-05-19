@@ -594,6 +594,7 @@ export const footerConfig: FooterConfig = {
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
     { name: "FAQ", href: "/faq" },
+    { name: "Sitemap", href: "/sitemap.xml" },
     { name: "LLMs.txt", href: "/llms.txt" },
   ],
   backToTopText: "Back to Top",
