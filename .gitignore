@@ -39,3 +39,9 @@ Thumbs.db
 # Misc
 *.tgz
 .cache/
+
+# local tooling
+.claude/
+graphify-out/
+
+*Zone.Identifier

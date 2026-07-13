@@ -1,12 +1,15 @@
 ---
 title: "Blood Money: How Slaughterhouse Waste Became Garden Gold"
 excerpt: "Blood meal — dried, powdered blood from slaughterhouses — is the fastest-acting organic nitrogen fertilizer available. The story of how Chicago's Union Stock Yards turned a disposal problem into agriculture's best emergency nitrogen source."
-date: "March 14, 2025"
+description: "Blood meal (12-0-0) is the fastest-acting organic nitrogen. How Chicago's Union Stock Yards turned slaughterhouse waste into agriculture's emergency nitrogen source."
+date: "April 19, 2026"
 category: "Ingredients"
 image: "daleys-cavern.png"
+ogImage: "/images/hero-garden.jpg"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["blood meal", "nitrogen", "organic fertilizer", "fast-acting", "deer repellent"]
+ingredientName: "Blood Meal"
 tldr:
   - "Blood meal (NPK ~12-0-0) is the fastest-acting organic nitrogen — corrects deficiency in 1-2 months vs. 4+ months for most organics"
   - "Commercialized in Chicago's Union Stock Yards in the 1880s — the 'use everything but the squeal' philosophy turned blood into revenue"
@@ -14,6 +17,22 @@ tldr:
   - "Doubles as a deer and rabbit repellent — the scent of dried blood signals predator activity to prey animals"
   - "Warning: one of the few organics that can burn plants — start conservative, and keep it away from dogs who may dig and eat it"
 relatedProducts: ["daleys-mix", "grow-blend"]
+relatedPosts:
+  - "feather-meal-slow-nitrogen"
+  - "bone-meal-the-bone-business"
+  - "soybean-meal-balanced-nitrogen"
+faqs:
+  - question: "How fast does blood meal release nitrogen?"
+    answer: "Blood meal releases nitrogen faster than any other organic amendment. Most of its nitrogen becomes plant-available within one to two months, compared to four or more months for most other organic fertilizers. This makes it the organic grower's best option for correcting nitrogen deficiency during the growing season."
+  - question: "Can blood meal burn plants?"
+    answer: "Yes, blood meal is one of the few organic amendments that can burn plants if over-applied. Its high nitrogen concentration (12-0-0 NPK) means a tablespoon too much near stems can cause leaf scorch within days. Start with less than you think you need, and for containers use no more than half teaspoon per gallon of soil."
+  - question: "Does blood meal repel deer?"
+    answer: "Yes, blood meal doubles as a deer and rabbit deterrent. The scent of dried blood signals predator activity to prey animals, causing them to avoid the area. The effect is temporary and requires reapplication after rain, but as a first line of defense for newly planted gardens, it works remarkably well."
+  - question: "How much blood meal should I use per 100 square feet?"
+    answer: "For a quick nitrogen fix on deficient plants, apply 1-2 lbs per 100 square feet and water in immediately. For pre-plant soil preparation before heavy feeders, work 2-3 lbs per 100 square feet into beds 1-2 weeks before planting. Always err on the side of less rather than more."
+  - question: "Is blood meal safe for dogs?"
+    answer: "Blood meal is attractive to dogs because of its scent, but ingesting large quantities can cause iron toxicity. If you have dogs, work blood meal thoroughly into the soil rather than leaving it on the surface where pets can dig it up and eat it."
+dateModified: "2026-07-12"
 ---
 
 In Chicago's stockyards, they had a problem: what to do with all that blood. The solution revolutionized agriculture.

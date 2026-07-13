@@ -1,0 +1,7 @@
+---
+// ProductsSchema.astro — WebPage + ItemList of Product objects
+// Source: daley-organics-schema-v2.json → "products_page"
+import schemaData from '../../data/daley-organics-schema-v2.json';
+const schema = schemaData.products_page;
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

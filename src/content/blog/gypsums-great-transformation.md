@@ -1,12 +1,14 @@
 ---
 title: "Gypsum's Great Transformation: From Egyptian Pyramids to Perfect Soil Structure"
 excerpt: "The mineral that built the pyramids also builds perfect soil structure. Gypsum's unique ability to break up clay without changing pH makes it the most underrated amendment in organic gardening."
-date: "March 28, 2025"
+date: "April 27, 2026"
 category: "Soil Science"
 image: "daleys-angel-of-gypsum.png"
+ogImage: "/images/hero-garden.jpg"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["gypsum", "clay soil", "calcium", "soil structure", "sulfur"]
+ingredientName: "Gypsum"
 tldr:
   - "Gypsum (CaSO₄) provides 23% calcium and 18% sulfur without altering soil pH — unlike agricultural lime"
   - "Its superpower: calcium ions displace sodium between clay particles, causing them to flocculate into aggregates with air and water spaces"
@@ -14,6 +16,22 @@ tldr:
   - "Works best in clay soils compacted by sodium — does NOT fix mechanical compaction from foot traffic or machinery"
   - "Use natural mined gypsum (OMRI-listed) for organic production, not FGD gypsum from coal plant scrubbers"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+relatedPosts:
+  - "glacial-rock-dust-remineralize"
+  - "dolomite-lime-calcium-magnesium"
+  - "oyster-shell-calcium-ph"
+faqs:
+  - question: "Does gypsum change soil pH?"
+    answer: "No, gypsum does not change soil pH. This is its key advantage over agricultural lime, which also provides calcium but raises pH — sometimes dramatically. Gypsum provides calcium and sulfur to improve clay structure without affecting acidity, making it ideal for soils that are already alkaline."
+  - question: "How much gypsum should I use for clay soil?"
+    answer: "For general clay soil improvement, apply 20-40 lbs per 100 square feet worked into the top 6-8 inches. For sodic soil remediation with high sodium levels, increase to 40-60 lbs per 100 square feet and water heavily after application to leach displaced sodium. Heavily compacted clay may require repeat applications over 2-3 seasons."
+  - question: "What is the difference between gypsum and lime for soil?"
+    answer: "Both gypsum and lime provide calcium, but lime raises soil pH while gypsum does not. In alkaline soils common in the American West, adding lime makes the problem worse. Gypsum also improves clay structure by displacing sodium ions between clay particles, causing them to aggregate into larger clumps with air and water spaces."
+  - question: "Does gypsum work on all compacted clay soil?"
+    answer: "Gypsum specifically improves clay soil compacted due to high sodium content — it works by displacing sodium with calcium ions. It does NOT improve clay soil compacted by physical pressure from foot traffic, machinery, or heavy objects. For mechanical compaction, you need physical amendments like organic matter, pumice, or perlite."
+  - question: "Is FGD gypsum safe for organic gardening?"
+    answer: "Natural mined gypsum is OMRI-listed and approved for organic production. FGD gypsum (flue gas desulfurization gypsum) is a recycled byproduct from coal-fired power plants that is chemically identical but may contain trace contaminants like mercury. For garden use, natural mined gypsum is the safer choice for organic growers."
+dateModified: "2026-07-12"
 ---
 
 The same mineral that built the pyramids also builds perfect soil structure. The ancients knew more than they realized.

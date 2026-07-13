@@ -1,12 +1,14 @@
 ---
 title: "The Guano Wars: When Bird Poop Was Worth More Than Gold"
 excerpt: "In the mid-1800s, seabird guano was the world's most valuable fertilizer and a strategic resource nations went to war over. The story of Peru's Chincha Islands — and why seabird guano is still one of the best organic fertilizers on Earth."
-date: "March 22, 2025"
+description: "Peru's guano tripled crop yields and nations fought wars over it. The Guano Islands Act claimed 100+ territories. Why seabird guano remains a top organic fertilizer."
+date: "April 23, 2026"
 category: "Ingredients"
 image: "daleys-seabird-guano.png"
 author: "Cameron Daley"
 readingTime: "7 min read"
 tags: ["guano", "seabird guano", "organic fertilizer", "phosphorus", "nitrogen", "soil history"]
+ingredientName: "Sea Bird Guano"
 tldr:
   - "Peru's Chincha Islands held guano deposits 150 feet deep — accumulated over thousands of years by seabird colonies"
   - "Guano tripled crop yields and triggered a global boom; Peru exported 12 million tons between 1840–1880"
@@ -14,6 +16,20 @@ tldr:
   - "Chile, Bolivia, and Peru fought the War of the Pacific (1879–1883) partly over guano and nitrate deposits"
   - "Today's sustainably harvested seabird guano provides balanced NPK plus humic acids and beneficial microorganisms"
 relatedProducts: ["daleys-mix"]
+relatedPosts:
+  - "bat-guano-cave-fertilizer"
+  - "fish-bone-meal-phosphorus"
+  - "bone-meal-the-bone-business"
+faqs:
+  - question: "What is the NPK of seabird guano?"
+    answer: "Seabird guano provides a balanced NPK analysis with nitrogen, phosphorus, and potassium in naturally occurring ratios. High-phosphorus guano varieties are particularly valued for flowering and fruiting. The exact analysis varies by source, but it delivers all three macronutrients alongside calcium, magnesium, sulfur, and trace minerals."
+  - question: "How do you apply seabird guano to the garden?"
+    answer: "Work seabird guano into beds at 5-10 lbs per 100 square feet before planting, or add 1-2 tablespoons per gallon of potting mix. It can also be brewed as compost tea by steeping 1 tablespoon per gallon in aerated water for 24-48 hours, then applied as a soil drench or foliar spray."
+  - question: "Is guano safe to handle?"
+    answer: "Guano can carry histoplasmosis spores, so always wear a dust mask when handling dry guano. While it is an excellent organic fertilizer, the airborne dust should not be inhaled. Work in well-ventilated areas and wash hands thoroughly after handling."
+  - question: "Why did countries go to war over guano?"
+    answer: "In the mid-1800s, Peruvian guano tripled crop yields and became the most valuable fertilizer on Earth. Peru exported 12 million tons between 1840-1880, with guano revenues accounting for 60% of government income. The US passed the Guano Islands Act of 1856 to claim islands, and Chile, Bolivia, and Peru fought the War of the Pacific partly over guano deposits."
+dateModified: "2026-07-12"
 ---
 
 In 1856, the United States nearly went to war over bird droppings. The economics were just that compelling.

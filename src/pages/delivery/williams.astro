@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DeliveryWilliamsSchema from '../../components/schema/DeliveryWilliamsSchema.astro';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<BaseLayout
+  title="Organic Soil Delivery in Williams, OR | Daley Organics"
+  description="Organic fertilizer, topsoil blends, and premium compost delivered in bulk to Williams, Oregon homesteads, farms, and permaculture sites. Call (541) 441-0510."
+  keywords="soil delivery Williams Oregon, organic fertilizer Williams OR, bulk compost delivery Williams, permaculture soil delivery Josephine County"
+  canonical={canonical}
+>
+  <DeliveryWilliamsSchema slot="head" />
+
+  <div class="bg-[#141414] min-h-screen pt-[72px]">
+    <!-- Page Header -->
+    <div class="bg-[#0e0e0e] border-b border-white/10 py-14">
+      <div class="container-custom">
+        <p class="eyebrow mb-4">Delivery Service</p>
+        <div class="flex items-center gap-3 mb-4">
+          <a href="/delivery" class="text-white/40 hover:text-gold-400 transition-colors text-sm">Delivery</a>
+          <span class="text-white/20">/</span>
+          <span class="text-white/60 text-sm">Williams, OR</span>
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl text-white mb-4">Organic Soil Delivery in Williams, Oregon</h1>
+        <p class="text-white/60 max-w-2xl">Specialized 25-ingredient complete organic fertilizer, living topsoil blends, and premium compost delivered in bulk to Williams homesteads, farms, and permaculture operations.</p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container-custom py-16 max-w-4xl">
+
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl text-white mb-4">Organic Soil Delivery to Williams</h2>
+        <p class="text-white/60 leading-relaxed mb-4">
+          Williams, Oregon is a small unincorporated community in the Williams Valley of Josephine County, known for its mix of rural homesteads, small farms, and permaculture operations. The valley's microclimate — slightly cooler and wetter than Grants Pass — creates unique growing conditions that benefit from biologically active, nutrient-dense soil amendments.
+        </p>
+        <p class="text-white/60 leading-relaxed">
+          Daley Organics delivers bulk organic soil, custom fertilizer blends, and premium compost directly to Williams properties. Whether you're building a food forest, establishing perennial beds, or rehabilitating depleted agricultural land, our products are formulated to build living soil that improves year after year.
+        </p>
+      </div>
+
+      <!-- What We Deliver to Williams -->
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl text-white mb-6">Products Available for Williams Delivery</h2>
+        <div class="space-y-4">
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-serif text-lg text-white">Daley's Mix — Elite Professional Blend</h3>
+              <span class="text-gold-400 font-bold text-sm">$140/yd</span>
+            </div>
+            <p class="text-white/55 text-sm leading-relaxed">Our most complete growing media — 21 organic amendments plus a 25-ingredient complete fertilizer blend. Designed for growers who want maximum biological activity and nutrient density from day one.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-serif text-lg text-white">Premium Soil Mix — Foundation Blend</h3>
+              <span class="text-gold-400 font-bold text-sm">$130/yd</span>
+            </div>
+            <p class="text-white/55 text-sm leading-relaxed">Professional-grade organic soil with 20 amendments and complete fertilizer blend. An excellent choice for raised beds, market gardens, and general-purpose growing in the Williams Valley.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-serif text-lg text-white">Merlin Blend — Landscape Mix</h3>
+              <span class="text-gold-400 font-bold text-sm">$55/yd</span>
+            </div>
+            <p class="text-white/55 text-sm leading-relaxed">High-volume organic soil for landscaping, yard top-dressing, and large garden projects. The most affordable option for properties requiring significant soil volume — ideal for food forest establishment and large-scale permaculture earthworks.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <h3 class="font-serif text-lg text-white mb-2">Grow Blend 5-4-2 &amp; Bloom Blend 2-7-7</h3>
+            <p class="text-white/55 text-sm leading-relaxed">Complete organic fertilizers with 25 ingredients each. Grow Blend feeds soil biology for vegetative growth; Bloom Blend supports flowering, fruiting, and root development. Available in bulk bags and 2,000 lb totes for farm-scale application.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <h3 class="font-serif text-lg text-white mb-2">Premium Organic Compost</h3>
+            <p class="text-white/55 text-sm leading-relaxed">Thermophilic compost produced through controlled aerobic decomposition. Excellent for soil rehabilitation on depleted homestead land, cover crop establishment, and building the biological foundation of new garden beds.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Williams-Specific Info -->
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl text-white mb-4">Williams Delivery Details</h2>
+        <div class="bg-white/5 border border-white/10 rounded-lg p-6 space-y-4 text-white/60 text-sm leading-relaxed">
+          <p><strong class="text-white">Delivery distance:</strong> Williams is approximately 20 miles northwest of our Grants Pass soil yard via Williams Highway.</p>
+          <p><strong class="text-white">Minimum order:</strong> 4 cubic yards for delivery. Smaller quantities are available for pickup at our soil yard on Monument Drive in Grants Pass.</p>
+          <p><strong class="text-white">Lead time:</strong> Williams deliveries are typically scheduled within 3-5 business days. The longer route and rural access may require flexible scheduling — we'll work with you to find a window that fits.</p>
+          <p><strong class="text-white">Road conditions:</strong> Some Williams addresses may have narrow or unpaved access roads. Please describe your site access when you call so we can send the appropriate vehicle. We operate both tandem-axle dump trucks and smaller delivery vehicles for tight access situations.</p>
+          <p><strong class="text-white">Bulk fertilizer totes:</strong> Williams growers can order 2,000 lb fertilizer totes for farm-scale application. Call for current pricing on Grow Blend and Bloom Blend totes.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-gold-500/10 border border-gold-500/30 rounded-lg p-8 text-center">
+        <h2 class="font-serif text-2xl text-white mb-3">Schedule Williams Delivery</h2>
+        <p class="text-white/55 mb-6 max-w-lg mx-auto">Call us with your Williams address and product needs. We'll provide a quote and schedule delivery to your property.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="tel:+15414410510" class="btn-primary rounded-sm inline-flex items-center gap-2 text-base px-10 py-4">
+            Call (541) 441-0510
+          </a>
+          <a href="/products" class="px-8 py-4 text-base font-medium border border-gold-500/40 text-gold-400 rounded-sm hover:bg-gold-500/10 transition-colors">
+            Browse Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

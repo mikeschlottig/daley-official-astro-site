@@ -1,0 +1,120 @@
+---
+import googleReviewsData from '../data/google-reviews.json';
+
+const { scrapedAt, profileUrl, totalRatingText, reviews } = googleReviewsData;
+
+// Filter out reviews with empty text for display
+const displayReviews = reviews.filter(r => r.text && r.text.trim().length > 0);
+
+function renderStars(rating) {
+  return Array.from({ length: 5 }, (_, i) => i < rating);
+}
+---
+
+<section id="google-reviews" class="section-padding relative overflow-hidden">
+  <!-- Decorative blurs -->
+  <div class="absolute left-0 top-1/3 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl"></div>
+  <div class="absolute right-0 bottom-1/3 w-48 h-48 bg-gold-500/5 rounded-full blur-3xl"></div>
+
+  <div class="container-custom relative">
+    <!-- Section Header -->
+    <div class="fade-up text-center mb-12">
+      <span class="eyebrow">Google Reviews</span>
+      <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">VERIFIED CUSTOMER REVIEWS</span>
+      <h2 class="font-serif text-h2 text-white mb-4">
+        What Our Customers Say
+      </h2>
+      <!-- Overall rating display -->
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <span class="text-4xl font-serif text-gold-500 font-bold">{totalRatingText.split(' stars')[0]}</span>
+        <div class="flex gap-1">
+          {renderStars(Math.round(parseFloat(totalRatingText.split(' stars')[0]))).map((filled) => (
+            <svg class={`w-5 h-5 ${filled ? 'text-gold-500 fill-gold-500' : 'text-white/20'}`} viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          ))}
+        </div>
+      </div>
+      <p class="text-white/60 text-sm">{totalRatingText}</p>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {displayReviews.map((review, index) => (
+        <div
+          class="scale-in p-6 bg-white/5 rounded-lg border border-white/10 relative"
+          style={`transition-delay: ${0.1 + index * 0.08}s`}
+        >
+          <!-- Quote icon -->
+          <svg class="w-7 h-7 text-gold-500/20 absolute top-5 right-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+          </svg>
+
+          <!-- Stars -->
+          <div class="flex gap-1 mb-3">
+            {renderStars(review.rating).map((filled) => (
+              <svg class={`w-4 h-4 ${filled ? 'text-gold-500 fill-gold-500' : 'text-white/20'}`} viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            ))}
+          </div>
+
+          <!-- Review text -->
+          <p class="text-white/80 leading-relaxed mb-4 text-sm min-h-[60px]">
+            {review.text}
+          </p>
+
+          <!-- Author info -->
+          <div class="flex items-center justify-between mt-auto pt-3 border-t border-white/5">
+            <div>
+              <p class="text-white font-medium text-sm">{review.author}</p>
+              <p class="text-white/40 text-xs">{review.relativeDate}</p>
+            </div>
+            <!-- Google icon -->
+            <svg class="w-4 h-4 text-white/20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA: Read all reviews on Google -->
+    <div class="fade-up text-center mt-10">
+      <a
+        href={profileUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-dark rounded-sm inline-flex items-center gap-2"
+        aria-label="Read all reviews on Google"
+      >
+        Read All Reviews on Google
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+      <p class="text-white/30 text-xs mt-3">
+        Reviews from Google Maps · Scraped {new Date(scrapedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Scroll animation observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
+  );
+
+  document.querySelectorAll('#google-reviews .fade-up, #google-reviews .scale-in').forEach(
+    (el) => observer.observe(el)
+  );
+</script>

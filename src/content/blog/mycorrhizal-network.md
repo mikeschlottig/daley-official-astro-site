@@ -1,12 +1,13 @@
 ---
 title: "The Mycorrhizae Mafia: The Underground Network That Controls Your Garden"
 excerpt: "Mycorrhizal fungi have been running a 400-million-year partnership with plants — trading phosphorus and water for sugar. Learn why most gardeners accidentally destroy it and how to rebuild it."
-date: "April 1, 2025"
+date: "April 29, 2026"
 category: "Soil Science"
 image: "daleys-mycorrhizal-highway.png"
 author: "Cameron Daley"
 readingTime: "7 min read"
 tags: ["mycorrhizae", "soil biology", "fungal networks", "organic gardening", "root health"]
+ingredientName: "Mycorrhiza"
 tldr:
   - "Mycorrhizal fungi partner with 90%+ of plant species, extending root reach up to 700x through hair-thin hyphae"
   - "The fungi trade phosphorus, water, and micronutrients to roots in exchange for up to 20% of the plant's sugar output"
@@ -14,6 +15,22 @@ tldr:
   - "Standard gardening practices (tilling, synthetic phosphorus, fungicides) systematically destroy these networks"
   - "Mycorrhizal inoculants applied at transplanting rebuild the partnership — don't apply to Brassicas, beets, or spinach"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "merlin-blend"]
+relatedPosts:
+  - "kelp-meal-ocean-nutrition"
+  - "glacial-rock-dust-remineralize"
+  - "worm-castings-black-gold"
+faqs:
+  - question: "What plants don't benefit from mycorrhizal fungi?"
+    answer: "Several plant families do not form mycorrhizal partnerships and gain no benefit from inoculants. These include Brassicaceae (cabbage, broccoli, kale, radish), beets, spinach, and chard. For all other garden plants, mycorrhizal fungi can extend root reach up to 700 times through their hyphal networks."
+  - question: "How do I apply mycorrhizal inoculant to plants?"
+    answer: "Apply mycorrhizal inoculant directly to the root zone at transplanting time for best results. Sprinkle the inoculant in the planting hole or dust it on bare roots before covering with soil. This gives the fungi immediate contact with roots so they can begin colonizing and forming the partnership."
+  - question: "Does tilling destroy mycorrhizal networks?"
+    answer: "Yes, tilling shreds the delicate hyphal networks that mycorrhizal fungi build between plants. The fungi must rebuild from surviving root fragments and spores, which takes weeks to months. Annual deep tilling means the network never fully establishes. Using broad forks instead of tillers and adopting no-till methods preserves these vital underground connections."
+  - question: "What is the Wood Wide Web?"
+    answer: "The Wood Wide Web is the term for shared mycorrhizal networks that connect multiple plants underground. Through these networks, plants can share carbon, nutrients, water, and even chemical defense signals. Research has shown that large trees feed carbon to shaded seedlings through the network, and plants under insect attack can warn their neighbors."
+  - question: "Why does synthetic fertilizer harm mycorrhizal fungi?"
+    answer: "When plants receive abundant phosphorus through synthetic fertilizers, they reduce their investment in mycorrhizal partnerships because they no longer need the fungi to access nutrients. The plant essentially fires its fungal partner. Over years of heavy synthetic phosphorus use, mycorrhizal populations in soil decline dramatically."
+dateModified: "2026-07-12"
 ---
 
 There's an internet under your feet, and it's been running for 400 million years.

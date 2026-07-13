@@ -5,18 +5,27 @@ const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
+    description: z.string().optional(),          // SERP-optimized meta description (120-155 chars)
     excerpt: z.string(),
     date: z.string(),
     category: z.string(),
     image: z.string(),
     featured: z.boolean().optional(),
     relatedProducts: z.array(z.string()).optional(),
+    relatedPosts: z.array(z.string()).optional(),
     // GEO / AI-search optimization fields
     tldr: z.array(z.string()).optional(),       // 3-5 bullet key takeaways shown at top
     readingTime: z.string().optional(),          // "8 min read"
     author: z.string().optional(),              // "Cameron Daley"
     tags: z.array(z.string()).optional(),        // ["mycorrhiza", "soil biology"]
     ogImage: z.string().optional(),             // override default OG image
+    dateModified: z.string().optional(),         // ISO 8601: "2026-07-12"
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
+    ingredientName: z.string().optional(),       // for schema About field
+    ingredientDescription: z.string().optional(),
   }),
 });
 

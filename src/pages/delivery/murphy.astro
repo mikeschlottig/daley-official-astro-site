@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DeliveryMurphySchema from '../../components/schema/DeliveryMurphySchema.astro';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<BaseLayout
+  title="Bulk Soil & Mulch Delivery in Murphy, OR | Daley Organics"
+  description="Premium organic planting soils, multi-ingredient compost, and bulk landscape mulch delivered to farms and residences in Murphy, Oregon. Call (541) 441-0510."
+  keywords="soil delivery Murphy Oregon, organic compost Murphy OR, bulk mulch delivery Murphy, landscape soil delivery Josephine County"
+  canonical={canonical}
+>
+  <DeliveryMurphySchema slot="head" />
+
+  <div class="bg-[#141414] min-h-screen pt-[72px]">
+    <!-- Page Header -->
+    <div class="bg-[#0e0e0e] border-b border-white/10 py-14">
+      <div class="container-custom">
+        <p class="eyebrow mb-4">Delivery Service</p>
+        <div class="flex items-center gap-3 mb-4">
+          <a href="/delivery" class="text-white/40 hover:text-gold-400 transition-colors text-sm">Delivery</a>
+          <span class="text-white/20">/</span>
+          <span class="text-white/60 text-sm">Murphy, OR</span>
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl text-white mb-4">Bulk Soil Delivery in Murphy, Oregon</h1>
+        <p class="text-white/60 max-w-2xl">Premium organic planting soils, multi-ingredient compost, and bulk landscape mulch delivered directly to farms, vineyards, and residences in Murphy.</p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container-custom py-16 max-w-4xl">
+
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl text-white mb-4">Organic Soil Delivery to Murphy</h2>
+        <p class="text-white/60 leading-relaxed mb-4">
+          Murphy, Oregon — an unincorporated community in Josephine County — sits just south of Grants Pass along the Applegate River. The area's agricultural heritage runs deep, with vineyards, small farms, and homestead operations throughout the valley. Daley Organics delivers bulk organic soil, compost, mulch, and fertilizer directly to Murphy properties, saving you the trip to our Grants Pass soil yard.
+        </p>
+        <p class="text-white/60 leading-relaxed">
+          Whether you're establishing a new vineyard block, amending raised beds for a market garden, or top-dressing a residential lawn, our delivery service brings the same professional-grade products available at our Monument Drive location right to your site.
+        </p>
+      </div>
+
+      <!-- What We Deliver to Murphy -->
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl text-white mb-6">Products Available for Murphy Delivery</h2>
+        <div class="space-y-4">
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-serif text-lg text-white">Daley's Mix — Elite Professional Blend</h3>
+              <span class="text-gold-400 font-bold text-sm">$140/yd</span>
+            </div>
+            <p class="text-white/55 text-sm leading-relaxed">Our flagship blend with 21 organic amendments plus complete fertilizer. The most nutrient-dense growing media available in Southern Oregon. Ideal for serious growers and high-yield gardens.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-serif text-lg text-white">Premium Soil Mix — Foundation Blend</h3>
+              <span class="text-gold-400 font-bold text-sm">$130/yd</span>
+            </div>
+            <p class="text-white/55 text-sm leading-relaxed">Professional-grade organic soil with 20 amendments and complete fertilizer blend. The go-to mix for home gardens and raised beds throughout the Rogue Valley.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-serif text-lg text-white">Merlin Blend — Landscape Mix</h3>
+              <span class="text-gold-400 font-bold text-sm">$55/yd</span>
+            </div>
+            <p class="text-white/55 text-sm leading-relaxed">High-volume organic soil for landscaping, yard top-dressing, and large garden projects. Affordable bulk media for commercial and residential landscape applications.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <h3 class="font-serif text-lg text-white mb-2">Premium Organic Compost</h3>
+            <p class="text-white/55 text-sm leading-relaxed">100% organic compost for soil rehabilitation, garden bed establishment, and top-dressing. Thermophilic composting process ensures pathogen-free, nutrient-dense material. Excellent for vineyard cover crop establishment.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+            <h3 class="font-serif text-lg text-white mb-2">Landscape Mulch</h3>
+            <p class="text-white/55 text-sm leading-relaxed">Bulk mulch for weed suppression, moisture retention, and erosion control. Ideal for vineyard rows, garden pathways, and residential landscaping.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Murphy-Specific Info -->
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl text-white mb-4">Murphy Delivery Details</h2>
+        <div class="bg-white/5 border border-white/10 rounded-lg p-6 space-y-4 text-white/60 text-sm leading-relaxed">
+          <p><strong class="text-white">Delivery distance:</strong> Murphy is approximately 8 miles south of our Grants Pass soil yard — one of our closest delivery zones.</p>
+          <p><strong class="text-white">Minimum order:</strong> 4 cubic yards for delivery. Smaller quantities are available for pickup at our soil yard on Monument Drive.</p>
+          <p><strong class="text-white">Lead time:</strong> Most Murphy deliveries can be scheduled within 2-3 business days. Peak spring season (March-May) may require additional lead time.</p>
+          <p><strong class="text-white">Vehicle access:</strong> Our dump trucks require adequate clearance for a large vehicle. Please ensure your driveway or dumping area can accommodate a full-size truck. If access is tight, call us to discuss options.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-gold-500/10 border border-gold-500/30 rounded-lg p-8 text-center">
+        <h2 class="font-serif text-2xl text-white mb-3">Schedule Murphy Delivery</h2>
+        <p class="text-white/55 mb-6 max-w-lg mx-auto">Call us with your Murphy address and product needs. We'll provide a quote including delivery and schedule your drop-off.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="tel:+15414410510" class="btn-primary rounded-sm inline-flex items-center gap-2 text-base px-10 py-4">
+            Call (541) 441-0510
+          </a>
+          <a href="/products" class="px-8 py-4 text-base font-medium border border-gold-500/40 text-gold-400 rounded-sm hover:bg-gold-500/10 transition-colors">
+            Browse Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,715 @@
+{
+  "_meta": {
+    "project": "daleyorganics.com",
+    "version": "2.0",
+    "date": "2026-07-05",
+    "notes": "Production-ready @graph schemas for all page types. Each key is a page type. Values are the complete JSON-LD object to inject via <script type='application/ld+json' set:html={JSON.stringify(schema)}></script> in the Astro <head> slot. The homepage schema REPLACES the current LocalBusiness block. Blog post schemas use template variables marked with ${...} for Astro frontmatter interpolation."
+  },
+
+  "homepage": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LandscapingSupplies",
+        "@id": "https://daleyorganics.com/#organization",
+        "name": "Daley Organics",
+        "legalName": "Daley Organics LLC",
+        "alternateName": "Daley Organics Grants Pass",
+        "description": "Premium organic soil mixes, multi-ingredient compost, specialized 25-ingredient complete organic fertilizer, and landscape mulch. Visit our soil yard in Grants Pass or schedule bulk delivery across Josephine County.",
+        "url": "https://daleyorganics.com",
+        "telephone": "+15414410510",
+        "email": "macmonk@live.com",
+        "foundingDate": "2014",
+        "founder": {
+          "@type": "Person",
+          "name": "Cameron Daley",
+          "jobTitle": "Founder",
+          "url": "https://daleyorganics.com"
+        },
+        "image": "https://daleyorganics.com/images/hero-garden.jpg",
+        "logo": "https://daleyorganics.com/favicon.svg",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "8470 Monument Dr",
+          "addressLocality": "Grants Pass",
+          "addressRegion": "OR",
+          "postalCode": "97526",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.5432168,
+          "longitude": -123.3884123
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+15414410510",
+          "email": "macmonk@live.com",
+          "contactType": "sales",
+          "areaServed": "US-OR",
+          "availableLanguage": "English"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Grants Pass",
+            "sameAs": "https://en.wikipedia.org/wiki/Grants_Pass,_Oregon"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Josephine County",
+            "sameAs": "https://en.wikipedia.org/wiki/Josephine_County,_Oregon"
+          },
+          {
+            "@type": "CensusDesignatedPlace",
+            "name": "Merlin, Oregon",
+            "sameAs": "https://en.wikipedia.org/wiki/Merlin,_Oregon"
+          },
+          {
+            "@type": "CensusDesignatedPlace",
+            "name": "Murphy, Oregon",
+            "sameAs": "https://en.wikipedia.org/wiki/Murphy,_Oregon"
+          },
+          {
+            "@type": "CensusDesignatedPlace",
+            "name": "Williams, Oregon",
+            "sameAs": "https://en.wikipedia.org/wiki/Williams,_Oregon"
+          },
+          {
+            "@type": "CensusDesignatedPlace",
+            "name": "Wilderville, Oregon",
+            "sameAs": "https://en.wikipedia.org/wiki/Wilderville,_Oregon"
+          },
+          {
+            "@type": "City",
+            "name": "Rogue River, Oregon",
+            "sameAs": "https://en.wikipedia.org/wiki/Rogue_River,_Oregon"
+          },
+          {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": 42.5432168,
+              "longitude": -123.3884123
+            },
+            "geoRadius": "48280"
+          }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/people/Daley-Organics/100035320282815/",
+          "https://www.instagram.com/dirtydaley/",
+          "https://www.google.com/search?q=daley+organics+grants+pass+or",
+          "https://www.yelp.com/biz/daley-organics-grants-pass",
+          "https://www.bbb.org/us/or/grants-pass/profile/soil/daley-organics-llc-1296-1000172000",
+          "https://www.yellowpages.com/grants-pass-or/mip/daley-organics-575888243",
+          "https://www.chamberofcommerce.com/business-directory/oregon/grants-pass/mulch-supplier/2026684095-daley-organics"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Organic Soil & Fertilizer Products",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Daley's Mix — Elite Professional Blend",
+                "description": "Premium organic growing media with 21 amendments plus complete fertilizer blend"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Premium Soil Mix — Foundation Blend",
+                "description": "Professional-grade organic soil with 20 amendments and complete fertilizer blend"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Merlin Blend with COF — Premium Landscape Mix",
+                "description": "Premium landscape soil blend with 10 lbs of complete organic fertilizer per yard for day-one plant nutrition"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Grow Blend Fertilizer 5-4-2",
+                "description": "Organic fertilizer that feeds soil microbiology for vegetative growth"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Bloom Blend Fertilizer 2-7-7",
+                "description": "High-phosphorus organic fertilizer for flowering and fruiting"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Premium Organic Compost",
+                "description": "100% organic compost for soil rehabilitation and garden bed establishment"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://daleyorganics.com/#website",
+        "url": "https://daleyorganics.com",
+        "name": "Daley Organics",
+        "publisher": {
+          "@id": "https://daleyorganics.com/#organization"
+        }
+      }
+    ]
+  },
+
+  "products_page": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://daleyorganics.com/products#webpage",
+        "url": "https://daleyorganics.com/products",
+        "name": "Organic Soil Products | Daley Organics – Grants Pass, Oregon",
+        "description": "Professional-grade organic soil mixes, fertilizers, and amendments made in the Rogue Valley. Daley's Mix, Premium Soil Mix, Merlin Blend, and complete organic fertilizer blends.",
+        "isPartOf": {
+          "@id": "https://daleyorganics.com/#website"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://daleyorganics.com/products#product-list",
+        "name": "Daley Organics Product Catalog",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "@id": "https://daleyorganics.com/products#daleys-mix",
+              "name": "Daley's Mix — Elite Professional Blend",
+              "description": "Premium organic growing media with 21 amendments including worm castings, bat guano, kelp meal, mycorrhizal fungi, and our complete organic fertilizer blend. The most nutrient-dense soil available in Southern Oregon.",
+              "brand": {
+                "@id": "https://daleyorganics.com/#organization"
+              },
+              "offers": [
+                {
+                  "@type": "Offer",
+                  "price": "140.00",
+                  "priceCurrency": "USD",
+                  "unitCode": "YRD",
+                  "unitText": "per cubic yard",
+                  "availability": "https://schema.org/InStock",
+                  "seller": {
+                    "@id": "https://daleyorganics.com/#organization"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "price": "300.00",
+                  "priceCurrency": "USD",
+                  "unitText": "per tote",
+                  "availability": "https://schema.org/InStock",
+                  "seller": {
+                    "@id": "https://daleyorganics.com/#organization"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "@id": "https://daleyorganics.com/products#premium-soil-mix",
+              "name": "Premium Soil Mix — Foundation Blend",
+              "description": "Professional-grade organic soil with 20 amendments and complete fertilizer blend. The go-to mix for serious gardeners and commercial growers in the Rogue Valley.",
+              "brand": {
+                "@id": "https://daleyorganics.com/#organization"
+              },
+              "offers": [
+                {
+                  "@type": "Offer",
+                  "price": "130.00",
+                  "priceCurrency": "USD",
+                  "unitText": "per cubic yard",
+                  "availability": "https://schema.org/InStock",
+                  "seller": {
+                    "@id": "https://daleyorganics.com/#organization"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "price": "280.00",
+                  "priceCurrency": "USD",
+                  "unitText": "per tote",
+                  "availability": "https://schema.org/InStock",
+                  "seller": {
+                    "@id": "https://daleyorganics.com/#organization"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+              "@id": "https://daleyorganics.com/products#merlin-blend",
+              "name": "Merlin Blend with COF — Premium Landscape Mix",
+              "description": "Premium landscape soil blend with 10 lbs of 20-ingredient complete organic fertilizer (COF) per yard. Same versatile compost, bark, bio fiber, pumice, and topsoil base as the standard Merlin Blend, but with fertilizer already mixed in for day-one plant nutrition.",
+              "brand": {
+                "@id": "https://daleyorganics.com/#organization"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "70.00",
+                "priceCurrency": "USD",
+                "unitText": "per cubic yard",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "70.00",
+                  "priceCurrency": "USD",
+                  "unitCode": "YRD",
+                  "unitText": "per cubic yard"
+                },
+                "seller": {
+                  "@id": "https://daleyorganics.com/#organization"
+                }
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Product",
+              "@id": "https://daleyorganics.com/products#grow-blend",
+              "name": "Grow Blend Fertilizer 5-4-2",
+              "description": "Complete organic fertilizer with 25 ingredients that feeds soil microbiology for vigorous vegetative growth. Multiple sources of nitrogen, phosphorus, and potassium for sustained nutrient release.",
+              "brand": {
+                "@id": "https://daleyorganics.com/#organization"
+              },
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "description": "Call (541) 441-0510 for current pricing"
+                },
+                "seller": {
+                  "@id": "https://daleyorganics.com/#organization"
+                }
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Product",
+              "@id": "https://daleyorganics.com/products#bloom-blend",
+              "name": "Bloom Blend Fertilizer 2-7-7",
+              "description": "High-phosphorus organic fertilizer for flowering, fruiting, and root development. Formulated with bat guano, bone meal, kelp meal, and 20+ organic amendments.",
+              "brand": {
+                "@id": "https://daleyorganics.com/#organization"
+              },
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "description": "Call (541) 441-0510 for current pricing"
+                },
+                "seller": {
+                  "@id": "https://daleyorganics.com/#organization"
+                }
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Product",
+              "@id": "https://daleyorganics.com/products#compost",
+              "name": "Premium Organic Compost",
+              "description": "100% organic compost for soil rehabilitation, garden bed establishment, and top-dressing. Thermophilic composting process ensures pathogen-free, nutrient-dense material.",
+              "brand": {
+                "@id": "https://daleyorganics.com/#organization"
+              },
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "description": "Call (541) 441-0510 for current pricing"
+                },
+                "seller": {
+                  "@id": "https://daleyorganics.com/#organization"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "blog_post_template": {
+    "_usage_notes": "Replace all ${...} placeholders with Astro frontmatter variables. The FAQPage mainEntity array should be populated per-post. This template REPLACES both the current LocalBusiness block AND the current Article block on blog posts.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "${canonicalUrl}#article",
+          "headline": "${headline}",
+          "description": "${metaDescription}",
+          "image": "${heroImageUrl}",
+          "datePublished": "${datePublishedISO}",
+          "dateModified": "${dateModifiedISO}",
+          "wordCount": "${wordCount}",
+          "articleSection": "${category}",
+          "keywords": "${keywords}",
+          "author": {
+            "@type": "Person",
+            "name": "Cameron Daley",
+            "jobTitle": "Founder",
+            "worksFor": {
+              "@id": "https://daleyorganics.com/#organization"
+            },
+            "url": "https://daleyorganics.com",
+            "description": "Cameron Daley has been formulating organic soil blends and complete fertilizers in Grants Pass, Oregon since 2014. With 12+ years of hands-on experience in organic soil science, he builds every product from raw ingredients at the Daley Organics soil yard on Monument Drive."
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Daley Organics",
+            "@id": "https://daleyorganics.com/#organization",
+            "url": "https://daleyorganics.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://daleyorganics.com/favicon.svg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "${canonicalUrl}"
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".speakable-intro", ".tldr-block", ".faq-answer"]
+          },
+          "about": {
+            "@type": "Thing",
+            "name": "${ingredientName}",
+            "description": "${ingredientShortDescription}"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "${canonicalUrl}#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "${faqQuestion1}",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "${faqAnswer1}"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "${faqQuestion2}",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "${faqAnswer2}"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "${faqQuestion3}",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "${faqAnswer3}"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "${faqQuestion4}",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "${faqAnswer4}"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "${canonicalUrl}#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://daleyorganics.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": "https://daleyorganics.com/blog"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "${headline}",
+              "item": "${canonicalUrl}"
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "delivery_hub_page": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://daleyorganics.com/delivery#webpage",
+        "url": "https://daleyorganics.com/delivery",
+        "name": "Bulk Soil & Mulch Delivery | Daley Organics – Josephine County, Oregon",
+        "description": "Schedule flatbed and dump truck delivery of premium organic soil, compost, mulch, and fertilizer across Grants Pass, Merlin, Murphy, Williams, Wilderville, and Rogue River. Call (541) 441-0510.",
+        "isPartOf": {
+          "@id": "https://daleyorganics.com/#website"
+        },
+        "about": {
+          "@type": "Service",
+          "name": "Bulk Soil & Amendment Delivery",
+          "provider": {
+            "@id": "https://daleyorganics.com/#organization"
+          },
+          "areaServed": [
+            {
+              "@type": "AdministrativeArea",
+              "name": "Josephine County, Oregon",
+              "sameAs": "https://en.wikipedia.org/wiki/Josephine_County,_Oregon"
+            }
+          ],
+          "description": "Large-scale flatbed and dump truck delivery of premium organic soils, compost, mulch, and fertilizer blends for farms, vineyards, landscapers, and residential projects across Josephine County."
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://daleyorganics.com/delivery#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daleyorganics.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Delivery",
+            "item": "https://daleyorganics.com/delivery"
+          }
+        ]
+      }
+    ]
+  },
+
+  "delivery_murphy_page": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://daleyorganics.com/delivery/murphy#webpage",
+        "url": "https://daleyorganics.com/delivery/murphy",
+        "name": "Bulk Soil & Mulch Delivery in Murphy, OR | Daley Organics",
+        "description": "Premium organic planting soils, multi-ingredient compost, and bulk landscape mulch delivered directly to farms, vineyards, and residences in Murphy, Oregon. Call (541) 441-0510.",
+        "about": {
+          "@type": "CensusDesignatedPlace",
+          "name": "Murphy, Oregon",
+          "sameAs": "https://en.wikipedia.org/wiki/Murphy,_Oregon"
+        },
+        "isPartOf": {
+          "@id": "https://daleyorganics.com/#website"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://daleyorganics.com/delivery/murphy#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daleyorganics.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Delivery",
+            "item": "https://daleyorganics.com/delivery"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Murphy, OR",
+            "item": "https://daleyorganics.com/delivery/murphy"
+          }
+        ]
+      }
+    ]
+  },
+
+  "delivery_williams_page": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://daleyorganics.com/delivery/williams#webpage",
+        "url": "https://daleyorganics.com/delivery/williams",
+        "name": "Organic Soil & Custom Fertilizer Delivery in Williams, OR | Daley Organics",
+        "description": "Specialized 25-ingredient complete organic fertilizer, living topsoil blends, and premium compost delivered in bulk to Williams, Oregon homesteads, farms, and permaculture operations. Call (541) 441-0510.",
+        "about": {
+          "@type": "CensusDesignatedPlace",
+          "name": "Williams, Oregon",
+          "sameAs": "https://en.wikipedia.org/wiki/Williams,_Oregon"
+        },
+        "isPartOf": {
+          "@id": "https://daleyorganics.com/#website"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://daleyorganics.com/delivery/williams#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daleyorganics.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Delivery",
+            "item": "https://daleyorganics.com/delivery"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Williams, OR",
+            "item": "https://daleyorganics.com/delivery/williams"
+          }
+        ]
+      }
+    ]
+  },
+
+  "ingredients_page": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://daleyorganics.com/ingredients#webpage",
+        "url": "https://daleyorganics.com/ingredients",
+        "name": "Organic Soil Ingredients — What's Inside Daley Organics Mixes",
+        "description": "Explore every ingredient in Daley Organics soil mixes and fertilizer blends. From worm castings to mycorrhiza, learn how each organic amendment feeds the biology that feeds your plants.",
+        "isPartOf": {
+          "@id": "https://daleyorganics.com/#website"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Organic Soil Amendments",
+          "description": "26 premium organic soil ingredients used in Daley Organics blends"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Daley Organics Ingredient Library",
+          "numberOfItems": 26,
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Coco Fiber", "url": "https://daleyorganics.com/blog/coco-coir-sustainable-alternative"},
+            {"@type": "ListItem", "position": 2, "name": "Peat Moss", "url": "https://daleyorganics.com/blog/peat-moss-ancient-carbon"},
+            {"@type": "ListItem", "position": 3, "name": "Perlite", "url": "https://daleyorganics.com/blog/perlite-volcanic-glass-drainage"},
+            {"@type": "ListItem", "position": 4, "name": "Pumice", "url": "https://daleyorganics.com/blog/pumice-porous-rock-soil"},
+            {"@type": "ListItem", "position": 5, "name": "Premium Compost", "url": "https://daleyorganics.com/blog/composting-science-soil-biology"},
+            {"@type": "ListItem", "position": 6, "name": "Worm Castings", "url": "https://daleyorganics.com/blog/worm-castings-black-gold"},
+            {"@type": "ListItem", "position": 7, "name": "Sea Bird Guano", "url": "https://daleyorganics.com/blog/the-guano-wars"},
+            {"@type": "ListItem", "position": 8, "name": "Bat Guano", "url": "https://daleyorganics.com/blog/bat-guano-cave-fertilizer"},
+            {"@type": "ListItem", "position": 9, "name": "Kelp Meal", "url": "https://daleyorganics.com/blog/kelp-meal-ocean-nutrition"},
+            {"@type": "ListItem", "position": 10, "name": "Fish Bone Meal", "url": "https://daleyorganics.com/blog/fish-bone-meal-phosphorus"},
+            {"@type": "ListItem", "position": 11, "name": "Fish Meal", "url": "https://daleyorganics.com/blog/fish-meal-nitrogen-ocean"},
+            {"@type": "ListItem", "position": 12, "name": "Feather Meal", "url": "https://daleyorganics.com/blog/feather-meal-slow-nitrogen"},
+            {"@type": "ListItem", "position": 13, "name": "Greensand", "url": "https://daleyorganics.com/blog/greensand-ancient-seabed"},
+            {"@type": "ListItem", "position": 14, "name": "Alfalfa Meal", "url": "https://daleyorganics.com/blog/alfalfa-meal-triacontanol"},
+            {"@type": "ListItem", "position": 15, "name": "Soybean Meal", "url": "https://daleyorganics.com/blog/soybean-meal-balanced-nitrogen"},
+            {"@type": "ListItem", "position": 16, "name": "Blood Meal", "url": "https://daleyorganics.com/blog/blood-meal-blood-money"},
+            {"@type": "ListItem", "position": 17, "name": "Bone Meal", "url": "https://daleyorganics.com/blog/bone-meal-the-bone-business"},
+            {"@type": "ListItem", "position": 18, "name": "Oyster Shell", "url": "https://daleyorganics.com/blog/oyster-shell-calcium-ph"},
+            {"@type": "ListItem", "position": 19, "name": "Crab Meal", "url": "https://daleyorganics.com/blog/crab-meal-chitin-pest-defense"},
+            {"@type": "ListItem", "position": 20, "name": "Shrimp Meal", "url": "https://daleyorganics.com/blog/shrimp-meal-trace-minerals"},
+            {"@type": "ListItem", "position": 21, "name": "K-Mag (Langbeinite)", "url": "https://daleyorganics.com/blog/k-mag-langbeinite-triple-mineral"},
+            {"@type": "ListItem", "position": 22, "name": "Gypsum", "url": "https://daleyorganics.com/blog/gypsums-great-transformation"},
+            {"@type": "ListItem", "position": 23, "name": "Dolomite Lime", "url": "https://daleyorganics.com/blog/dolomite-lime-calcium-magnesium"},
+            {"@type": "ListItem", "position": 24, "name": "Humic Acids", "url": "https://daleyorganics.com/blog/humic-acids-leonardite-soil"},
+            {"@type": "ListItem", "position": 25, "name": "Glacial Rock Dust", "url": "https://daleyorganics.com/blog/glacial-rock-dust-remineralize"},
+            {"@type": "ListItem", "position": 26, "name": "Mycorrhizal Fungi", "url": "https://daleyorganics.com/blog/mycorrhizal-network"}
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://daleyorganics.com/ingredients#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daleyorganics.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ingredients",
+            "item": "https://daleyorganics.com/ingredients"
+          }
+        ]
+      }
+    ]
+  }
+}

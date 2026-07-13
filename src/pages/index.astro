@@ -8,8 +8,12 @@ import { ProductShowcase } from '../components/ProductShowcase';
 import { GardenCarousel } from '../components/GardenCarousel';
 import { OurStory } from '../components/OurStory';
 import News from '../components/News.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 import { ContactForm } from '../components/ContactForm';
 import { siteConfig } from '../lib/site-config';
+import HomepageSchema from '../components/schema/HomepageSchema.astro';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <BaseLayout
@@ -17,8 +21,9 @@ import { siteConfig } from '../lib/site-config';
   description={siteConfig.description}
   keywords={siteConfig.keywords}
   ogImage={siteConfig.ogImage}
-  canonical={siteConfig.canonical}
+  canonical={canonical}
 >
+  <HomepageSchema slot="head" />
   <!-- Preloader: locks scroll, fires preloader:complete event when done -->
   <Preloader client:load />
 
@@ -43,6 +48,9 @@ import { siteConfig } from '../lib/site-config';
 
       <!-- Blog + Testimonials: static Astro — zero JS shipped for this section -->
       <News />
+
+      <!-- Google Reviews: real reviews from Google Maps -->
+      <GoogleReviews />
 
       <!-- Contact form with submission state -->
       <ContactForm client:visible />

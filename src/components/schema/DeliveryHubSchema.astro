@@ -1,0 +1,7 @@
+---
+// DeliveryHubSchema.astro — WebPage + Service @graph
+// Source: daley-organics-schema-v2.json → "delivery_hub_page"
+import schemaData from '../../data/daley-organics-schema-v2.json';
+const schema = schemaData.delivery_hub_page;
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
