@@ -4,6 +4,8 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { siteImages } from '../../lib/blog-images';
 
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
 const allPosts = (await getCollection('blog')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
@@ -26,6 +28,7 @@ const categoryClass = (cat: string) => categoryColors[cat] ?? 'text-gold-400 bg-
   title="Growing Guides & Soil Science Blog | Daley Organics"
   description="Practical growing guides, soil science deep-dives, and organic gardening tips from Daley Organics in Grants Pass, Oregon. Learn about mycorrhiza, worm castings, fertilizer timing, and more."
   keywords="organic gardening blog, soil science articles, worm castings guide, kelp meal benefits, mycorrhiza soil, organic fertilizer tips, Grants Pass Oregon gardening"
+  canonical={canonical}
 >
   <!-- Hero -->
   <section class="relative pt-32 pb-16 bg-gradient-to-b from-black via-stone-950 to-stone-950 overflow-hidden">

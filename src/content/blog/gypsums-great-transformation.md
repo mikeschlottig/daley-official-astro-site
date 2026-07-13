@@ -14,6 +14,7 @@ tldr:
   - "Works best in clay soils compacted by sodium — does NOT fix mechanical compaction from foot traffic or machinery"
   - "Use natural mined gypsum (OMRI-listed) for organic production, not FGD gypsum from coal plant scrubbers"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+dateModified: "2026-07-12"
 ---
 
 The same mineral that built the pyramids also builds perfect soil structure. The ancients knew more than they realized.

@@ -14,6 +14,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://daleyorganics.com',
   output: 'static',
+  trailingSlash: 'never',
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),

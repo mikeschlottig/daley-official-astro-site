@@ -15,6 +15,7 @@ tldr:
   - "Works synergistically with mycorrhizal fungi to improve uptake"
   - "Included in both Daley's Mix and Premium Soil Mix fertilizer blends"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+dateModified: "2026-07-12"
 ---
 
 Kelp meal is one of nature's most complete fertilizers, harvested from cold ocean waters and packed with over 70 trace minerals and natural plant growth hormones. At Daley Organics, we source only the finest kelp meal to include in our premium fertilizer blends.

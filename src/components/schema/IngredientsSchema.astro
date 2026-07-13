@@ -1,0 +1,7 @@
+---
+// IngredientsSchema.astro — CollectionPage + ItemList of 26 ingredients
+// Source: daley-organics-schema-v2.json → "ingredients_page"
+import schemaData from '../../data/daley-organics-schema-v2.json';
+const schema = schemaData.ingredients_page;
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

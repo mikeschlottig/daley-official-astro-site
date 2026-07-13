@@ -14,6 +14,7 @@ tldr:
   - "Standard gardening practices (tilling, synthetic phosphorus, fungicides) systematically destroy these networks"
   - "Mycorrhizal inoculants applied at transplanting rebuild the partnership — don't apply to Brassicas, beets, or spinach"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "merlin-blend"]
+dateModified: "2026-07-12"
 ---
 
 There's an internet under your feet, and it's been running for 400 million years.

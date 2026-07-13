@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../lib/site-config';
+import IngredientsSchema from '../components/schema/IngredientsSchema.astro';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
 const pageTitle = "Organic Soil Ingredients — What's Inside Daley Organics Mixes";
 const pageDescription = "Explore every ingredient in Daley Organics soil mixes and fertilizer blends. From worm castings to mycorrhiza, learn how each organic amendment feeds the biology that feeds your plants.";
@@ -255,7 +258,9 @@ const totalIngredients = baseMedia.length + fertilizerBlend.length;
   title={pageTitle}
   description={pageDescription}
   keywords="organic soil ingredients, worm castings benefits, mycorrhiza soil, kelp meal fertilizer, bat guano organic, humic acids soil, greensand garden, organic soil amendments Grants Pass Oregon"
+  canonical={canonical}
 >
+  <IngredientsSchema slot="head" />
   <!-- Hero -->
   <section class="relative pt-32 pb-20 bg-gradient-to-b from-black via-stone-950 to-stone-950 overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,109,50,0.08),transparent_60%)]"></div>

@@ -15,6 +15,7 @@ tldr:
   - "Cannot over-apply — completely safe for seedlings and established plants"
   - "Found in every yard of Daley's Mix and Premium Soil Mix"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+dateModified: "2026-07-12"
 ---
 
 Worm castings — also called vermicompost — are the digested organic material produced by earthworms. The nickname "black gold" is well earned: no other organic amendment delivers such a complete package of readily available nutrients, beneficial microbes, and humic acids in a form plants can use immediately.

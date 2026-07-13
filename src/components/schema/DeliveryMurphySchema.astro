@@ -1,0 +1,7 @@
+---
+// DeliveryMurphySchema.astro — WebPage + BreadcrumbList @graph
+// Source: daley-organics-schema-v2.json → "delivery_murphy_page"
+import schemaData from '../../data/daley-organics-schema-v2.json';
+const schema = schemaData.delivery_murphy_page;
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

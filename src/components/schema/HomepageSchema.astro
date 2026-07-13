@@ -1,0 +1,7 @@
+---
+// HomepageSchema.astro — LandscapingSupplies + WebSite @graph
+// Source: daley-organics-schema-v2.json → "homepage"
+import schemaData from '../../data/daley-organics-schema-v2.json';
+const schema = schemaData.homepage;
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

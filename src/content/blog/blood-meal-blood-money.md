@@ -14,6 +14,7 @@ tldr:
   - "Doubles as a deer and rabbit repellent — the scent of dried blood signals predator activity to prey animals"
   - "Warning: one of the few organics that can burn plants — start conservative, and keep it away from dogs who may dig and eat it"
 relatedProducts: ["daleys-mix", "grow-blend"]
+dateModified: "2026-07-12"
 ---
 
 In Chicago's stockyards, they had a problem: what to do with all that blood. The solution revolutionized agriculture.

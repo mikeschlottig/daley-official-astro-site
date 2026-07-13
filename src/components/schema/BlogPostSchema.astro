@@ -1,0 +1,89 @@
+---
+// BlogPostSchema.astro — Article + FAQPage + BreadcrumbList @graph
+interface Props {
+  headline: string;
+  description: string;
+  canonicalUrl: string;
+  heroImage: string;
+  datePublished: string;
+  dateModified: string;
+  keywords: string;
+  category: string;
+  wordCount: number;
+  ingredientName?: string;
+  ingredientDescription?: string;
+  faqs: Array<{ question: string; answer: string }>;
+}
+
+const {
+  headline, description, canonicalUrl, heroImage,
+  datePublished, dateModified, keywords, category,
+  wordCount, ingredientName, ingredientDescription, faqs
+} = Astro.props;
+
+const graphNodes: any[] = [
+  {
+    "@type": "Article",
+    "@id": `${canonicalUrl}#article`,
+    "headline": headline,
+    "description": description,
+    "image": heroImage,
+    "datePublished": datePublished,
+    "dateModified": dateModified,
+    "wordCount": wordCount,
+    "articleSection": category,
+    "keywords": keywords,
+    "author": {
+      "@type": "Person",
+      "name": "Cameron Daley",
+      "jobTitle": "Founder",
+      "worksFor": { "@id": "https://daleyorganics.com/#organization" },
+      "url": "https://daleyorganics.com",
+      "description": "Cameron Daley has been formulating organic soil blends and complete fertilizers in Grants Pass, Oregon since 2014."
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Daley Organics",
+      "@id": "https://daleyorganics.com/#organization",
+      "url": "https://daleyorganics.com",
+      "logo": { "@type": "ImageObject", "url": "https://daleyorganics.com/favicon.svg" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".speakable-intro", ".tldr-block", ".faq-answer"]
+    },
+    ...(ingredientName ? {
+      "about": {
+        "@type": "Thing",
+        "name": ingredientName,
+        "description": ingredientDescription || ""
+      }
+    } : {})
+  },
+  {
+    "@type": "FAQPage",
+    "@id": `${canonicalUrl}#faq`,
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    }))
+  },
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${canonicalUrl}#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleyorganics.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://daleyorganics.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": headline, "item": canonicalUrl }
+    ]
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": graphNodes
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -14,6 +14,7 @@ tldr:
   - "Bone meal's phosphorus is pH-dependent: works well below pH 7.0, locks up in alkaline soils above 7.0"
   - "For alkaline soils, use bat guano or fish bone meal instead — they have finer particle size and better availability at higher pH"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+dateModified: "2026-07-12"
 ---
 
 For thousands of years, humans have known bones make plants grow. What we didn't know was why.

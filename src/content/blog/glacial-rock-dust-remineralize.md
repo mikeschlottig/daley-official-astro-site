@@ -14,6 +14,7 @@ tldr:
   - "Works best when paired with mycorrhizal fungi (included in our blends)"
   - "Used in both Daley's Mix and Premium Soil Mix as a long-game ingredient"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+dateModified: "2026-07-12"
 ---
 
 Modern farming and intensive gardening strip minerals from the soil over time. Plants need more than just N, P, and K — they require dozens of trace elements that determine the quality, flavor, and nutritional density of everything you grow.

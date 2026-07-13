@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import ProductsSchema from '../components/schema/ProductsSchema.astro';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
 const allProducts = (await getCollection('products')).sort(
   (a, b) => a.data.order - b.data.order
@@ -19,7 +22,9 @@ const pageDescription = "Professional-grade organic soil mixes, fertilizers, and
   title={pageTitle}
   description={pageDescription}
   keywords="Daley's Mix Grants Pass, organic soil Rogue Valley, bulk fertilizer Oregon, worm castings Southern Oregon, organic soil mix pickup Grants Pass, Grow Blend 5-4-2, landscaping soil Grants Pass OR"
+  canonical={canonical}
 >
+  <ProductsSchema slot="head" />
 
   <!-- ── Sticky Top Bar ── -->
   <div class="sticky top-[72px] z-40 bg-[#141414]/95 backdrop-blur-md border-b border-white/10">

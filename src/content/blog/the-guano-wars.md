@@ -14,6 +14,7 @@ tldr:
   - "Chile, Bolivia, and Peru fought the War of the Pacific (1879–1883) partly over guano and nitrate deposits"
   - "Today's sustainably harvested seabird guano provides balanced NPK plus humic acids and beneficial microorganisms"
 relatedProducts: ["daleys-mix"]
+dateModified: "2026-07-12"
 ---
 
 In 1856, the United States nearly went to war over bird droppings. The economics were just that compelling.

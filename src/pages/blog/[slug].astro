@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import { siteImages } from '../../lib/blog-images';
+import { estimateWordCount } from '../../lib/utils';
+import BlogPostSchema from '../../components/schema/BlogPostSchema.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -39,39 +41,23 @@ const productNames: Record<string, {name: string; url: string}> = {
   'bloom-blend': { name: 'Bloom Blend (2-7-7)', url: '/products#fertilizers' },
 };
 
+// Parse date string to ISO 8601 format
+function toISO(dateStr) {
+  const d = new Date(dateStr);
+  return Number.isNaN(d.getTime()) ? '2025-01-01' : d.toISOString().slice(0, 10);
+}
+
 const heroImage = siteImages[post.data.image];
 const heroSrc = heroImage?.src ?? `/images/${post.data.image}`;
 
-// JSON-LD Article schema for GEO / AI search
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": post.data.title,
-  "description": post.data.excerpt,
-  "image": `https://daleyorganics.com${post.data.ogImage ?? heroSrc}`,
-  "datePublished": post.data.date,
-  "author": {
-    "@type": "Person",
-    "name": post.data.author ?? "Cameron Daley",
-    "url": "https://daleyorganics.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Daley Organics",
-    "url": "https://daleyorganics.com",
-    "logo": { "@type": "ImageObject", "url": "https://daleyorganics.com/favicon.svg" }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": `https://daleyorganics.com/blog/${post.id}`
-  },
-  "keywords": post.data.tags?.join(', ') ?? post.data.category,
-  "articleSection": post.data.category,
-  "about": {
-    "@type": "Thing",
-    "name": "Organic Soil Science"
-  }
-};
+// Schema props
+const canonicalUrl = `https://daleyorganics.com/blog/${post.id}`;
+const heroImageUrl = `https://daleyorganics.com${post.data.ogImage ?? heroSrc}`;
+const datePublished = toISO(post.data.date);
+const dateModified = post.data.dateModified ?? '2026-07-12';
+const wordCount = estimateWordCount(post.body ?? '');
+const keywords = post.data.tags?.join(', ') ?? post.data.category;
+const faqs = []; // No FAQ data available for existing posts
 ---
 
 <BaseLayout
@@ -81,8 +67,20 @@ const articleSchema = {
   ogImage={post.data.ogImage ?? heroSrc}
   canonical={`https://daleyorganics.com/blog/${post.id}`}
 >
-  <!-- Article JSON-LD -->
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
+  <!-- Article + FAQ + Breadcrumb JSON-LD -->
+  <BlogPostSchema
+    slot="head"
+    headline={post.data.title}
+    description={post.data.excerpt}
+    canonicalUrl={canonicalUrl}
+    heroImage={heroImageUrl}
+    datePublished={datePublished}
+    dateModified={dateModified}
+    keywords={keywords}
+    category={post.data.category}
+    wordCount={wordCount}
+    faqs={faqs}
+  />
 
   <!-- Back nav -->
   <div class="fixed top-[72px] left-0 right-0 z-20 bg-black/80 backdrop-blur-sm border-b border-stone-800">
@@ -143,7 +141,9 @@ const articleSchema = {
           <span class="text-stone-300 text-sm font-medium">{post.data.author ?? 'Cameron Daley'}</span>
         </div>
         <span class="text-stone-600">·</span>
-        <span class="text-stone-500 text-sm">{post.data.date}</span>
+        <time datetime={datePublished} class="text-stone-500 text-sm">{post.data.date}</time>
+        <span class="text-stone-600">·</span>
+        <time datetime={dateModified} class="text-stone-500 text-sm">Updated {dateModified}</time>
         {post.data.readingTime && (
           <>
             <span class="text-stone-600">·</span>
@@ -157,7 +157,7 @@ const articleSchema = {
 
       <!-- TLDR Box — GEO critical: AI search reads this first -->
       {post.data.tldr && post.data.tldr.length > 0 && (
-        <div class="bg-amber-950/30 border border-amber-800/40 rounded-2xl p-7 mb-10">
+        <div class="tldr-block bg-amber-950/30 border border-amber-800/40 rounded-2xl p-7 mb-10">
           <div class="flex items-center gap-2 mb-4">
             <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -178,7 +178,7 @@ const articleSchema = {
       )}
 
       <!-- Article content -->
-      <div class="prose prose-invert prose-lg max-w-none
+      <div class="speakable-intro prose prose-invert prose-lg max-w-none
         prose-headings:font-serif prose-headings:text-white
         prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-stone-800 prose-h2:pb-3
         prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-gold-300

@@ -14,6 +14,7 @@ tldr:
   - "Daley's Grow Blend is 5-4-2; Bloom Blend is 2-7-7 for flowering and fruiting"
   - "We don't chase numbers — we build blends that feed the biology that feeds your plants"
 relatedProducts: ["grow-blend", "bloom-blend"]
+dateModified: "2026-07-12"
 ---
 
 Every bag of fertilizer carries three numbers on the label — something like 5-3-2 or 4-4-4. These are the N-P-K ratios, and understanding them is the first step to feeding your garden intelligently.

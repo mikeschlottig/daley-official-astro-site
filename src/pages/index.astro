@@ -10,6 +10,9 @@ import { OurStory } from '../components/OurStory';
 import News from '../components/News.astro';
 import { ContactForm } from '../components/ContactForm';
 import { siteConfig } from '../lib/site-config';
+import HomepageSchema from '../components/schema/HomepageSchema.astro';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <BaseLayout
@@ -17,8 +20,9 @@ import { siteConfig } from '../lib/site-config';
   description={siteConfig.description}
   keywords={siteConfig.keywords}
   ogImage={siteConfig.ogImage}
-  canonical={siteConfig.canonical}
+  canonical={canonical}
 >
+  <HomepageSchema slot="head" />
   <!-- Preloader: locks scroll, fires preloader:complete event when done -->
   <Preloader client:load />
 

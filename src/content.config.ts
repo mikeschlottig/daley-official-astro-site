@@ -17,6 +17,7 @@ const blog = defineCollection({
     author: z.string().optional(),              // "Cameron Daley"
     tags: z.array(z.string()).optional(),        // ["mycorrhiza", "soil biology"]
     ogImage: z.string().optional(),             // override default OG image
+    dateModified: z.string().optional(),         // ISO 8601: "2026-07-12"
   }),
 });
 
