@@ -67,6 +67,18 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://daleyorganics.com/blog/alfalfa-meal-triacontanol</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/bat-guano-cave-fertilizer</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://daleyorganics.com/blog/blood-meal-blood-money</loc>
     <lastmod>2025-03-14</lastmod>
     <changefreq>yearly</changefreq>
@@ -79,14 +91,74 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://daleyorganics.com/blog/coco-coir-sustainable-alternative</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/composting-science-soil-biology</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/crab-meal-chitin-pest-defense</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/dolomite-lime-calcium-magnesium</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/feather-meal-slow-nitrogen</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/fish-bone-meal-phosphorus</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/fish-meal-nitrogen-ocean</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://daleyorganics.com/blog/glacial-rock-dust-remineralize</loc>
     <lastmod>2025-02-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://daleyorganics.com/blog/greensand-ancient-seabed</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://daleyorganics.com/blog/gypsums-great-transformation</loc>
     <lastmod>2025-03-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/humic-acids-leonardite-soil</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/k-mag-langbeinite-triple-mineral</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -99,6 +171,42 @@
   <url>
     <loc>https://daleyorganics.com/blog/mycorrhizal-network</loc>
     <lastmod>2025-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/oyster-shell-calcium-ph</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/peat-moss-ancient-carbon</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/perlite-volcanic-glass-drainage</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/pumice-porous-rock-soil</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/shrimp-meal-trace-minerals</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://daleyorganics.com/blog/soybean-meal-balanced-nitrogen</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
