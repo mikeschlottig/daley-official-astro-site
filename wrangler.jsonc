@@ -1,0 +1,9 @@
+{
+  // Daley Organics — static Astro site on Cloudflare Workers (assets-only)
+  "name": "daley-organics",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
