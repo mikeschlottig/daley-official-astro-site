@@ -1,7 +1,7 @@
 ---
 title: "The Bone Business: From Burial Grounds to Growing Grounds"
 excerpt: "Bone meal — finely ground animal bones — is one of humanity's oldest fertilizers and remains the gold standard organic phosphorus source. Seven thousand years of empirical farming have been correct. The science just took a while to explain why."
-date: "March 18, 2025"
+date: "April 17, 2026"
 category: "Ingredients"
 image: "daleys-bone-meal.png"
 author: "Cameron Daley"
@@ -14,6 +14,17 @@ tldr:
   - "Bone meal's phosphorus is pH-dependent: works well below pH 7.0, locks up in alkaline soils above 7.0"
   - "For alkaline soils, use bat guano or fish bone meal instead — they have finer particle size and better availability at higher pH"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+faqs:
+  - question: "What is the NPK of bone meal?"
+    answer: "Bone meal typically analyzes at approximately 3-15-0 NPK. It provides modest nitrogen from the collagen protein fraction and high phosphorus from the calcium phosphate mineral fraction. It also contains 20-24% calcium by weight, which is a significant benefit that rarely appears on the label."
+  - question: "Does bone meal work in alkaline soil?"
+    answer: "Bone meal's phosphorus availability drops significantly in alkaline soils above pH 7.0. The calcium phosphate in bone meal reacts with excess calcium already in the soil and forms insoluble compounds that plants cannot access. For alkaline soils, consider fish bone meal, bat guano, or rock phosphate instead."
+  - question: "How much bone meal should I use per tomato plant?"
+    answer: "For transplanting tomatoes, apply 1-2 tablespoons of bone meal per transplant hole. For garden bed preparation, work 5-10 lbs per 100 square feet into the soil before planting. Bone meal provides the phosphorus tomatoes need for flowering and fruit development."
+  - question: "How long does bone meal take to release phosphorus?"
+    answer: "Bone meal releases phosphorus over three to four months as soil acids and microbial activity gradually dissolve the calcium phosphate crystals. This slow release timeline aligns well with the flowering and fruiting stages of most garden crops, providing sustained nutrition throughout the growing season."
+  - question: "What is a good alternative to bone meal for alkaline soils?"
+    answer: "For alkaline soils above pH 7.0, fish bone meal is the best alternative because its finer particle size provides faster phosphorus availability. Bat guano and rock phosphate combined with organic acids are also effective options that remain available at higher pH levels."
 dateModified: "2026-07-12"
 ---
 

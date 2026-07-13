@@ -1,7 +1,7 @@
 ---
 title: "Remineralize Your Soil with Glacial Rock Dust"
 excerpt: "How adding trace minerals can revitalize tired soil and boost plant immunity."
-date: "February 28, 2025"
+date: "April 25, 2026"
 category: "Ingredients"
 image: "rock-dust.jpg"
 author: "Cameron Daley"
@@ -14,6 +14,15 @@ tldr:
   - "Works best when paired with mycorrhizal fungi (included in our blends)"
   - "Used in both Daley's Mix and Premium Soil Mix as a long-game ingredient"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+faqs:
+  - question: "What minerals are in glacial rock dust?"
+    answer: "Glacial rock dust contains over 60 trace minerals including calcium and magnesium as secondary macronutrients, plus iron, manganese, zinc, copper, and boron as micronutrients. It also provides silica for cell wall strength and dozens of ultra-trace elements that influence plant immunity and flavor."
+  - question: "How long does glacial rock dust take to work?"
+    answer: "Glacial rock dust is a long-term amendment that releases minerals slowly over one full growing season and beyond. The effects build over time as soil microbes break down the finely ground stone. Gardeners typically notice improved flavor, deeper colors, and better disease resistance after the first season of application."
+  - question: "How do you apply glacial rock dust?"
+    answer: "Work glacial rock dust into your soil before planting or top dress established beds. It integrates into both Daley's Mix and Premium Soil Mix as a long-game ingredient. For best results, pair it with mycorrhizal fungi and soil bacteria that solubilize the minerals over time, making them available to plant roots."
+  - question: "Why do plants need trace minerals beyond NPK?"
+    answer: "Plants evolved to require dozens of trace elements that determine quality, flavor, and nutritional density. Modern farming strips these minerals from soil over time. Glacial rock dust rebuilds this mineral bank, and gardeners commonly report noticeably improved flavor in vegetables and deeper colors in flowers after remineralizing depleted soil."
 dateModified: "2026-07-12"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Understanding N-P-K: The Building Blocks of Fertilizer"
 excerpt: "A beginner's guide to nitrogen, phosphorus, and potassium and how they support plant growth."
-date: "March 5, 2025"
+date: "April 13, 2026"
 category: "Education"
 image: "bat-guano.jpg"
 author: "Cameron Daley"
@@ -14,6 +14,17 @@ tldr:
   - "Daley's Grow Blend is 5-4-2; Bloom Blend is 2-7-7 for flowering and fruiting"
   - "We don't chase numbers — we build blends that feed the biology that feeds your plants"
 relatedProducts: ["grow-blend", "bloom-blend"]
+faqs:
+  - question: "What does NPK stand for on fertilizer bags?"
+    answer: "NPK stands for Nitrogen (N), Phosphorus (P), and Potassium (K) — the three primary macronutrients plants need. The numbers on a fertilizer bag represent the percentage by weight of each nutrient. For example, a 5-4-2 fertilizer contains 5% nitrogen, 4% phosphorus, and 2% potassium."
+  - question: "What does nitrogen do for plants?"
+    answer: "Nitrogen drives leafy, vegetative growth. It is essential for chlorophyll production and gives plants their green color. Plants deficient in nitrogen turn pale yellow and grow slowly. Blood meal and feather meal are fast-acting organic nitrogen sources."
+  - question: "What does phosphorus do for plants?"
+    answer: "Phosphorus supports root development, flower formation, and fruit set. Without adequate phosphorus, plants may produce abundant leaves but few flowers or fruits. Bone meal and fish bone meal are the primary organic phosphorus sources used in Daley Organics blends."
+  - question: "What does potassium do for plants?"
+    answer: "Potassium regulates water movement within the plant, strengthens cell walls, and improves resistance to disease, drought, and cold stress. Kelp meal and greensand are excellent natural potassium sources."
+  - question: "What is the difference between Grow Blend and Bloom Blend?"
+    answer: "Daley's Grow Blend is 5-4-2, with higher nitrogen for vegetative growth like leafy greens and early-season development. Bloom Blend is 2-7-7, with higher phosphorus and potassium for flowering, fruiting, and root development during the reproductive stage."
 dateModified: "2026-07-12"
 ---
 
