@@ -68,6 +68,10 @@ export function Hero() {
             src={heroConfig.backgroundImage}
             alt={heroConfig.mainTitle}
             className="w-full h-full object-cover scale-105"
+            loading="eager"
+            fetchpriority="high"
+            width="1200"
+            height="630"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />

@@ -4,6 +4,7 @@ excerpt: "Blood meal — dried, powdered blood from slaughterhouses — is the f
 date: "April 19, 2026"
 category: "Ingredients"
 image: "daleys-cavern.png"
+ogImage: "/images/hero-garden.jpg"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["blood meal", "nitrogen", "organic fertilizer", "fast-acting", "deer repellent"]

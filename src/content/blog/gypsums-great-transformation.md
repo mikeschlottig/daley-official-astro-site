@@ -4,6 +4,7 @@ excerpt: "The mineral that built the pyramids also builds perfect soil structure
 date: "April 27, 2026"
 category: "Soil Science"
 image: "daleys-angel-of-gypsum.png"
+ogImage: "/images/hero-garden.jpg"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["gypsum", "clay soil", "calcium", "soil structure", "sulfur"]

@@ -4,6 +4,7 @@ excerpt: "Bone meal — finely ground animal bones — is one of humanity's olde
 date: "April 17, 2026"
 category: "Ingredients"
 image: "daleys-bone-meal.png"
+ogImage: "/images/hero-garden.jpg"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["bone meal", "phosphorus", "calcium", "organic fertilizer", "root development", "fruiting"]

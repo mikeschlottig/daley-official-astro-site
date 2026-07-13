@@ -17,7 +17,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  title: "Daley Organics - Premium Organic Soil Solutions | Grants Pass, Oregon",
+  title: "Daley Organics — Premium Organic Soil | Grants Pass, Oregon",
   description: "Discover premium organic soil, compost, mulch, and the best fertilizer in Oregon at Daley Organics in Grants Pass. Feed the microbes. Grow Bigger. Grow Better.",
   language: "en",
   keywords: "organic fertilizer, soil mix, worm castings, compost, Grants Pass, Oregon, Rogue Valley, sustainable gardening, organic gardening, bat guano, kelp meal",

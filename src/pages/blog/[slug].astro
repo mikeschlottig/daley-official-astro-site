@@ -50,6 +50,9 @@ function toISO(dateStr) {
 const heroImage = siteImages[post.data.image];
 const heroSrc = heroImage?.src ?? `/images/${post.data.image}`;
 
+// For og:image, prefer explicit ogImage, else use default hero (always exists in public/images/)
+const ogImagePath = post.data.ogImage ?? '/images/hero-garden.jpg';
+
 // Schema props
 const canonicalUrl = `https://daleyorganics.com/blog/${post.id}`;
 const heroImageUrl = `https://daleyorganics.com${post.data.ogImage ?? heroSrc}`;
@@ -61,10 +64,11 @@ const faqs = post.data.faqs ?? [];
 ---
 
 <BaseLayout
-  title={`${post.data.title} | Daley Organics Blog`}
+  title={`${post.data.title} | Daley Organics`}
   description={post.data.excerpt}
   keywords={post.data.tags?.join(', ') ?? `${post.data.category}, organic gardening, soil science, Grants Pass Oregon`}
-  ogImage={post.data.ogImage ?? heroSrc}
+  ogImage={ogImagePath}
+  ogType="article"
   canonical={`https://daleyorganics.com/blog/${post.id}`}
 >
   <!-- Article + FAQ + Breadcrumb JSON-LD -->
@@ -110,10 +114,11 @@ const faqs = post.data.faqs ?? [];
         width={1200}
         height={500}
         loading="eager"
+        fetchpriority="high"
         class="w-full h-full object-cover"
       />
     ) : (
-      <img src={heroSrc} alt={post.data.title} class="w-full h-full object-cover" />
+      <img src={heroSrc} alt={post.data.title} loading="eager" fetchpriority="high" class="w-full h-full object-cover" />
     )}
     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
     <div class="absolute bottom-0 left-0 right-0 p-8">

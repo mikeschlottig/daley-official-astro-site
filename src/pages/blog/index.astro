@@ -26,7 +26,7 @@ const categoryClass = (cat: string) => categoryColors[cat] ?? 'text-gold-400 bg-
 
 <BaseLayout
   title="Growing Guides & Soil Science Blog | Daley Organics"
-  description="Practical growing guides, soil science deep-dives, and organic gardening tips from Daley Organics in Grants Pass, Oregon. Learn about mycorrhiza, worm castings, fertilizer timing, and more."
+  description="Practical growing guides, soil science deep-dives, and organic gardening tips from Daley Organics in Grants Pass, Oregon. Learn about mycorrhiza and more."
   keywords="organic gardening blog, soil science articles, worm castings guide, kelp meal benefits, mycorrhiza soil, organic fertilizer tips, Grants Pass Oregon gardening"
   canonical={canonical}
 >
@@ -56,10 +56,11 @@ const categoryClass = (cat: string) => categoryColors[cat] ?? 'text-gold-400 bg-
                   width={800}
                   height={600}
                   loading="eager"
+                  fetchpriority="high"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               ) : (
-                <img src={`/images/${featuredPost.data.image}`} alt={featuredPost.data.title} loading="eager" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src={`/images/${featuredPost.data.image}`} alt={featuredPost.data.title} loading="eager" fetchpriority="high" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               )}
               <div class="absolute inset-0 bg-gradient-to-r from-transparent to-stone-900/30 md:bg-gradient-to-l"></div>
               <div class="absolute top-5 left-5">

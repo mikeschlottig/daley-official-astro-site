@@ -9,14 +9,16 @@ interface Props {
   description?: string;
   keywords?: string;
   ogImage?: string;
+  ogType?: string;
   canonical?: string;
 }
 
 const {
-  title = "Daley Organics - Premium Organic Soil Solutions | Grant Pass, Oregon",
-  description = "Premium organic soil and fertilizer blends for healthier plants and a sustainable future. Born and raised in the Rogue Valley, committed to bringing prosperity through sustainable agriculture.",
+  title = "Daley Organics - Premium Organic Soil Solutions | Grants Pass, Oregon",
+  description = "Premium organic soil, compost, mulch, and fertilizer blends from Daley Organics in Grants Pass, Oregon. Feed the microbes. Grow Bigger. Grow Better.",
   keywords = "organic soil mix Grants Pass Oregon, bulk organic fertilizer Rogue Valley, Daley's Mix premium growing media, organic compost Southern Oregon, worm castings, bat guano, kelp meal, mycorrhiza, glacial rock dust, organic gardening Grants Pass, soil amendments Oregon, bulk soil pickup Grants Pass",
   ogImage = "/images/hero-garden.jpg",
+  ogType = "website",
   canonical = "",
 } = Astro.props;
 
@@ -37,7 +39,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph (Facebook / Instagram link previews) -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -58,7 +60,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
     <meta name="ICBM" content="42.5432168, -123.3884123" />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Page-specific schema injected via head slot -->
     <slot name="head" />

@@ -43,9 +43,9 @@ export function Preloader() {
       </div>
 
       <div className="preloader-text text-center" style={{ animationDelay: '0.2s' }}>
-        <h1 className="font-serif text-3xl md:text-4xl text-white tracking-wide mb-2">
+        <div className="font-serif text-3xl md:text-4xl text-white tracking-wide mb-2">
           {preloaderConfig.brandName}
-        </h1>
+        </div>
         <p className="font-script text-2xl text-gold-400">{preloaderConfig.brandSubname}</p>
       </div>
 
