@@ -1,12 +1,14 @@
 ---
 title: "The Guano Wars: When Bird Poop Was Worth More Than Gold"
 excerpt: "In the mid-1800s, seabird guano was the world's most valuable fertilizer and a strategic resource nations went to war over. The story of Peru's Chincha Islands — and why seabird guano is still one of the best organic fertilizers on Earth."
+description: "Peru's guano tripled crop yields and nations fought wars over it. The Guano Islands Act claimed 100+ territories. Why seabird guano remains a top organic fertilizer."
 date: "April 23, 2026"
 category: "Ingredients"
 image: "daleys-seabird-guano.png"
 author: "Cameron Daley"
 readingTime: "7 min read"
 tags: ["guano", "seabird guano", "organic fertilizer", "phosphorus", "nitrogen", "soil history"]
+ingredientName: "Sea Bird Guano"
 tldr:
   - "Peru's Chincha Islands held guano deposits 150 feet deep — accumulated over thousands of years by seabird colonies"
   - "Guano tripled crop yields and triggered a global boom; Peru exported 12 million tons between 1840–1880"
@@ -14,6 +16,10 @@ tldr:
   - "Chile, Bolivia, and Peru fought the War of the Pacific (1879–1883) partly over guano and nitrate deposits"
   - "Today's sustainably harvested seabird guano provides balanced NPK plus humic acids and beneficial microorganisms"
 relatedProducts: ["daleys-mix"]
+relatedPosts:
+  - "bat-guano-cave-fertilizer"
+  - "fish-bone-meal-phosphorus"
+  - "bone-meal-the-bone-business"
 faqs:
   - question: "What is the NPK of seabird guano?"
     answer: "Seabird guano provides a balanced NPK analysis with nitrogen, phosphorus, and potassium in naturally occurring ratios. High-phosphorus guano varieties are particularly valued for flowering and fruiting. The exact analysis varies by source, but it delivers all three macronutrients alongside calcium, magnesium, sulfur, and trace minerals."

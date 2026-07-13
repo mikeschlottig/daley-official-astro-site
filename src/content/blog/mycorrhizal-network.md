@@ -7,6 +7,7 @@ image: "daleys-mycorrhizal-highway.png"
 author: "Cameron Daley"
 readingTime: "7 min read"
 tags: ["mycorrhizae", "soil biology", "fungal networks", "organic gardening", "root health"]
+ingredientName: "Mycorrhiza"
 tldr:
   - "Mycorrhizal fungi partner with 90%+ of plant species, extending root reach up to 700x through hair-thin hyphae"
   - "The fungi trade phosphorus, water, and micronutrients to roots in exchange for up to 20% of the plant's sugar output"
@@ -14,6 +15,10 @@ tldr:
   - "Standard gardening practices (tilling, synthetic phosphorus, fungicides) systematically destroy these networks"
   - "Mycorrhizal inoculants applied at transplanting rebuild the partnership — don't apply to Brassicas, beets, or spinach"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "merlin-blend"]
+relatedPosts:
+  - "kelp-meal-ocean-nutrition"
+  - "glacial-rock-dust-remineralize"
+  - "worm-castings-black-gold"
 faqs:
   - question: "What plants don't benefit from mycorrhizal fungi?"
     answer: "Several plant families do not form mycorrhizal partnerships and gain no benefit from inoculants. These include Brassicaceae (cabbage, broccoli, kale, radish), beets, spinach, and chard. For all other garden plants, mycorrhizal fungi can extend root reach up to 700 times through their hyphal networks."

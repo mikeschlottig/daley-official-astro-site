@@ -1,6 +1,7 @@
 ---
 title: "Dolomite Lime: The pH Corrector That Delivers Calcium AND Magnesium"
 excerpt: "Dolomite lime delivers both calcium and magnesium carbonate in a single amendment that corrects acidic soil pH over weeks to months. Learn how CaMg(CO₃)₂ chemistry optimizes the calcium-to-magnesium ratio in Daley Organics blends."
+description: "Dolomite lime is CaMg(CO₃)₂ — calcium and magnesium carbonate that corrects acidic pH over weeks. Optimizes the Ca:Mg ratio crops need."
 date: "July 12, 2026"
 category: "Ingredients"
 image: "compost-hands.jpg"
@@ -12,6 +13,10 @@ tldr:
   - "Daley Organics uses dolomite lime to balance the naturally acidic pH of peat moss and coco coir in the base media, targeting a final mix pH of 6.2-6.5 across all premium blends"
   - "It works alongside oyster shell (slow pH correction) and gypsum (calcium without pH change) as one of three calcium delivery mechanisms"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend", "bloom-blend"]
+relatedPosts:
+  - "oyster-shell-calcium-ph"
+  - "gypsums-great-transformation"
+  - "k-mag-langbeinite-triple-mineral"
 ingredientName: "Dolomite Lime"
 ingredientDescription: "Sedimentary calcium-magnesium carbonate (CaMg(CO₃)₂) for soil pH correction and dual-mineral delivery in a single amendment"
 faqs:

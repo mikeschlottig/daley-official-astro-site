@@ -12,6 +12,10 @@ tldr:
   - "Unlike perlite, pumice never floats, never compacts, and never decomposes"
   - "Daley Organics uses horticultural-grade pumice in Daley's Mix and Premium Soil Mix, paired with perlite for complementary root zone performance across the full soil profile"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+relatedPosts:
+  - "perlite-volcanic-glass-drainage"
+  - "greensand-ancient-seabed"
+  - "glacial-rock-dust-remineralize"
 ingredientName: "Pumice"
 ingredientDescription: "Lightweight volcanic rock with permanent pore structure used for drainage, aeration, and nutrient exchange in organic soil mixes"
 faqs:

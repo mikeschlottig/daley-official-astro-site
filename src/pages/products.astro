@@ -13,9 +13,48 @@ const premiumMedia   = allProducts.filter(p => p.data.category === 'premium-medi
 const amendments     = allProducts.filter(p => p.data.category === 'amendments');
 const landscaping    = allProducts.filter(p => p.data.category === 'landscaping');
 const fertilizers    = allProducts.filter(p => p.data.category === 'fertilizer');
+const merlinBlends   = landscaping.filter(p => ['Merlin Blend', 'Merlin Blend with COF'].includes(p.data.name)).sort((a, b) => a.data.order - b.data.order);
 
 const pageTitle       = "Organic Soil Products | Daley Organics – Grants Pass, Oregon";
 const pageDescription = "Professional-grade organic soil mixes and fertilizer blends from Daley Organics in Grants Pass. Bulk pickup only. Call (541) 441-0510.";
+
+// Ingredient article link map — only ingredients with matching blog posts
+const ingredientBlogMap = {
+  'Mycorrhiza': '/blog/mycorrhizal-network',
+  'Kelp Meal': '/blog/kelp-meal-ocean-nutrition',
+  'Bat Guano': '/blog/bat-guano-cave-fertilizer',
+  'Worm Castings': '/blog/worm-castings-black-gold',
+  'Glacial Rock Dust': '/blog/glacial-rock-dust-remineralize',
+  'Blood Meal': '/blog/blood-meal-blood-money',
+  'Bone Meal': '/blog/bone-meal-the-bone-business',
+  'Fish Bone Meal': '/blog/fish-bone-meal-phosphorus',
+  'Feather Meal': '/blog/feather-meal-slow-nitrogen',
+  'Crab Meal': '/blog/crab-meal-chitin-pest-defense',
+  'Humic Acids': '/blog/humic-acids-leonardite-soil',
+  'Greensand': '/blog/greensand-ancient-seabed',
+  'Dolomite Lime': '/blog/dolomite-lime-calcium-magnesium',
+  'Alfalfa Meal': '/blog/alfalfa-meal-triacontanol',
+  'Soybean Meal': '/blog/soybean-meal-balanced-nitrogen',
+  'Oyster Shell': '/blog/oyster-shell-calcium-ph',
+  'Sea Bird Guano': '/blog/the-guano-wars',
+  'Fish Meal': '/blog/fish-meal-nitrogen-ocean',
+  'Shrimp Meal': '/blog/shrimp-meal-trace-minerals',
+  'K-Mag Trio': '/blog/k-mag-langbeinite-triple-mineral',
+  'Gypsum': '/blog/gypsums-great-transformation',
+  'Perlite': '/blog/perlite-volcanic-glass-drainage',
+  'Pumice': '/blog/pumice-porous-rock-soil',
+  'Coco Fiber': '/blog/coco-coir-sustainable-alternative',
+  'Peat Moss': '/blog/peat-moss-ancient-carbon',
+  'Premium Compost': '/blog/composting-science-soil-biology',
+};
+
+// Product-to-key-ingredients mapping for article links on product cards
+const productIngredientLinks = {
+  "Daley's Mix": ['Worm Castings', 'Kelp Meal', 'Bat Guano', 'Mycorrhiza', 'Glacial Rock Dust', 'Humic Acids', 'Blood Meal'],
+  'Premium Soil Mix': ['Worm Castings', 'Kelp Meal', 'Bat Guano', 'Mycorrhiza', 'Glacial Rock Dust'],
+  'Daley Organics Grow Blend': ['Worm Castings', 'Kelp Meal', 'Bat Guano', 'Blood Meal', 'Feather Meal', 'Fish Bone Meal', 'Bone Meal'],
+  "Daley's Bloom": ['Worm Castings', 'Kelp Meal', 'Bat Guano', 'Fish Bone Meal', 'Bone Meal', 'Crab Meal'],
+};
 ---
 
 <BaseLayout
@@ -159,12 +198,18 @@ const pageDescription = "Professional-grade organic soil mixes and fertilizer bl
                   )}
                 </div>
 
-                <!-- Ingredient Callout Icons -->
+                <!-- Ingredient Callout Icons (linked to articles) -->
                 <div class="mt-4 flex flex-wrap gap-2">
                   {['Mycorrhiza', 'Kelp Meal', 'Bat Guano', 'Worm Castings', 'Glacial Rock Dust'].map(key => (
-                    <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-white/50 text-xs">
-                      {key}
-                    </span>
+                    ingredientBlogMap[key] ? (
+                      <a href={ingredientBlogMap[key]} class="px-2.5 py-1 bg-white/5 border border-white/10 hover:border-gold-500/30 rounded-full text-white/50 hover:text-gold-400 text-xs transition-colors">
+                        {key}
+                      </a>
+                    ) : (
+                      <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-white/50 text-xs">
+                        {key}
+                      </span>
+                    )
                   ))}
                   {product.data.name === "Daley's Mix" && (
                     <span class="px-2.5 py-1 bg-gold-500/15 border border-gold-500/40 rounded-full text-gold-400 text-xs font-semibold">
@@ -245,48 +290,94 @@ const pageDescription = "Professional-grade organic soil mixes and fertilizer bl
     </section>
 
     <!-- ============================================================
-         CATEGORY C — Landscaping (Merlin Blend)  [shown before B — best value draw]
+         CATEGORY C — Landscaping (Merlin Blends)  [shown before B — best value draw]
     ============================================================ -->
     <section id="cat-c" class="section-padding border-t border-white/8 bg-white/[0.015]">
       <div class="container-custom">
-        <div class="text-center mb-12 fade-up">
+        <div class="text-center mb-4 fade-up">
           <span class="eyebrow">Category C</span>
           <span class="text-gold-500 text-xs uppercase tracking-[0.2em] mb-4 block">Landscaping & Utility · High Volume</span>
-          <h2 class="font-serif text-h1 text-white">Landscaping & Utility</h2>
+          <h2 class="font-serif text-h1 text-white mb-3">Landscaping & Utility</h2>
+          <p class="text-white/55 max-w-xl mx-auto">Three Merlin landscape blends — from the base volume mix to the premium COF-included option.</p>
         </div>
 
-        {landscaping.map(product => (
-          <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center fade-up max-w-5xl mx-auto">
-            <div class="relative rounded-lg overflow-hidden">
-              <img src={`/images/${product.data.image}`} alt={product.data.name} class="w-full aspect-[4/3] object-cover" loading="lazy"/>
-              <div class="absolute inset-0 ring-1 ring-white/10 rounded-lg"></div>
-              {product.data.badge && (
-                <span class="absolute top-4 left-4 px-3 py-1 bg-gold-500 text-[#141414] text-xs font-bold uppercase tracking-wider rounded-full">{product.data.badge}</span>
-              )}
-            </div>
-            <div>
-              <h3 class="font-serif text-4xl md:text-5xl text-white mb-1">{product.data.name}</h3>
-              <p class="text-gold-400 text-sm font-bold uppercase tracking-widest mb-4">{product.data.subtitle}</p>
-              {product.data.price && (
-                <div class="inline-block px-4 py-2 bg-gold-500/10 border border-gold-500/30 rounded-lg mb-6">
-                  <p class="text-gold-400 font-bold text-xl">{product.data.price}</p>
-                </div>
-              )}
-              <div class="bg-white/5 rounded-lg border border-white/10 overflow-hidden mb-6">
-                <div class="divide-y divide-white/5 text-sm">
-                  {product.data.components && product.data.components.map(c => (
-                    <div class="px-4 py-2.5 text-white/65">{c}</div>
-                  ))}
-                </div>
-              </div>
-              <p class="text-white/60 text-sm mb-6 italic">For projects requiring 10+ yards, bulk pricing is available — call ahead.</p>
-              <div class="flex gap-3">
-                <a href="tel:+15414410510" class="btn-primary rounded-sm inline-flex items-center gap-2">Schedule Pickup</a>
-                <a href="#pickup" class="px-5 py-3 text-sm border border-white/20 text-white/60 rounded-sm hover:border-gold-500/40 hover:text-gold-400 transition-colors">Pickup Info</a>
-              </div>
-            </div>
+        <!-- Merlin Blend vs Merlin Power Blend Comparison -->
+        <div class="fade-up max-w-3xl mx-auto mb-16 mt-10 rounded-lg overflow-hidden border border-white/10">
+          <div class="bg-white/5 px-6 py-4 border-b border-white/10">
+            <p class="text-xs text-gold-500 font-bold uppercase tracking-widest text-center">Merlin Blend Comparison</p>
           </div>
-        ))}
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left px-6 py-3 text-white/50 font-medium">Feature</th>
+                  <th class="px-6 py-3 text-gold-400 font-bold text-center">Merlin Blend with COF<br/><span class="text-white/40 font-normal text-xs">$70/yd</span></th>
+                  <th class="px-6 py-3 text-white font-bold text-center border-l border-white/10">Merlin Power Blend<br/><span class="text-white/40 font-normal text-xs">$55/yd</span></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5">
+                <tr>
+                  <td class="px-6 py-3 text-white/60">COF Included</td>
+                  <td class="px-6 py-3 text-center text-gold-400 font-semibold">10 lbs per yard</td>
+                  <td class="px-6 py-3 text-center text-white border-l border-white/10">No</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-white/60">Price</td>
+                  <td class="px-6 py-3 text-center text-gold-400 font-semibold">$70 per yard</td>
+                  <td class="px-6 py-3 text-center text-white border-l border-white/10">$55 per yard</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-white/60">Best For</td>
+                  <td class="px-6 py-3 text-center text-white text-xs">New raised beds, lawn prep, landscaping projects</td>
+                  <td class="px-6 py-3 text-center text-white text-xs border-l border-white/10">Large landscaping, yard top-dressing, bulk soil building</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Merlin Blend Cards -->
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16 fade-up">
+          {merlinBlends.map((product) => (
+            <div>
+              <div class="relative rounded-lg overflow-hidden">
+                <img
+                  src={`/images/${product.data.image}`}
+                  alt={product.data.name}
+                  class="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 ring-1 ring-white/10 rounded-lg"></div>
+                {product.data.badge && (
+                  <span class="absolute top-4 left-4 px-3 py-1 bg-gold-500 text-[#141414] text-xs font-bold uppercase tracking-wider rounded-full">
+                    {product.data.badge}
+                  </span>
+                )}
+              </div>
+
+              <div class="mt-6">
+                <h3 class="font-serif text-4xl text-white mb-1">{product.data.name}</h3>
+                <p class="text-gold-400 text-sm font-bold uppercase tracking-widest mb-4">{product.data.subtitle}</p>
+                {product.data.price && (
+                  <div class="inline-block px-4 py-2 bg-gold-500/10 border border-gold-500/30 rounded-lg mb-6">
+                    <p class="text-gold-400 font-bold text-xl">{product.data.price}</p>
+                  </div>
+                )}
+                <div class="bg-white/5 rounded-lg border border-white/10 overflow-hidden mb-6">
+                  <div class="divide-y divide-white/5 text-sm">
+                    {product.data.fertilizerIncluded && (
+                      <div class="px-4 py-2.5 text-gold-400 font-semibold">{product.data.fertilizerIncluded}</div>
+                    )}
+                    {product.data.components && product.data.components.map(c => (
+                      <div class="px-4 py-2.5 text-white/65">{c}</div>
+                    ))}
+                  </div>
+                </div>
+                <a href="tel:+15414410510" class="btn-primary rounded-sm inline-flex items-center gap-2">Schedule Pickup</a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -391,6 +482,21 @@ const pageDescription = "Professional-grade organic soil mixes and fertilizer bl
                 <a href="tel:+15414410510" class="w-full btn-primary rounded-sm flex items-center justify-center gap-2 text-sm">
                   Call for Pricing · (541) 441-0510
                 </a>
+                {/* Key ingredient article links */}
+                {productIngredientLinks[product.data.name] && (
+                  <div class="mt-4 pt-4 border-t border-white/10">
+                    <p class="text-white/40 text-xs mb-2">Learn about our ingredients:</p>
+                    <div class="flex flex-wrap gap-1.5">
+                      {productIngredientLinks[product.data.name].map(ing => (
+                        ingredientBlogMap[ing] ? (
+                          <a href={ingredientBlogMap[ing]} class="text-xs text-white/50 hover:text-gold-400 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-gold-500/30 rounded px-2 py-1 transition-colors">
+                            {ing}
+                          </a>
+                        ) : null
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}

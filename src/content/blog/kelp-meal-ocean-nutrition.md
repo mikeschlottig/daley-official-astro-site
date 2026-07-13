@@ -8,6 +8,7 @@ featured: true
 author: "Cameron Daley"
 readingTime: "4 min read"
 tags: ["kelp meal", "micronutrients", "growth hormones", "soil biology"]
+ingredientName: "Kelp Meal"
 tldr:
   - "Kelp meal contains 70+ trace minerals unavailable in most synthetic fertilizers"
   - "Natural cytokinins and auxins stimulate root growth and stress resistance"
@@ -15,6 +16,10 @@ tldr:
   - "Works synergistically with mycorrhizal fungi to improve uptake"
   - "Included in both Daley's Mix and Premium Soil Mix fertilizer blends"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+relatedPosts:
+  - "alfalfa-meal-triacontanol"
+  - "glacial-rock-dust-remineralize"
+  - "mycorrhizal-network"
 faqs:
   - question: "What nutrients does kelp meal provide?"
     answer: "Kelp meal contains over 70 trace minerals including calcium, magnesium, iron, manganese, zinc, copper, and boron. It also provides natural plant growth hormones called cytokinins and auxins that stimulate root development and help plants resist stress from heat, drought, and pests."

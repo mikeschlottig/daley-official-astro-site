@@ -12,6 +12,10 @@ tldr:
   - "This \"first wave\" of nitrogen activates soil biology and jumpstarts early-season growth while slower amendments (feather meal, soybean meal) sustain nutrition over months"
   - "Daley Organics uses fish meal in the nitrogen fraction of all premium blends, alongside fish bone meal for phosphorus from the same Pacific fishery processing stream"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend"]
+relatedPosts:
+  - "fish-bone-meal-phosphorus"
+  - "blood-meal-blood-money"
+  - "feather-meal-slow-nitrogen"
 ingredientName: "Fish Meal"
 ingredientDescription: "Dried, ground fish tissue delivering fast-acting nitrogen and amino acids for rapid microbial activation and early-season plant growth"
 faqs:

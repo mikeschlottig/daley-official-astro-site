@@ -12,6 +12,10 @@ tldr:
   - "Its protein-rich structure (44-48% crude protein) feeds soil microbes steadily without the ammonia spikes of more water-soluble nitrogen sources"
   - "Daley Organics uses non-GMO soybean meal in all premium blends to fill the critical mid-season nitrogen window between fast-acting fish meal and slow-acting feather meal"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend"]
+relatedPosts:
+  - "alfalfa-meal-triacontanol"
+  - "feather-meal-slow-nitrogen"
+  - "blood-meal-blood-money"
 ingredientName: "Soybean Meal"
 ingredientDescription: "Protein-rich soybean processing byproduct delivering 7% nitrogen through moderate-speed microbial decomposition over 60-90 days"
 faqs:

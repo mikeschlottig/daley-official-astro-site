@@ -1,5 +1,6 @@
 ---
 title: "K-Mag: The Triple-Mineral Powerhouse — Potassium, Magnesium, and Sulfur in One Rock"
+description: "K-Mag (langbeinite) supplies potassium, magnesium, and sulfur from one chloride-free mineral — the triple-nutrient backbone of every Daley Organics blend."
 excerpt: "K-Mag (langbeinite) delivers potassium, magnesium, and sulfur from a single naturally occurring mineral — chloride-free and immediately available. Learn why this evaporite deposit is essential in Daley Organics blends."
 date: "July 12, 2026"
 category: "Ingredients"
@@ -12,6 +13,10 @@ tldr:
   - "Its sulfate matrix dissolves in 2-6 weeks — filling the gap between fast-acting kelp meal and slow-acting greensand in Daley Organics' three-tier potassium strategy"
   - "Every premium blend mixed at our Grants Pass soil yard includes K-Mag for medium-speed potassium plus the magnesium and sulfur that other potassium sources cannot provide"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend", "bloom-blend"]
+relatedPosts:
+  - "greensand-ancient-seabed"
+  - "kelp-meal-ocean-nutrition"
+  - "dolomite-lime-calcium-magnesium"
 ingredientName: "K-Mag (Langbeinite)"
 ingredientDescription: "Naturally occurring langbeinite mineral delivering potassium (22% K₂O), magnesium (11% Mg), and sulfur (22% S) in a single chloride-free source"
 faqs:

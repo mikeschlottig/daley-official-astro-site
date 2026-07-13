@@ -18,9 +18,19 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const allPosts = await getCollection('blog');
-const related = allPosts
-  .filter(p => p.id !== post.id && p.data.category === post.data.category)
-  .slice(0, 3);
+
+// Related posts: prefer frontmatter relatedPosts, fallback to category match
+let related;
+if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
+  related = post.data.relatedPosts
+    .map((slug) => allPosts.find(p => p.id === slug))
+    .filter(Boolean)
+    .slice(0, 4);
+} else {
+  related = allPosts
+    .filter(p => p.id !== post.id && p.data.category === post.data.category)
+    .slice(0, 3);
+}
 
 // Category colors
 const categoryColors: Record<string, string> = {
@@ -61,11 +71,12 @@ const dateModified = post.data.dateModified ?? '2026-07-12';
 const wordCount = estimateWordCount(post.body ?? '');
 const keywords = post.data.tags?.join(', ') ?? post.data.category;
 const faqs = post.data.faqs ?? [];
+const serpDescription = post.data.description ?? post.data.excerpt;
 ---
 
 <BaseLayout
   title={`${post.data.title} | Daley Organics`}
-  description={post.data.excerpt}
+  description={serpDescription}
   keywords={post.data.tags?.join(', ') ?? `${post.data.category}, organic gardening, soil science, Grants Pass Oregon`}
   ogImage={ogImagePath}
   ogType="article"
@@ -75,7 +86,7 @@ const faqs = post.data.faqs ?? [];
   <BlogPostSchema
     slot="head"
     headline={post.data.title}
-    description={post.data.excerpt}
+    description={serpDescription}
     canonicalUrl={canonicalUrl}
     heroImage={heroImageUrl}
     datePublished={datePublished}

@@ -1,6 +1,7 @@
 ---
 title: "Crab Meal: The Chitin-Rich Amendment That Triggers Your Soil's Immune System"
 excerpt: "Crab meal delivers 5-10% chitin that activates chitinase enzymes in soil — suppressing nematodes and soil-borne fungi through biological defense. Learn about the Dungeness crab connection to Daley Organics blends."
+description: "Crab meal's 5-10% chitin activates enzymes that suppress nematodes and soil fungi. How Dungeness crab waste becomes biological pest defense in organic soil."
 date: "July 12, 2026"
 category: "Ingredients"
 image: "worm-castings.jpg"
@@ -12,6 +13,10 @@ tldr:
   - "The 4-3-0 NPK and 12-23% calcium provide meaningful nutrition alongside the defense mechanism"
   - "Daley Organics uses crab meal as part of a three-source chitin complex (with shrimp meal and oyster shell) in all 25-ingredient fertilizer blends"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend", "bloom-blend"]
+relatedPosts:
+  - "shrimp-meal-trace-minerals"
+  - "oyster-shell-calcium-ph"
+  - "mycorrhizal-network"
 ingredientName: "Crab Meal"
 ingredientDescription: "Ground Dungeness crab shell delivering chitin for soil immune activation, plus moderate nitrogen, calcium, and trace minerals"
 faqs:

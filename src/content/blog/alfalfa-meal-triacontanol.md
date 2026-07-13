@@ -12,6 +12,10 @@ tldr:
   - "The combination makes it both a moderate nitrogen source and a biological catalyst that accelerates the decomposition of every other amendment in the blend"
   - "Daley Organics uses alfalfa meal as the 'catalyst' ingredient in all premium fertilizer blends mixed at our Grants Pass soil yard"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend"]
+relatedPosts:
+  - "soybean-meal-balanced-nitrogen"
+  - "composting-science-soil-biology"
+  - "worm-castings-black-gold"
 ingredientName: "Alfalfa Meal"
 ingredientDescription: "Dried, ground alfalfa delivering triacontanol growth hormone, moderate nitrogen, and exceptional microbial food value for soil biology activation"
 faqs:

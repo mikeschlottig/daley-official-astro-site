@@ -1,6 +1,7 @@
 ---
 title: "The Bone Business: From Burial Grounds to Growing Grounds"
 excerpt: "Bone meal — finely ground animal bones — is one of humanity's oldest fertilizers and remains the gold standard organic phosphorus source. Seven thousand years of empirical farming have been correct. The science just took a while to explain why."
+description: "Bone meal (3-15-0) is humanity's oldest fertilizer and the gold standard organic phosphorus. 7,000 years of farming were right — the science just caught up."
 date: "April 17, 2026"
 category: "Ingredients"
 image: "daleys-bone-meal.png"
@@ -8,6 +9,7 @@ ogImage: "/images/hero-garden.jpg"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["bone meal", "phosphorus", "calcium", "organic fertilizer", "root development", "fruiting"]
+ingredientName: "Bone Meal"
 tldr:
   - "Bone meal (NPK ~3-15-0) is the gold standard organic phosphorus source — 20-24% calcium is a bonus rarely shown on the label"
   - "Humans have been burying bones near crops since 7,000 BCE — the Neolithic era — long before chemistry explained why it worked"
@@ -15,6 +17,10 @@ tldr:
   - "Bone meal's phosphorus is pH-dependent: works well below pH 7.0, locks up in alkaline soils above 7.0"
   - "For alkaline soils, use bat guano or fish bone meal instead — they have finer particle size and better availability at higher pH"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+relatedPosts:
+  - "fish-bone-meal-phosphorus"
+  - "blood-meal-blood-money"
+  - "bat-guano-cave-fertilizer"
 faqs:
   - question: "What is the NPK of bone meal?"
     answer: "Bone meal typically analyzes at approximately 3-15-0 NPK. It provides modest nitrogen from the collagen protein fraction and high phosphorus from the calcium phosphate mineral fraction. It also contains 20-24% calcium by weight, which is a significant benefit that rarely appears on the label."

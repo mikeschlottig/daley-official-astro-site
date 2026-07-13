@@ -1,0 +1,181 @@
+{
+  "_meta": {
+    "description": "18 GEO-optimized blog posts for Daley Organics ingredient library. Each entry contains all data needed to generate a full blog page: metadata, markdown content, FAQ pairs for FAQPage schema, and internal linking targets. Posts follow the GEO Content Skill framework: TL;DR block, question-framed H2s, entity-dense paragraphs, and self-contained FAQ answers.",
+    "author": "Cameron Daley",
+    "authorTitle": "Founder, Daley Organics LLC",
+    "authorCredentials": "12+ years organic soil formulation, Grants Pass OR",
+    "datePublished": "2026-07-05",
+    "dateModified": "2026-07-05",
+    "category": "Ingredients"
+  },
+
+  "posts": [
+    {
+      "slug": "coco-coir-sustainable-alternative",
+      "title": "Coco Coir: The Sustainable Peat Moss Alternative That Changed Organic Growing",
+      "metaDescription": "Coco coir delivers superior water retention and aeration to organic soil mixes. Learn how this coconut husk byproduct became the go-to peat alternative in Daley Organics base media.",
+      "keywords": "coco coir, coconut coir organic soil, coco fiber vs peat moss, coco coir water retention, organic growing media",
+      "heroImageAlt": "Coco coir fiber used as organic soil base media",
+      "ingredientName": "Coco Coir",
+      "ingredientDescription": "Processed coconut husk fiber used as a sustainable base medium in organic soil mixes for water retention and aeration",
+      "productsUsedIn": ["Daley's Mix", "Premium Soil Mix", "Merlin Blend"],
+      "relatedPosts": ["peat-moss-ancient-carbon", "perlite-volcanic-glass-drainage", "pumice-porous-rock-soil"],
+      "content": "Coco coir — also called coconut fiber or coco peat — is the processed husk of the coconut fruit, transformed from agricultural waste into one of the most effective base media in organic soil science. Every cubic yard of Daley Organics soil starts with this material as a structural foundation.\n\n## What Is Coco Coir and Why Do Organic Growers Use It?\n\nCoco coir is the fibrous material extracted from the outer shell of coconuts, primarily processed in Sri Lanka, India, and the Philippines. It serves as a base medium in soil mixes because it holds up to 10 times its weight in water while maintaining enough air porosity to prevent root suffocation — a combination that peat moss and topsoil alone cannot match.\n\nThe fibers are washed, buffered to remove excess sodium and potassium salts, and graded by particle size. Daley Organics sources triple-washed, pH-buffered coco coir to ensure consistent performance across every batch of growing media mixed at our Grants Pass soil yard.\n\n## What Properties Does Coco Coir Bring to Soil?\n\nCoco coir contributes three critical physical properties to an organic soil mix. First, water retention: the sponge-like fiber structure absorbs and slowly releases moisture, reducing irrigation frequency by 30-50% compared to perlite-heavy mixes. Second, aeration: the fiber matrix creates stable air channels that persist even when saturated, delivering oxygen to root zones throughout the growing cycle. Third, structure: unlike peat moss which compacts over 12-18 months, coco fiber maintains its particle integrity for 3-5 years before decomposing.\n\nThe cation exchange capacity (CEC) of coco coir ranges from 40-100 meq/100g — significantly higher than perlite (negligible CEC) and comparable to high-quality compost. This means coco coir actively holds and exchanges nutrient ions with plant roots, functioning as both a structural medium and a nutrient reservoir.\n\n## How Does Coco Coir Compare to Peat Moss?\n\nThe coco coir vs peat moss debate centers on three factors: sustainability, pH behavior, and longevity. Peat moss is harvested from sphagnum bogs that accumulate at roughly 1 millimeter per year — a 10-foot-deep peat deposit represents 3,000 years of carbon storage. Coco coir is a byproduct of coconut processing, generated annually from a renewable crop cycle.\n\npH-wise, peat moss is naturally acidic (pH 3.5-4.5) and requires lime correction for most garden applications. Coco coir arrives at a near-neutral pH of 5.8-6.8 after buffering, closer to the optimal range for nutrient uptake in most vegetable and flower crops.\n\nLongevity favors coco coir: its lignin-rich fibers resist decomposition far longer than sphagnum peat, maintaining soil structure over multiple growing seasons without re-amendment.\n\n## How Does Daley Organics Use Coco Coir?\n\nCoco coir forms a significant portion of the base media in Daley's Mix ($140/yd), Premium Soil Mix ($130/yd), and Merlin Blend ($55/yd). It's blended with peat moss, perlite, pumice, and premium compost to create a base that balances water retention, drainage, aeration, and biological activity.\n\nAt our soil yard on Monument Drive in Grants Pass, we combine the coco coir with our 25-ingredient complete fertilizer blend before final mixing. The high CEC of the coco fiber immediately begins binding nutrients from the worm castings, kelp meal, and other amendments — making them available to roots from the first day of planting.\n\n## How to Use Coco Coir in Your Garden\n\nFor container growing, coco coir can constitute 40-60% of your total mix volume, with the remainder split between perlite (for drainage), compost (for biology), and amendments (for nutrition). In raised beds, a 30-40% coco coir ratio works well when blended with native soil and organic fertilizer.\n\nAvoid using raw, unbuffered coco coir directly — the residual sodium and potassium salts can cause nutrient lockout, particularly for calcium and magnesium. Always source pre-washed, buffered product, or rinse thoroughly with pH-adjusted water before mixing. Every Daley Organics blend uses pre-buffered coco coir, so this step is already handled.",
+      "faqs": [
+        {
+          "question": "Is coco coir better than peat moss for organic gardening?",
+          "answer": "Coco coir offers superior longevity (3-5 years vs 12-18 months), a near-neutral pH of 5.8-6.8 that requires less lime correction, and comparable water retention. It's also a renewable coconut byproduct rather than a slow-growing bog resource."
+        },
+        {
+          "question": "How much water does coco coir hold?",
+          "answer": "Coco coir absorbs up to 10 times its dry weight in water. This high water-holding capacity reduces irrigation frequency by 30-50% compared to perlite-dominant mixes while still maintaining air porosity above 20%."
+        },
+        {
+          "question": "Does coco coir need to be washed before use?",
+          "answer": "Raw coco coir from coconut processing contains excess sodium and potassium salts that can cause nutrient lockout. Pre-washed, pH-buffered coco coir (which Daley Organics uses in all blends) is ready to use immediately without additional rinsing."
+        },
+        {
+          "question": "Which Daley Organics products contain coco coir?",
+          "answer": "Coco coir is a core base medium in Daley's Mix ($140/yd), Premium Soil Mix ($130/yd), and Merlin Blend ($55/yd). It's combined with peat moss, perlite, pumice, and compost to create the structural foundation of each blend."
+        },
+        {
+          "question": "What is the pH of coco coir?",
+          "answer": "Buffered coco coir has a pH of 5.8-6.8, which falls within the optimal range for most vegetable, herb, and flower crops. This is significantly closer to neutral than peat moss (pH 3.5-4.5), reducing the need for lime amendments."
+        }
+      ],
+      "tldr": "Coco coir is a processed coconut husk fiber that holds 10x its weight in water while maintaining 20%+ air porosity — making it one of the most effective organic base media available. With a near-neutral pH of 5.8-6.8 and a 3-5 year structural lifespan, it outperforms peat moss in longevity and sustainability. Daley Organics uses triple-washed, pH-buffered coco coir as a foundation ingredient in all three soil blends mixed at our Grants Pass yard."
+    },
+
+    {
+      "slug": "peat-moss-ancient-carbon",
+      "title": "Peat Moss: 10,000 Years of Carbon Storage in Your Garden Bed",
+      "metaDescription": "Sphagnum peat moss delivers acidic pH buffering and exceptional water retention to organic soil. Learn how millennia of bog formation creates this essential soil amendment.",
+      "keywords": "peat moss organic soil, sphagnum peat moss benefits, peat moss pH buffering, peat moss water retention, organic soil amendment",
+      "heroImageAlt": "Sphagnum peat moss used in organic soil mixes",
+      "ingredientName": "Peat Moss",
+      "ingredientDescription": "Partially decomposed sphagnum moss harvested from ancient bogs, used for water retention and pH buffering in organic soil mixes",
+      "productsUsedIn": ["Daley's Mix", "Premium Soil Mix"],
+      "relatedPosts": ["coco-coir-sustainable-alternative", "composting-science-soil-biology", "dolomite-lime-calcium-magnesium"],
+      "content": "Peat moss is the partially decomposed remains of sphagnum moss that has accumulated in oxygen-deprived bogs over thousands of years. A single foot of peat represents roughly 1,000 years of slow carbon accumulation — when you add peat moss to your garden, you're working with ancient organic matter.\n\n## What Is Peat Moss and Why Do Organic Growers Use It?\n\nSphagnum peat moss forms in waterlogged bogs across Canada, Scandinavia, and Russia where cold temperatures and anaerobic conditions slow decomposition to near-zero. The sphagnum plant cells contain a unique polymer structure that can absorb 16-26 times their dry weight in water — far exceeding the capacity of any mineral soil component.\n\nOrganic growers use peat moss primarily for its water-holding capacity and its ability to buffer soil pH in the acidic range (3.5-4.5). For acid-loving crops like blueberries, azaleas, and rhododendrons, peat moss creates the ideal root environment without synthetic inputs.\n\n## What Properties Does Peat Moss Contribute to Soil?\n\nPeat moss brings four properties to an organic mix: water retention (16-26x its weight), a naturally low pH of 3.5-4.5, a high cation exchange capacity (CEC) of 100-200 meq/100g, and slow decomposition that maintains structure for 12-18 months in active growing conditions.\n\nThe CEC of peat moss is among the highest of any natural soil component. This means each particle holds and exchanges nutrient cations — calcium, magnesium, potassium — with root hairs, acting as a slow-release nutrient bank. When combined with Daley Organics' complete fertilizer blend, the peat fraction binds amendments like worm castings and kelp meal, preventing nutrient leaching during heavy watering.\n\n## How Does Daley Organics Use Peat Moss?\n\nPeat moss appears in Daley's Mix ($140/yd) and Premium Soil Mix ($130/yd) as part of the base media blend alongside coco coir, perlite, pumice, and premium compost. Its acidic pH is balanced by dolomite lime and oyster shell — two pH-raising amendments in our fertilizer blend — to achieve a final mix pH of 6.0-6.8.\n\nAt our Grants Pass soil yard, we source Canadian sphagnum peat that meets OMRI (Organic Materials Review Institute) standards for organic production. The peat is blended in precise ratios with coco coir to achieve both the water retention of peat and the structural longevity of coconut fiber.\n\n## What About Peat Moss Sustainability?\n\nThe sustainability question is real. Canadian peatlands store an estimated 150 billion metric tons of carbon — roughly 25 years of global CO₂ emissions. Harvesting removes carbon-storing capacity that took millennia to build. The Canadian Sphagnum Peat Moss Association reports that harvest operations affect approximately 0.03% of Canada's total peatland area, with restoration protocols returning harvested bogs to active sphagnum growth within 5-10 years.\n\nDaley Organics addresses this by using peat moss as one component in a multi-substrate base — not as the sole medium. Our coco coir provides the renewable structural backbone, while peat moss contributes its unmatched CEC and water retention in a smaller proportion.\n\n## How to Apply Peat Moss in Your Garden\n\nFor blueberries and acid-loving shrubs, mix peat moss at 40-50% of total soil volume. For general garden beds, keep peat at 20-30% and balance with lime to prevent excessive soil acidification. In seed-starting mixes, fine-grade peat at 30-40% provides the moisture consistency that germinating seeds require.\n\nAlways hydrate dry peat moss before mixing — it's hydrophobic when completely dry and can repel water for weeks if incorporated into soil without pre-wetting. Soak in warm water for 20-30 minutes until fully saturated, then blend.",
+      "faqs": [
+        {
+          "question": "What pH does peat moss have?",
+          "answer": "Sphagnum peat moss has a naturally acidic pH of 3.5-4.5. This makes it ideal for acid-loving plants like blueberries and azaleas, but requires lime correction (such as dolomite lime or oyster shell) for general garden use to reach the 6.0-6.8 range most vegetables prefer."
+        },
+        {
+          "question": "How much water can peat moss absorb?",
+          "answer": "Sphagnum peat moss absorbs 16-26 times its dry weight in water, giving it one of the highest water-holding capacities of any natural soil component. This reduces irrigation frequency and provides consistent moisture to root zones between waterings."
+        },
+        {
+          "question": "Is peat moss sustainable for organic gardening?",
+          "answer": "Peat bogs accumulate at roughly 1mm per year, making peat a very slowly renewable resource. Canadian harvest operations affect approximately 0.03% of total peatland area, with restoration protocols in place. Daley Organics uses peat as one component alongside renewable coco coir to reduce overall peat dependency."
+        },
+        {
+          "question": "Why is peat moss combined with coco coir in Daley's Mix?",
+          "answer": "Peat moss contributes unmatched water retention (16-26x its weight) and high CEC (100-200 meq/100g) for nutrient binding, while coco coir provides superior structural longevity (3-5 years vs 12-18 months). Together they deliver both moisture consistency and long-term soil structure."
+        }
+      ],
+      "tldr": "Sphagnum peat moss absorbs 16-26 times its dry weight in water and delivers a cation exchange capacity of 100-200 meq/100g — among the highest of any natural soil component. Its acidic pH of 3.5-4.5 is balanced by dolomite lime and oyster shell in Daley Organics blends to achieve a final mix pH of 6.0-6.8. Canadian sphagnum peat appears in Daley's Mix and Premium Soil Mix alongside coco coir for a dual-substrate base that combines moisture retention with structural longevity."
+    },
+
+    {
+      "slug": "perlite-volcanic-glass-drainage",
+      "title": "Perlite: How Volcanic Glass Gives Your Roots Room to Breathe",
+      "metaDescription": "Perlite is expanded volcanic glass that creates permanent drainage channels and air pockets in organic soil. Learn how superheating obsidian at 1,600°F produces this essential amendment.",
+      "keywords": "perlite soil drainage, perlite aeration, volcanic perlite organic soil, perlite vs pumice, perlite root zone oxygen",
+      "heroImageAlt": "White perlite granules used for soil drainage and aeration",
+      "ingredientName": "Perlite",
+      "ingredientDescription": "Superheated volcanic glass expanded to create lightweight, porous granules for soil drainage and root zone aeration",
+      "productsUsedIn": ["Daley's Mix", "Premium Soil Mix", "Merlin Blend"],
+      "relatedPosts": ["pumice-porous-rock-soil", "coco-coir-sustainable-alternative", "peat-moss-ancient-carbon"],
+      "content": "Perlite is volcanic glass — specifically a form of hydrated obsidian — that has been superheated to 1,600°F (871°C) until it expands like popcorn to 13 times its original volume. Those white, lightweight granules in your potting mix are the result of ancient volcanic eruptions processed through industrial kilns.\n\n## What Is Perlite and Why Do Organic Growers Use It?\n\nPerlite originates as volcanic obsidian containing 2-5% trapped water within its glassy structure. When heated rapidly in industrial kilns at 1,600°F, the bound water vaporizes and expands the glass into a cellular foam structure — creating thousands of microscopic air chambers in each granule. The resulting material weighs just 5-10 lbs per cubic foot compared to 75-100 lbs for garden soil.\n\nOrganic growers use perlite for one primary reason: it creates permanent, non-compressible drainage channels that prevent waterlogging and deliver oxygen to root zones. In heavy organic mixes rich in compost and worm castings, perlite prevents the dense biological material from becoming anaerobic.\n\n## What Properties Does Perlite Bring to Soil?\n\nPerlite's contribution is almost entirely physical rather than chemical. It has negligible nutrient content (no significant N-P-K value), near-zero cation exchange capacity, and a neutral pH of 6.5-7.5. Its value lies in its permanent porosity — each granule is roughly 93% void space by volume, creating air channels that persist even under compaction from watering and gravity.\n\nThe drainage capacity of perlite is measured at 30-50% by volume after saturation — meaning a mix containing 20% perlite retains significant air porosity even when thoroughly watered. This prevents root rot, promotes aerobic microbial activity, and reduces the risk of fungal pathogens like Pythium and Fusarium that thrive in waterlogged conditions.\n\n## How Does Perlite Compare to Pumice?\n\nDaley Organics uses both perlite and pumice in our soil blends, and the distinction matters. Perlite is lighter and creates larger air pockets, but it floats when watered heavily and can migrate to the soil surface over time. Pumice is denser, stays in place permanently, and has a measurable CEC (cation exchange capacity) that perlite lacks — meaning pumice holds and exchanges nutrients while perlite does not.\n\nThe complementary pairing works because perlite excels at immediate drainage in the upper root zone where oxygen demand is highest, while pumice provides stable structural porosity deeper in the profile where nutrient exchange matters more.\n\n## How Does Daley Organics Use Perlite?\n\nPerlite is a base media component in all three Daley Organics soil mixes: Daley's Mix ($140/yd), Premium Soil Mix ($130/yd), and Merlin Blend ($55/yd). It's blended with coco coir, peat moss, pumice, and premium compost to create the physical structure before the 25-ingredient fertilizer blend is added.\n\nAt our Grants Pass soil yard on Monument Drive, we use horticultural-grade perlite (#3 or #4 size — 1/8\" to 3/8\" diameter) rather than the fine-grade material used in seed starting. The coarser particle size creates larger drainage channels suited to the heavy organic load in our premium blends.\n\n## How to Use Perlite in Your Garden\n\nFor container mixes, add perlite at 15-25% of total volume. For raised beds, 10-15% is sufficient since the deeper profile provides natural drainage. In seed-starting trays, fine-grade perlite at 30-40% ensures the delicate seedling roots never sit in waterlogged medium.\n\nPerlite dust is a respiratory irritant — always moisten perlite before mixing, and wear a dust mask when handling large volumes. The dust settles quickly once wet and poses no ongoing concern in the finished soil mix.",
+      "faqs": [
+        {
+          "question": "What is perlite made from?",
+          "answer": "Perlite is volcanic obsidian (a form of natural glass) containing 2-5% trapped water. When superheated to 1,600°F in industrial kilns, the water vaporizes and expands the glass to 13 times its original volume, creating lightweight white granules that are roughly 93% void space."
+        },
+        {
+          "question": "Does perlite add nutrients to soil?",
+          "answer": "No. Perlite has negligible nutrient content (no significant N-P-K), near-zero cation exchange capacity, and a neutral pH of 6.5-7.5. Its value is entirely physical — creating permanent drainage channels and air pockets that deliver oxygen to root zones."
+        },
+        {
+          "question": "What is the difference between perlite and pumice?",
+          "answer": "Perlite is lighter, creates larger air pockets, and floats when heavily watered. Pumice is denser, stays in place permanently, and has a measurable cation exchange capacity for nutrient retention. Daley Organics uses both for complementary drainage and structure benefits."
+        },
+        {
+          "question": "How much perlite should I add to potting soil?",
+          "answer": "For containers, add perlite at 15-25% of total volume. For raised beds, 10-15% is sufficient due to natural drainage depth. For seed starting, fine-grade perlite at 30-40% prevents waterlogging around delicate seedling roots."
+        }
+      ],
+      "tldr": "Perlite is volcanic obsidian superheated to 1,600°F until it expands to 13 times its original volume, creating granules that are 93% void space. It contributes zero nutrients but provides permanent non-compressible drainage channels that deliver oxygen to root zones and prevent waterlogging in heavy organic mixes. Daley Organics uses horticultural-grade perlite (#3-#4 size) in all three soil blends mixed at our Grants Pass yard, paired with pumice for complementary drainage and structural porosity."
+    },
+
+    {
+      "slug": "pumice-porous-rock-soil",
+      "title": "Pumice: The Porous Volcanic Rock That Never Compacts",
+      "metaDescription": "Pumice is a lightweight volcanic rock with permanent pore structure and measurable CEC. Learn why Daley Organics uses both pumice and perlite for superior root zone performance.",
+      "keywords": "pumice soil amendment, pumice vs perlite, volcanic pumice organic gardening, pumice CEC, pumice drainage",
+      "heroImageAlt": "Pumice volcanic rock used as permanent soil structural amendment",
+      "ingredientName": "Pumice",
+      "ingredientDescription": "Lightweight volcanic rock with permanent pore structure used for drainage, aeration, and nutrient exchange in organic soil mixes",
+      "productsUsedIn": ["Daley's Mix", "Premium Soil Mix"],
+      "relatedPosts": ["perlite-volcanic-glass-drainage", "greensand-ancient-seabed", "glacial-rock-dust-remineralize"],
+      "content": "Pumice is a lightweight volcanic rock formed when gas-rich magma erupts and cools so rapidly that the bubbles freeze in place — creating a stone riddled with microscopic pores that never compact, never decompose, and never float to the surface of your soil mix.\n\n## What Is Pumice and Why Do Organic Growers Use It?\n\nPumice forms during explosive volcanic eruptions when frothy, gas-saturated magma is ejected and quenches mid-air. Unlike perlite (which is manufactured by heating obsidian), pumice arrives in its useful form directly from nature — no industrial processing required beyond screening and grading. Pacific Northwest volcanic deposits in Oregon, California, and Idaho produce the bulk of horticultural-grade pumice used in North America.\n\nOrganic growers use pumice because it creates permanent structural porosity that persists indefinitely. While peat moss decomposes in 12-18 months and perlite can float and migrate, pumice particles sit exactly where you place them — providing stable drainage channels and air pockets for the entire life of a raised bed or container.\n\n## What Properties Does Pumice Bring to Soil?\n\nPumice's defining advantage over perlite is its measurable cation exchange capacity (CEC) of 15-25 meq/100g. This means pumice doesn't just create physical space in soil — it actively participates in nutrient exchange, holding potassium, calcium, magnesium, and micronutrient cations on its surface and releasing them to plant roots on demand.\n\nThe porosity of pumice ranges from 60-80%, with a bulk density of 30-40 lbs per cubic foot — heavier than perlite (5-10 lbs/ft³) but lighter than sand (90-100 lbs/ft³). This density is an advantage: pumice stays in place when you water, doesn't blow away in wind, and doesn't accumulate at the soil surface like perlite does over time.\n\n## How Does Pumice Compare to Perlite?\n\nBoth serve the drainage function, but they're complementary rather than interchangeable. Perlite excels at immediate drainage in the upper 2-4 inches of a container where oxygen demand is highest. Pumice excels deeper in the profile where structural stability, nutrient exchange, and long-term porosity matter more.\n\nDaley Organics uses both in our premium blends because each addresses a different zone of the root profile. The combination delivers better overall performance than either material alone.\n\n## How Does Daley Organics Use Pumice?\n\nPumice is a base media component in Daley's Mix ($140/yd) and Premium Soil Mix ($130/yd). We source horticultural-grade pumice screened to 1/4\" to 3/8\" particle size — large enough to create meaningful drainage channels but small enough to distribute evenly through the mix during blending.\n\nAt our Grants Pass soil yard, the pumice is blended with coco coir, peat moss, perlite, and premium compost before the 25-ingredient fertilizer blend is incorporated. The pumice fraction immediately begins binding nutrient cations from the worm castings, kelp meal, and other amendments — creating a slow-release nutrient reservoir throughout the soil profile.\n\n## How to Use Pumice in Your Garden\n\nFor container mixes, pumice at 10-20% of total volume provides excellent drainage without the floating problem of perlite. For permanent raised beds, pumice is the superior choice over perlite because it never needs replacement. In heavy clay soils common in parts of Josephine County, tilling pumice into the top 8-12 inches at 15-20% by volume permanently improves drainage and root penetration.\n\nPumice is also excellent as a top-dressing mulch for succulents, alpine plants, and Mediterranean herbs that need rapid surface drainage — a 1-2 inch layer reduces crown rot risk dramatically.",
+      "faqs": [
+        {
+          "question": "What is the difference between pumice and perlite in soil?",
+          "answer": "Pumice is a natural volcanic rock with a CEC of 15-25 meq/100g that stays in place permanently and actively exchanges nutrients with roots. Perlite is manufactured expanded glass with near-zero CEC that is lighter but floats and migrates to the surface over time."
+        },
+        {
+          "question": "Does pumice decompose in soil?",
+          "answer": "No. Pumice is an igneous rock that never decomposes, never compacts, and maintains its pore structure indefinitely. A pumice-amended raised bed retains its drainage characteristics permanently, unlike peat moss (12-18 months) or bark mulch (1-2 years)."
+        },
+        {
+          "question": "Where does horticultural pumice come from?",
+          "answer": "Most horticultural-grade pumice in North America comes from Pacific Northwest volcanic deposits in Oregon, California, and Idaho. It forms during explosive volcanic eruptions when gas-saturated magma quenches mid-air, freezing the bubble structure into permanent pores."
+        },
+        {
+          "question": "How much pumice should I add to clay soil?",
+          "answer": "For heavy clay soils common in parts of Josephine County, Oregon, till pumice into the top 8-12 inches at 15-20% by volume. This permanently improves drainage and root penetration without needing annual replacement."
+        }
+      ],
+      "tldr": "Pumice is a naturally porous volcanic rock with 60-80% void space and a CEC of 15-25 meq/100g — meaning it creates permanent drainage channels while actively holding and exchanging nutrients with plant roots. Unlike perlite, pumice never floats, never compacts, and never decomposes. Daley Organics uses horticultural-grade pumice in Daley's Mix and Premium Soil Mix, paired with perlite for complementary root zone performance across the full soil profile."
+    },
+
+    {
+      "slug": "composting-science-soil-biology",
+      "title": "The Science of Compost: How Decomposition Builds Living Soil",
+      "metaDescription": "Premium organic compost undergoes thermophilic decomposition reaching 131-170°F to eliminate pathogens while cultivating beneficial soil biology. Learn the composting science behind Daley Organics premium compost.",
+      "keywords": "organic compost science, thermophilic composting, compost soil biology, compost carbon nitrogen ratio, premium organic compost Grants Pass",
+      "heroImageAlt": "Premium organic compost with rich dark color and humus structure",
+      "ingredientName": "Premium Compost",
+      "ingredientDescription": "Thermophilic compost produced through controlled aerobic decomposition, used as a base medium and biological inoculant in organic soil mixes",
+      "productsUsedIn": ["Daley's Mix", "Premium Soil Mix", "Merlin Blend", "Premium Organic Compost"],
+      "relatedPosts": ["worm-castings-black-gold", "humic-acids-leonardite-soil", "alfalfa-meal-triacontanol"],
+      "content": "Compost is the controlled aerobic decomposition of organic matter into a stable, humus-rich material teeming with beneficial microorganisms. But not all compost is equal — the difference between premium compost and municipal yard waste comes down to feedstock selection, temperature management, and microbial diversity.\n\n## What Is Premium Organic Compost and How Is It Made?\n\nPremium organic compost is produced through thermophilic (heat-loving) decomposition, where microbial metabolism drives pile temperatures to 131-170°F (55-77°C) for sustained periods. This heat serves a dual purpose: it eliminates weed seeds, plant pathogens, and harmful bacteria while selecting for thermophilic microorganisms that produce enzymes capable of breaking down cellulose, lignin, and chitin into plant-available nutrients.\n\nThe process requires careful management of four variables: carbon-to-nitrogen ratio (C:N), moisture content (40-60% by weight), oxygen availability (achieved through turning or forced aeration), and particle size (smaller particles decompose faster but compact more easily). A C:N ratio of 25-30:1 produces the fastest, most complete decomposition — too much carbon (sawdust, wood chips) and the pile stalls; too much nitrogen (manure, food waste) and it generates ammonia and foul odors.\n\n## What Happens During Thermophilic Decomposition?\n\nComposting proceeds through four distinct microbial succession phases. The mesophilic phase (ambient to 104°F) lasts 1-3 days as common soil bacteria begin consuming easily digestible sugars and proteins. The thermophilic phase (104-170°F) sustains for 2-8 weeks as heat-tolerant Bacillus, Thermus, and actinomycete species dominate, breaking down complex cellulose and lignin. The cooling phase returns temperatures to mesophilic range as easily consumed material is exhausted. Finally, the curing phase (2-6 months) allows slow-acting fungi and soil animals to complete humification — converting remaining organic matter into stable humic substances.\n\nEach phase cultivates different microbial communities. The finished product contains billions of beneficial organisms per gram — bacteria, fungi, actinomycetes, protozoa, and beneficial nematodes — that become the biological foundation of living soil.\n\n## How Does Premium Compost Differ from Municipal Compost?\n\nMunicipal yard waste compost is typically produced from leaves, grass clippings, and chipped branches collected curbside. While useful as a soil conditioner, it often suffers from inconsistent C:N ratios, incomplete thermophilic processing (weed seeds survive), and contamination from herbicide-treated lawns (aminopyralid persistence can damage sensitive crops for 2+ years).\n\nPremium organic compost uses controlled feedstocks — aged manures, crop residues, food processing waste — with known C:N ratios and zero herbicide contamination risk. Daley Organics' premium compost meets OMRI standards and undergoes complete thermophilic processing verified by temperature monitoring.\n\n## How Does Daley Organics Use Compost?\n\nPremium compost serves as both a base medium and a biological inoculant in all Daley Organics soil blends. In Daley's Mix ($140/yd), Premium Soil Mix ($130/yd), and Merlin Blend ($55/yd), compost contributes the microbial diversity that activates the 25-ingredient fertilizer blend — converting organic nitrogen from blood meal, feather meal, and fish meal into plant-available ammonium and nitrate forms.\n\nDaley Organics also sells Premium Organic Compost as a standalone product for soil rehabilitation, lawn top-dressing, and garden bed establishment. At our Grants Pass soil yard on Monument Drive, we maintain active compost operations to ensure fresh, biologically active material in every batch.\n\n## How to Apply Compost in Your Garden\n\nFor new garden beds, incorporate 3-4 inches of premium compost into the top 8-12 inches of native soil. For established beds, top-dress with 1-2 inches annually in early spring. For lawn renovation, apply 1/4 to 1/2 inch of fine-screened compost after core aeration.\n\nAvoid using immature (hot) compost directly on plants — the ongoing decomposition generates ammonia and heat that can burn roots and seedlings. Finished compost should smell earthy (never sour or ammonia-like), crumble easily in your hand, and show no recognizable feedstock materials.",
+      "faqs": [
+        {
+          "question": "What temperature does compost need to reach to kill weed seeds?",
+          "answer": "Compost must sustain temperatures of 131°F (55°C) or higher for at least 3 consecutive days during the thermophilic phase to reliably kill weed seeds, plant pathogens, and harmful bacteria. Premium compost typically reaches 140-170°F during this phase."
+        },
+        {
+          "question": "What is the ideal carbon-to-nitrogen ratio for composting?",
+          "answer": "A C:N ratio of 25-30:1 produces the fastest, most complete decomposition. Too much carbon (above 40:1) causes the pile to stall. Too much nitrogen (below 20:1) generates ammonia and foul odors. Mixing brown materials (leaves, straw) with green materials (manure, food waste) achieves this balance."
+        },
+        {
+          "question": "How is premium compost different from municipal compost?",
+          "answer": "Premium organic compost uses controlled feedstocks with known C:N ratios, undergoes verified thermophilic processing, and has zero herbicide contamination risk. Municipal yard waste compost often has inconsistent quality, incomplete processing (surviving weed seeds), and potential aminopyralid contamination from treated lawns."
+        },
+        {
+          "question": "How much compost should I add to a new garden bed?",
+          "answer": "For new garden beds, incorporate 3-4 inches of premium compost into the top 8-12 inches of native soil. For established beds, top-dress with 1-2 inches annually in early spring. For lawns, apply 1/4 to 1/2 inch after core aeration."
+        },
+        {
+          "question": "Does Daley Organics sell compost separately?",
+          "answer": "Yes. Daley Organics sells Premium Organic Compost as a standalone product at our soil yard on Monument Drive in Grants Pass, Oregon. It's also a core base medium ingredient in all three soil blends: Daley's Mix, Premium Soil Mix, and Merlin Blend."
+        }
+      ],
+      "tldr": "Premium organic compost undergoes thermophilic decomposition at 131-170°F, eliminating weed seeds and pathogens while cultivating billions of beneficial microorganisms per gram. A controlled C:N ratio of 25-30:1 drives complete decomposition through four microbial succession phases over 3-8 months. Daley Organics uses OMRI-standard premium compost as both a base medium and biological inoculant in all soil blends, and sells it as a standalone product at our Grants Pass soil yard."
+    }
+  ]
+}

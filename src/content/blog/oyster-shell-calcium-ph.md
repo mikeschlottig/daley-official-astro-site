@@ -1,6 +1,7 @@
 ---
 title: "Oyster Shell: Slow-Release Calcium That Won't Shock Your Soil pH"
 excerpt: "Oyster shell flour delivers calcium carbonate and trace chitin through a gentle multi-year dissolution that raises pH gradually — unlike fast-acting garden lime. Learn why Daley Organics chose oyster shell for pH buffering."
+description: "Oyster shell delivers calcium carbonate and trace chitin through multi-year dissolution, raising pH gradually without shocking soil. The slow-calcium choice in Daley Organics blends."
 date: "July 12, 2026"
 category: "Ingredients"
 image: "daleys-bone-meal.png"
@@ -12,6 +13,10 @@ tldr:
   - "The crystalline calcite structure releases calcium and carbonate ions for 1-3 years from a single application"
   - "Daley Organics uses Pacific Coast oyster shell alongside dolomite lime and gypsum in all fertilizer blends for three-tier calcium delivery with different dissolution rates"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend", "bloom-blend"]
+relatedPosts:
+  - "dolomite-lime-calcium-magnesium"
+  - "crab-meal-chitin-pest-defense"
+  - "gypsums-great-transformation"
 ingredientName: "Oyster Shell"
 ingredientDescription: "Ground Pacific Coast oyster shell delivering slow-release calcium carbonate for gradual pH correction and cell wall strengthening"
 faqs:

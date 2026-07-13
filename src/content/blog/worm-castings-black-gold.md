@@ -8,6 +8,7 @@ featured: true
 author: "Cameron Daley"
 readingTime: "4 min read"
 tags: ["worm castings", "vermicompost", "soil biology", "organic fertilizer"]
+ingredientName: "Worm Castings"
 tldr:
   - "Worm castings deliver NPK + Ca + S + Mg in immediately plant-available form"
   - "Each casting is coated in beneficial bacteria — a living microbial inoculant"
@@ -15,6 +16,10 @@ tldr:
   - "Cannot over-apply — completely safe for seedlings and established plants"
   - "Found in every yard of Daley's Mix and Premium Soil Mix"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+relatedPosts:
+  - "humic-acids-leonardite-soil"
+  - "composting-science-soil-biology"
+  - "alfalfa-meal-triacontanol"
 faqs:
   - question: "Can you use too many worm castings?"
     answer: "No, worm castings are completely safe at any application rate. Unlike synthetic fertilizers or concentrated amendments like blood meal, worm castings cannot burn plants. You can mix up to 20% worm castings by volume into your soil or potting mix without any risk of over-application."

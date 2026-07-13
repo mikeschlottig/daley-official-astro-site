@@ -11,6 +11,10 @@ tldr:
   - "Sphagnum peat moss absorbs 16-26 times its dry weight in water and delivers a cation exchange capacity of 100-200 meq/100g — among the highest of any natural soil component"
   - "Its acidic pH of 3.5-4.5 is balanced by dolomite lime and oyster shell in Daley Organics blends to achieve a final mix pH of 6.0-6.8. Canadian sphagnum peat appears in Daley's Mix and Premium Soil Mix alongside coco coir for a dual-substrate base that combines moisture retention with structural longevity"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+relatedPosts:
+  - "coco-coir-sustainable-alternative"
+  - "composting-science-soil-biology"
+  - "dolomite-lime-calcium-magnesium"
 ingredientName: "Peat Moss"
 ingredientDescription: "Partially decomposed sphagnum moss harvested from ancient bogs, used for water retention and pH buffering in organic soil mixes"
 faqs:

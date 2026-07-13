@@ -11,6 +11,10 @@ tldr:
   - "Greensand is a 70-million-year-old Cretaceous marine sediment containing 6-7% potassium, 15-20% iron oxide, and 30+ trace minerals locked in a glauconite crystal structure that releases nutrients over 2-3 growing seasons"
   - "Daley Organics uses greensand as the slowest of three potassium sources in the 25-ingredient fertilizer — alongside fast-acting kelp meal and medium-speed K-Mag — to ensure continuous potassium availability from planting through the second and third growing seasons"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend", "bloom-blend"]
+relatedPosts:
+  - "k-mag-langbeinite-triple-mineral"
+  - "kelp-meal-ocean-nutrition"
+  - "glacial-rock-dust-remineralize"
 ingredientName: "Greensand"
 ingredientDescription: "Cretaceous-era marine sediment rich in glauconite, delivering slow-release potassium, iron, and 30+ trace minerals while conditioning soil structure"
 faqs:

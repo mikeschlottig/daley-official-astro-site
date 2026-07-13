@@ -12,6 +12,10 @@ tldr:
   - "Its porous hydroxyapatite structure dissolves as root acids solubilize the mineral surface — a self-regulating delivery mechanism"
   - "Daley Organics uses fish bone meal alongside three other phosphorus sources to create a layered availability curve spanning the full growing season"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "bloom-blend"]
+relatedPosts:
+  - "fish-meal-nitrogen-ocean"
+  - "bone-meal-the-bone-business"
+  - "bat-guano-cave-fertilizer"
 ingredientName: "Fish Bone Meal"
 ingredientDescription: "Processed fish skeletal material delivering slow-release phosphorus and calcium for root zone development in organic soil systems"
 faqs:

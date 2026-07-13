@@ -12,6 +12,10 @@ tldr:
   - "It delivers nutrients in both immediately available and slow-release forms as soil microbes break down the mineralized cave deposits"
   - "Daley Organics pairs bat guano with sea bird guano in all fertilizer blends — bat guano for phosphorus-driven root and flower development, sea bird guano for nitrogen-driven vegetative growth"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend", "bloom-blend"]
+relatedPosts:
+  - "the-guano-wars"
+  - "fish-bone-meal-phosphorus"
+  - "bone-meal-the-bone-business"
 ingredientName: "Bat Guano"
 ingredientDescription: "Accumulated bat excrement from cave ecosystems, used as a concentrated source of phosphorus and nitrogen in organic fertilizer blends"
 faqs:

@@ -1,6 +1,7 @@
 ---
 title: "The Science of Compost: How Decomposition Builds Living Soil"
 excerpt: "Premium organic compost undergoes thermophilic decomposition reaching 131-170°F to eliminate pathogens while cultivating beneficial soil biology. Learn the composting science behind Daley Organics premium compost."
+description: "Thermophilic composting at 131-170°F kills pathogens while building beneficial soil biology. The decomposition science behind Daley Organics premium compost."
 date: "July 12, 2026"
 category: "Ingredients"
 image: "compost-hands.jpg"
@@ -12,6 +13,10 @@ tldr:
   - "A controlled C:N ratio of 25-30:1 drives complete decomposition through four microbial succession phases over 3-8 months"
   - "Daley Organics uses OMRI-standard premium compost as both a base medium and biological inoculant in all soil blends, and sells it as a standalone product at our Grants Pass soil yard"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "merlin-blend"]
+relatedPosts:
+  - "worm-castings-black-gold"
+  - "humic-acids-leonardite-soil"
+  - "alfalfa-meal-triacontanol"
 ingredientName: "Premium Compost"
 ingredientDescription: "Thermophilic compost produced through controlled aerobic decomposition, used as a base medium and biological inoculant in organic soil mixes"
 faqs:

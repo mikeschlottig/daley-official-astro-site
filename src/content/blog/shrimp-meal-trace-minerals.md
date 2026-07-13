@@ -11,6 +11,10 @@ tldr:
   - "Shrimp meal delivers a balanced 6-6-0 NPK alongside 3-5% chitin, astaxanthin antioxidant, and concentrated marine trace minerals (zinc, copper, manganese, iodine, selenium) that fill micronutrient gaps in terrestrial soils"
   - "Daley Organics uses shrimp meal as part of a three-source crustacean complex (crab meal + shrimp meal + oyster shell) that maintains continuous chitinase enzyme activity for biological pest suppression throughout the growing season"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend", "bloom-blend"]
+relatedPosts:
+  - "crab-meal-chitin-pest-defense"
+  - "oyster-shell-calcium-ph"
+  - "kelp-meal-ocean-nutrition"
 ingredientName: "Shrimp Meal"
 ingredientDescription: "Dried ground shrimp shell and tissue delivering chitin, astaxanthin, and concentrated marine trace minerals for soil biology activation"
 faqs:

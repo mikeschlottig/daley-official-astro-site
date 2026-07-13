@@ -8,6 +8,36 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const pageTitle = "Organic Soil Ingredients — What's Inside Daley Organics Mixes";
 const pageDescription = "Explore every ingredient in Daley Organics soil mixes and fertilizer blends. From worm castings to mycorrhiza, learn how each amendment feeds your soil biology.";
 
+// Map ingredient slugs to their blog post slugs (for visible "Read more" links)
+const ingredientBlogSlugs = {
+  'coco-fiber': 'coco-coir-sustainable-alternative',
+  'peat-moss': 'peat-moss-ancient-carbon',
+  'perlite': 'perlite-volcanic-glass-drainage',
+  'pumice': 'pumice-porous-rock-soil',
+  'premium-compost': 'composting-science-soil-biology',
+  'worm-castings': 'worm-castings-black-gold',
+  'sea-bird-guano': 'the-guano-wars',
+  'bat-guano': 'bat-guano-cave-fertilizer',
+  'kelp-meal': 'kelp-meal-ocean-nutrition',
+  'fish-bone-meal': 'fish-bone-meal-phosphorus',
+  'fish-meal': 'fish-meal-nitrogen-ocean',
+  'feather-meal': 'feather-meal-slow-nitrogen',
+  'greensand': 'greensand-ancient-seabed',
+  'alfalfa-meal': 'alfalfa-meal-triacontanol',
+  'soybean-meal': 'soybean-meal-balanced-nitrogen',
+  'blood-meal': 'blood-meal-blood-money',
+  'bone-meal': 'bone-meal-the-bone-business',
+  'oyster-shell': 'oyster-shell-calcium-ph',
+  'crab-meal': 'crab-meal-chitin-pest-defense',
+  'shrimp-meal': 'shrimp-meal-trace-minerals',
+  'k-mag-trio': 'k-mag-langbeinite-triple-mineral',
+  'gypsum': 'gypsums-great-transformation',
+  'dolomite-lime': 'dolomite-lime-calcium-magnesium',
+  'humic-acids': 'humic-acids-leonardite-soil',
+  'mycorrhiza': 'mycorrhizal-network',
+  'glacial-rock-dust': 'glacial-rock-dust-remineralize',
+};
+
 // Ingredient data with product cross-references
 const baseMedia = [
   {
@@ -341,6 +371,12 @@ const totalIngredients = baseMedia.length + fertilizerBlend.length;
                     <span class="text-xs text-stone-400 bg-stone-800/80 border border-stone-700 rounded-md px-2 py-0.5">{tag}</span>
                   ))}
                 </div>
+                {ingredientBlogSlugs[ingredient.slug] && (
+                  <a href={`/blog/${ingredientBlogSlugs[ingredient.slug]}`} class="inline-flex items-center gap-1.5 mt-3 text-xs font-medium text-gold-400 hover:text-gold-300 transition-colors">
+                    Read the deep dive
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                  </a>
+                )}
               </div>
               <div class="md:w-52 flex-shrink-0">
                 <div class="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2">Found in</div>
@@ -400,6 +436,12 @@ const totalIngredients = baseMedia.length + fertilizerBlend.length;
                     <span class="text-xs text-stone-400 bg-stone-800/80 border border-stone-700 rounded-md px-2 py-0.5">{tag}</span>
                   ))}
                 </div>
+                {ingredientBlogSlugs[ingredient.slug] && (
+                  <a href={`/blog/${ingredientBlogSlugs[ingredient.slug]}`} class="inline-flex items-center gap-1.5 mt-3 text-xs font-medium text-gold-400 hover:text-gold-300 transition-colors">
+                    Read the deep dive
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                  </a>
+                )}
               </div>
               <div class="md:w-52 flex-shrink-0">
                 <div class="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2">Found in</div>

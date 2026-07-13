@@ -5,12 +5,14 @@ const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
+    description: z.string().optional(),          // SERP-optimized meta description (120-155 chars)
     excerpt: z.string(),
     date: z.string(),
     category: z.string(),
     image: z.string(),
     featured: z.boolean().optional(),
     relatedProducts: z.array(z.string()).optional(),
+    relatedPosts: z.array(z.string()).optional(),
     // GEO / AI-search optimization fields
     tldr: z.array(z.string()).optional(),       // 3-5 bullet key takeaways shown at top
     readingTime: z.string().optional(),          // "8 min read"

@@ -137,8 +137,8 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Product",
-                "name": "Merlin Blend with COF — Premium Landscape Mix",
-                "description": "Premium landscape soil blend with 10 lbs of complete organic fertilizer per yard for day-one plant nutrition"
+                "name": "Merlin Blend — Landscape Mix",
+                "description": "High-volume organic soil for landscaping, yard top-dressing, and large garden projects"
               }
             },
             {
@@ -276,24 +276,17 @@
             "item": {
               "@type": "Product",
               "@id": "https://daleyorganics.com/products#merlin-blend",
-              "name": "Merlin Blend with COF — Premium Landscape Mix",
-              "description": "Premium landscape soil blend with 10 lbs of 20-ingredient complete organic fertilizer (COF) per yard. Same versatile compost, bark, bio fiber, pumice, and topsoil base as the standard Merlin Blend, but with fertilizer already mixed in for day-one plant nutrition.",
+              "name": "Merlin Blend — Landscape Mix",
+              "description": "High-volume organic soil for landscaping, yard top-dressing, and large garden projects. Affordable bulk media for commercial and residential landscape applications.",
               "brand": {
                 "@id": "https://daleyorganics.com/#organization"
               },
               "offers": {
                 "@type": "Offer",
-                "price": "70.00",
+                "price": "55.00",
                 "priceCurrency": "USD",
                 "unitText": "per cubic yard",
                 "availability": "https://schema.org/InStock",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "70.00",
-                  "priceCurrency": "USD",
-                  "unitCode": "YRD",
-                  "unitText": "per cubic yard"
-                },
                 "seller": {
                   "@id": "https://daleyorganics.com/#organization"
                 }

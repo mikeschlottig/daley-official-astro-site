@@ -7,6 +7,7 @@ image: "bat-guano.jpg"
 author: "Cameron Daley"
 readingTime: "5 min read"
 tags: ["NPK", "fertilizer", "nitrogen", "phosphorus", "potassium", "soil science"]
+ingredientName: "NPK"
 tldr:
   - "N (Nitrogen) drives green leafy growth — blood meal and feather meal are our primary sources"
   - "P (Phosphorus) builds roots and flowers — fish bone meal and bone meal supply this"
@@ -14,6 +15,10 @@ tldr:
   - "Daley's Grow Blend is 5-4-2; Bloom Blend is 2-7-7 for flowering and fruiting"
   - "We don't chase numbers — we build blends that feed the biology that feeds your plants"
 relatedProducts: ["grow-blend", "bloom-blend"]
+relatedPosts:
+  - "blood-meal-blood-money"
+  - "bone-meal-the-bone-business"
+  - "kelp-meal-ocean-nutrition"
 faqs:
   - question: "What does NPK stand for on fertilizer bags?"
     answer: "NPK stands for Nitrogen (N), Phosphorus (P), and Potassium (K) — the three primary macronutrients plants need. The numbers on a fertilizer bag represent the percentage by weight of each nutrient. For example, a 5-4-2 fertilizer contains 5% nitrogen, 4% phosphorus, and 2% potassium."

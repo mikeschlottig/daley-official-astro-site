@@ -1,6 +1,7 @@
 ---
 title: "Humic Acids: How Ancient Plant Decomposition Unlocks Modern Nutrient Uptake"
 excerpt: "Humic acids from leonardite shale chelate micronutrients, increase CEC by 30-50%, and stimulate root growth through auxin-like activity. Learn why this 70-million-year-old carbon compound is the nutrient multiplier in Daley Organics blends."
+description: "Humic acids from leonardite chelate micronutrients, boost CEC 30-50%, and stimulate roots through auxin-like activity. The nutrient multiplier in Daley Organics blends."
 date: "July 12, 2026"
 category: "Ingredients"
 image: "soil-mix.jpg"
@@ -11,6 +12,10 @@ tldr:
   - "Humic acids are 70-million-year-old organic carbon compounds from leonardite shale that chelate micronutrients, increase soil CEC by 30-50%, and stimulate root growth through auxin-like activity"
   - "They function as the nutrient multiplier in Daley Organics' 25-ingredient blend — not delivering significant NPK themselves, but ensuring that the nutrients from the other 24 ingredients reach plant roots in available form by preventing lockout, precipitation, and leaching"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend", "bloom-blend"]
+relatedPosts:
+  - "worm-castings-black-gold"
+  - "composting-science-soil-biology"
+  - "glacial-rock-dust-remineralize"
 ingredientName: "Humic Acids"
 ingredientDescription: "Complex organic carbon compounds from leonardite shale that chelate micronutrients, increase cation exchange capacity, and stimulate root growth through auxin-like activity"
 faqs:

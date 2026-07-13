@@ -1,6 +1,7 @@
 ---
 title: "Blood Money: How Slaughterhouse Waste Became Garden Gold"
 excerpt: "Blood meal — dried, powdered blood from slaughterhouses — is the fastest-acting organic nitrogen fertilizer available. The story of how Chicago's Union Stock Yards turned a disposal problem into agriculture's best emergency nitrogen source."
+description: "Blood meal (12-0-0) is the fastest-acting organic nitrogen. How Chicago's Union Stock Yards turned slaughterhouse waste into agriculture's emergency nitrogen source."
 date: "April 19, 2026"
 category: "Ingredients"
 image: "daleys-cavern.png"
@@ -8,6 +9,7 @@ ogImage: "/images/hero-garden.jpg"
 author: "Cameron Daley"
 readingTime: "6 min read"
 tags: ["blood meal", "nitrogen", "organic fertilizer", "fast-acting", "deer repellent"]
+ingredientName: "Blood Meal"
 tldr:
   - "Blood meal (NPK ~12-0-0) is the fastest-acting organic nitrogen — corrects deficiency in 1-2 months vs. 4+ months for most organics"
   - "Commercialized in Chicago's Union Stock Yards in the 1880s — the 'use everything but the squeal' philosophy turned blood into revenue"
@@ -15,6 +17,10 @@ tldr:
   - "Doubles as a deer and rabbit repellent — the scent of dried blood signals predator activity to prey animals"
   - "Warning: one of the few organics that can burn plants — start conservative, and keep it away from dogs who may dig and eat it"
 relatedProducts: ["daleys-mix", "grow-blend"]
+relatedPosts:
+  - "feather-meal-slow-nitrogen"
+  - "bone-meal-the-bone-business"
+  - "soybean-meal-balanced-nitrogen"
 faqs:
   - question: "How fast does blood meal release nitrogen?"
     answer: "Blood meal releases nitrogen faster than any other organic amendment. Most of its nitrogen becomes plant-available within one to two months, compared to four or more months for most other organic fertilizers. This makes it the organic grower's best option for correcting nitrogen deficiency during the growing season."

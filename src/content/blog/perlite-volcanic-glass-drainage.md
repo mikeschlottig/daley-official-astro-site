@@ -12,6 +12,10 @@ tldr:
   - "It contributes zero nutrients but provides permanent non-compressible drainage channels that deliver oxygen to root zones and prevent waterlogging in heavy organic mixes"
   - "Daley Organics uses horticultural-grade perlite (#3-#4 size) in all three soil blends mixed at our Grants Pass yard, paired with pumice for complementary drainage and structural porosity"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "merlin-blend"]
+relatedPosts:
+  - "pumice-porous-rock-soil"
+  - "coco-coir-sustainable-alternative"
+  - "peat-moss-ancient-carbon"
 ingredientName: "Perlite"
 ingredientDescription: "Superheated volcanic glass expanded to create lightweight, porous granules for soil drainage and root zone aeration"
 faqs:

@@ -12,6 +12,10 @@ tldr:
   - "With a near-neutral pH of 5.8-6.8 and a 3-5 year structural lifespan, it outperforms peat moss in longevity and sustainability"
   - "Daley Organics uses triple-washed, pH-buffered coco coir as a foundation ingredient in all three soil blends mixed at our Grants Pass yard"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "merlin-blend"]
+relatedPosts:
+  - "peat-moss-ancient-carbon"
+  - "perlite-volcanic-glass-drainage"
+  - "pumice-porous-rock-soil"
 ingredientName: "Coco Coir"
 ingredientDescription: "Processed coconut husk fiber used as a sustainable base medium in organic soil mixes for water retention and aeration"
 faqs:

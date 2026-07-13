@@ -11,6 +11,10 @@ tldr:
   - "Feather meal delivers 12-15% nitrogen locked inside keratin protein that soil microbes take 90-120 days to fully decompose — creating the longest sustained nitrogen release of any common organic amendment"
   - "Only 20-30% of nitrogen is available in the first month, with 80-90% released by day 120. Daley Organics pairs feather meal with fast-acting blood meal and fish meal to eliminate the mid-season nitrogen gap in all premium soil blends"
 relatedProducts: ["daleys-mix", "premium-soil-mix", "grow-blend"]
+relatedPosts:
+  - "blood-meal-blood-money"
+  - "fish-meal-nitrogen-ocean"
+  - "soybean-meal-balanced-nitrogen"
 ingredientName: "Feather Meal"
 ingredientDescription: "Steam-hydrolyzed poultry feathers delivering 12% nitrogen through a 90-120 day sustained release curve via keratin protein breakdown"
 faqs:

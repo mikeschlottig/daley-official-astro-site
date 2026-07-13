@@ -7,6 +7,7 @@ image: "rock-dust.jpg"
 author: "Cameron Daley"
 readingTime: "4 min read"
 tags: ["glacial rock dust", "remineralization", "trace minerals", "soil health"]
+ingredientName: "Glacial Rock Dust"
 tldr:
   - "Modern farming strips dozens of trace minerals that plants evolved to need"
   - "Glacial rock dust slowly releases 60+ minerals as microbes break it down"
@@ -14,6 +15,10 @@ tldr:
   - "Works best when paired with mycorrhizal fungi (included in our blends)"
   - "Used in both Daley's Mix and Premium Soil Mix as a long-game ingredient"
 relatedProducts: ["daleys-mix", "premium-soil-mix"]
+relatedPosts:
+  - "gypsums-great-transformation"
+  - "greensand-ancient-seabed"
+  - "dolomite-lime-calcium-magnesium"
 faqs:
   - question: "What minerals are in glacial rock dust?"
     answer: "Glacial rock dust contains over 60 trace minerals including calcium and magnesium as secondary macronutrients, plus iron, manganese, zinc, copper, and boron as micronutrients. It also provides silica for cell wall strength and dozens of ultra-trace elements that influence plant immunity and flavor."
