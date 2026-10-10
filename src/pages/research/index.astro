@@ -1,5 +1,17 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Picture } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Blueprint figures live in src/assets/blueprints so astro:assets emits sized AVIF/WebP
+// instead of shipping the ~1–2 MB source PNGs. Section data keeps the short "/blueprints/…" paths.
+const blueprintImages = import.meta.glob<{ default: ImageMetadata }>('../../assets/blueprints/*/*.png', { eager: true });
+const blueprint = (src: string): ImageMetadata => {
+  const mod = blueprintImages[`../../assets${src}`];
+  if (!mod) throw new Error(`Missing blueprint image: ${src}`);
+  return mod.default;
+};
+const blueprintWidths = [416, 640, 848, 1280];
 
 const pageTitle = "Soil Science and the Organic Paradigm | Research | Daley Organics";
 const pageDescription = "A whitepaper on soil science through the lens of organic agriculture — covering CEC, mycorrhizal networks, and nutritional density. 60+ references.";
@@ -417,7 +429,16 @@ const reportSchema = {
 
       <!-- Cover blueprint -->
       <div class="rounded-2xl overflow-hidden border border-stone-700 max-w-2xl mx-auto">
-        <img src="/blueprints/biological/page1_img1.png" alt="Biological Soil Intelligence — Framework Overview" class="w-full" loading="eager"/>
+        <Picture
+          src={blueprint("/blueprints/biological/page1_img1.png")}
+          formats={['avif', 'webp']}
+          widths={[480, 672, 1008, 1344]}
+          sizes="(min-width: 720px) 672px, calc(100vw - 48px)"
+          alt="Biological Soil Intelligence — Framework Overview"
+          class="w-full h-auto"
+          loading="eager"
+          fetchpriority="high"
+        />
         <p class="bg-stone-900 text-stone-400 text-xs text-center py-2 px-4">Biological Soil Intelligence — Framework Overview</p>
       </div>
     </div>
@@ -521,7 +542,17 @@ const reportSchema = {
               <div class={`mt-8 grid gap-4 ${section.blueprints.length === 1 ? 'grid-cols-1' : 'md:grid-cols-2'}`}>
                 {section.blueprints.map((bp) => (
                   <figure class="rounded-xl overflow-hidden border border-stone-800">
-                    <img src={bp.src} alt={bp.caption} loading="lazy" class="w-full"/>
+                    <Picture
+                      src={blueprint(bp.src)}
+                      formats={['avif', 'webp']}
+                      widths={blueprintWidths}
+                      sizes={section.blueprints.length === 1
+                        ? "(min-width: 896px) 848px, calc(100vw - 48px)"
+                        : "(min-width: 896px) 416px, (min-width: 768px) calc(50vw - 32px), calc(100vw - 48px)"}
+                      alt={bp.caption}
+                      loading="lazy"
+                      class="w-full h-auto"
+                    />
                     <figcaption class="bg-stone-900 text-stone-500 text-xs text-center py-2 px-3">{bp.caption}</figcaption>
                   </figure>
                 ))}

@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Daley Organics"
+  description="The page you were looking for isn't here. Browse Daley Organics soil mixes, amendments and delivery options in Grants Pass, Oregon."
+  noindex
+>
+  <div class="bg-[#141414] min-h-screen pt-[72px]">
+    <div class="container-custom py-24 max-w-3xl text-center">
+      <p class="eyebrow mb-4">404</p>
+      <h1 class="font-serif text-4xl md:text-5xl text-white mb-6">This page didn't take root.</h1>
+      <p class="text-white/70 leading-relaxed mb-10">
+        The link may be old or mistyped. Everything we grow and sell is still a click away.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="/" class="btn-primary inline-block rounded-sm">Back to Home</a>
+        <a href="/products" class="inline-block rounded-sm border border-white/30 px-6 py-3 text-white hover:border-white/60 transition-colors">Shop Products</a>
+      </div>
+      <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/60">
+        <li><a href="/ingredients" class="hover:text-white transition-colors">Ingredients</a></li>
+        <li><a href="/delivery" class="hover:text-white transition-colors">Delivery</a></li>
+        <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+        <li><a href="/faq" class="hover:text-white transition-colors">FAQ</a></li>
+        <li><a href="/#contact" class="hover:text-white transition-colors">Contact</a></li>
+        <li><a href="tel:+15414410510" class="hover:text-white transition-colors">(541) 441-0510</a></li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
