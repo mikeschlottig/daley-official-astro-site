@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { pickImage } from '../lib/pick-image';
+import type { ImageMap } from '../types/images';
 import { ArrowRight } from 'lucide-react';
 import { heroConfig } from '../lib/site-config';
 
@@ -24,7 +26,8 @@ function useCountUp(target: number, duration = 2000, start = false) {
   return count;
 }
 
-export function Hero() {
+export function Hero({ images }: { images?: ImageMap }) {
+  const heroImage = pickImage(images, heroConfig.backgroundImage);
   if (!heroConfig.mainTitle) return null;
 
   const [phase, setPhase] = useState(0);
@@ -65,11 +68,13 @@ export function Hero() {
       <div className={`absolute inset-0 transition-opacity duration-[1.5s] ease-out ${phase >= 1 ? 'opacity-100' : 'opacity-0'}`}>
         <div className="absolute inset-0 hero-kenburns">
           <img
-            src={heroConfig.backgroundImage}
+            src={heroImage.src}
+            srcSet={heroImage.srcSet}
+            sizes="100vw"
             alt={heroConfig.mainTitle}
             className="w-full h-full object-cover scale-105"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
             width="1200"
             height="630"
           />

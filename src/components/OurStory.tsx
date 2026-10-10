@@ -1,18 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { History, Award, BookOpen } from 'lucide-react';
 import { ourStoryConfig } from '../lib/site-config';
-import { siteImages } from '../lib/blog-images';
+import { pickImage } from '../lib/pick-image';
+import type { ImageMap } from '../types/images';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   History, Award, BookOpen,
 };
 
-function getOptimizedSrc(path: string): string {
-  const filename = path.split('/').pop() || '';
-  return siteImages[filename]?.src ?? path;
-}
-
-export function OurStory() {
+export function OurStory({ images }: { images?: ImageMap }) {
+  const founderPhoto = pickImage(images, ourStoryConfig.founderPhoto);
   if (!ourStoryConfig.mainTitle) return null;
 
   const [activeTab, setActiveTab] = useState(ourStoryConfig.tabs[0]?.id || '');
@@ -124,7 +121,9 @@ export function OurStory() {
                 {ourStoryConfig.founderPhoto && (
                   <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-lg overflow-hidden border-2 border-gold-500/30 shadow-lg flex-shrink-0">
                     <img
-                      src={getOptimizedSrc(ourStoryConfig.founderPhoto)}
+                      src={founderPhoto.src}
+                      srcSet={founderPhoto.srcSet}
+                      sizes="96px"
                       alt={ourStoryConfig.founderPhotoAlt}
                       loading="lazy"
                       className="w-full h-full object-cover sepia"
@@ -157,7 +156,9 @@ export function OurStory() {
                   }`}
                 >
                   <img
-                    src={getOptimizedSrc(tab.image)}
+                    src={pickImage(images, tab.image).src}
+                    srcSet={pickImage(images, tab.image).srcSet}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     alt={`${tab.name} - ${ourStoryConfig.mainTitle}`}
                     loading="lazy"
                     className="w-full h-full object-cover"

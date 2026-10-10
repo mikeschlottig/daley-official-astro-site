@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { gardenCarouselConfig, navigationConfig } from '../lib/site-config';
+import { pickImage } from '../lib/pick-image';
+import type { ImageMap } from '../types/images';
 
-export function GardenCarousel() {
+export function GardenCarousel({ images }: { images?: ImageMap }) {
   if (!gardenCarouselConfig.mainTitle || gardenCarouselConfig.slides.length === 0) return null;
 
   const slides = gardenCarouselConfig.slides;
@@ -88,7 +90,9 @@ export function GardenCarousel() {
                   }`}
                 >
                   <img
-                    src={slide.image}
+                    src={pickImage(images, slide.image).src}
+                    srcSet={pickImage(images, slide.image).srcSet}
+                    sizes="(min-width: 1024px) 60vw, 100vw"
                     alt={`${slide.title} - ${slide.description}`}
                     loading="lazy"
                     className={`w-full h-full object-cover ${index === currentSlide ? 'kenburns' : ''}`}

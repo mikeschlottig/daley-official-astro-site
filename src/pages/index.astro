@@ -11,9 +11,11 @@ import News from '../components/News.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 import { ContactForm } from '../components/ContactForm';
 import { siteConfig } from '../lib/site-config';
+import { buildImageMap } from '../lib/responsive-images';
 import HomepageSchema from '../components/schema/HomepageSchema.astro';
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const images = await buildImageMap();
 ---
 
 <BaseLayout
@@ -30,7 +32,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <div class="min-h-screen bg-[#141414]">
     <main>
       <!-- Hero: waits for preloader:complete event to start animations -->
-      <Hero client:load />
+      <Hero client:load images={images} />
 
       <!-- Banner image: between hero and product showcase -->
       <div class="w-full">
@@ -38,13 +40,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       </div>
 
       <!-- Interactive product showcase with tab switching -->
-      <ProductShowcase client:visible />
+      <ProductShowcase client:visible images={images} />
 
       <!-- Auto-advancing garden photo carousel -->
-      <GardenCarousel client:visible />
+      <GardenCarousel client:visible images={images} />
 
       <!-- Our Story with tab content switching -->
-      <OurStory client:visible />
+      <OurStory client:visible images={images} />
 
       <!-- Blog + Testimonials: static Astro — zero JS shipped for this section -->
       <News />

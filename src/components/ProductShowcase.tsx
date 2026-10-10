@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { Sprout, Sparkles, MapPin, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { productShowcaseConfig } from '../lib/site-config';
+import { pickImage } from '../lib/pick-image';
+import type { ImageMap } from '../types/images';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Sprout, Sparkles, MapPin, Clock,
 };
 
-export function ProductShowcase() {
+export function ProductShowcase({ images }: { images?: ImageMap }) {
   if (!productShowcaseConfig.mainTitle || productShowcaseConfig.products.length === 0) return null;
 
   const [activeProduct, setActiveProduct] = useState(0);
@@ -147,7 +149,9 @@ export function ProductShowcase() {
               {products.map((p, i) => (
                 <img
                   key={p.id}
-                  src={p.image}
+                  src={pickImage(images, p.image).src}
+                  srcSet={pickImage(images, p.image).srcSet}
+                  sizes="220px"
                   alt={`${p.name} - ${p.subtitle}`}
                   loading={i === 0 ? undefined : 'lazy'}
                   style={p.filter ? { filter: p.filter } : undefined}
