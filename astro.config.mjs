@@ -15,6 +15,9 @@ export default defineConfig({
   site: 'https://daleyorganics.com',
   output: 'static',
   trailingSlash: 'never',
+  // Emit /research.html (not /research/index.html) so Workers assets serve the canonical,
+  // slash-less URL with a 200 instead of a 307 to /research/.
+  build: { format: 'file' },
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),

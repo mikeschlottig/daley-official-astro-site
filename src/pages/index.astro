@@ -1,4 +1,5 @@
 ---
+import { canonicalFor } from '../lib/canonical';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import bannerImage from '../assets/images/banner-image.png';
@@ -14,7 +15,7 @@ import { siteConfig } from '../lib/site-config';
 import { buildImageMap } from '../lib/responsive-images';
 import HomepageSchema from '../components/schema/HomepageSchema.astro';
 
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = canonicalFor(Astro.url.pathname, Astro.site);
 const images = await buildImageMap();
 ---
 

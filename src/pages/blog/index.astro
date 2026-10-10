@@ -1,10 +1,11 @@
 ---
+import { canonicalFor } from '../../lib/canonical';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { siteImages } from '../../lib/blog-images';
 
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = canonicalFor(Astro.url.pathname, Astro.site);
 
 const allPosts = (await getCollection('blog')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()

@@ -1,9 +1,10 @@
 ---
+import { canonicalFor } from '../lib/canonical';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import ProductsSchema from '../components/schema/ProductsSchema.astro';
 
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = canonicalFor(Astro.url.pathname, Astro.site);
 
 const allProducts = (await getCollection('products')).sort(
   (a, b) => a.data.order - b.data.order

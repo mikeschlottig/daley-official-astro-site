@@ -1,8 +1,9 @@
 ---
+import { canonicalFor } from '../../lib/canonical';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DeliveryHubSchema from '../../components/schema/DeliveryHubSchema.astro';
 
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = canonicalFor(Astro.url.pathname, Astro.site);
 ---
 
 <BaseLayout

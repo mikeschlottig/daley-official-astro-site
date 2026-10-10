@@ -1,9 +1,10 @@
 ---
+import { canonicalFor } from '../lib/canonical';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../lib/site-config';
 import IngredientsSchema from '../components/schema/IngredientsSchema.astro';
 
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = canonicalFor(Astro.url.pathname, Astro.site);
 
 const pageTitle = "Organic Soil Ingredients — What's Inside Daley Organics Mixes";
 const pageDescription = "Explore every ingredient in Daley Organics soil mixes and fertilizer blends. From worm castings to mycorrhiza, learn how each amendment feeds your soil biology.";

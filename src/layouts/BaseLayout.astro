@@ -1,4 +1,5 @@
 ---
+import { canonicalFor } from '../lib/canonical';
 // Self-hosted fonts (replaced the render-blocking Google Fonts @import in global.css).
 import "@fontsource/cormorant-garamond/latin-300.css";
 import "@fontsource/cormorant-garamond/latin-400.css";
@@ -43,7 +44,7 @@ const {
 } = Astro.props;
 
 // Compute canonical from current page path if not explicitly provided
-const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
+const canonicalUrl = canonical || canonicalFor(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
