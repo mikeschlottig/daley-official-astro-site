@@ -1,9 +1,14 @@
 {
-  // Daley Organics — static Astro site on Cloudflare Workers (assets-only)
+  // Daley Organics — static Astro site on Cloudflare Workers.
+  // Assets are served directly; the Worker script (worker/index.ts) runs only for the
+  // first-party PostHog relay at /lv-relay/*.
   "name": "daley-organics",
   "compatibility_date": "2025-01-01",
+  "main": "./worker/index.ts",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/lv-relay/*"]
   }
 }
