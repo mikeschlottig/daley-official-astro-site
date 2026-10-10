@@ -19,6 +19,8 @@ export function ContactForm() {
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serverError, setServerError] = useState('');
+  const honeypotRef = useRef<HTMLInputElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -45,13 +47,20 @@ export function ContactForm() {
       const response = await fetch(contactFormConfig.formEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          sourcePage: window.location.pathname,
+          website: honeypotRef.current?.value ?? '',
+        }),
       });
 
       if (response.ok) {
+        setServerError('');
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', visitDate: '', visitors: contactFormConfig.form.visitorsOptions[0] || '', message: '' });
       } else {
+        const result: { error?: string } = await response.json().catch(() => ({}));
+        setServerError(result.error ?? '');
         setStatus('error');
       }
     } catch {
@@ -160,10 +169,20 @@ export function ContactForm() {
               ) : status === 'error' ? (
                 <div className="text-center py-12" role="alert">
                   <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-                  <h3 className="font-serif text-h5 text-white mb-2">{form.errorMessage}</h3>
+                  <h3 className="font-serif text-h5 text-white mb-2">{serverError || form.errorMessage}</h3>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                  {/* Honeypot: hidden from people and screen readers; bots that fill it are ignored. */}
+                  <input
+                    ref={honeypotRef}
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
+                  />
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="contact-name" className="block text-sm text-white/80 mb-2">

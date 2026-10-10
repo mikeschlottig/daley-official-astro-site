@@ -525,7 +525,7 @@ export const contactFormConfig: ContactFormConfig = {
     errorMessage: "Something went wrong. Please try again.",
   },
   privacyNotice: "We respect your privacy. Your information will never be shared.",
-  formEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
+  formEndpoint: "/api/contact",
 };
 
 // -----------------------------------------------------------------------------
@@ -588,7 +588,7 @@ export const footerConfig: FooterConfig = {
   newsletterButtonText: "Subscribe",
   newsletterSuccessText: "Thank you for subscribing!",
   newsletterErrorText: "Something went wrong. Please try again.",
-  newsletterEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
+  newsletterEndpoint: "/api/newsletter",
   copyrightText: "Daley Organics LLC. All Rights Reserved.",
   legalLinks: [
     { name: "Privacy Policy", href: "/privacy" },

@@ -49,7 +49,7 @@ export function Footer() {
       const response = await fetch(footerConfig.newsletterEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: newsletterEmail }),
+        body: JSON.stringify({ email: newsletterEmail, sourcePage: window.location.pathname }),
       });
 
       if (response.ok) {

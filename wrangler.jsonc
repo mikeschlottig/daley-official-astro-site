@@ -1,7 +1,8 @@
 {
   // Daley Organics — static Astro site on Cloudflare Workers.
-  // Assets are served directly; the Worker script (worker/index.ts) runs only for the
-  // first-party PostHog relay at /lv-relay/*.
+  // Assets are served directly; the Worker script (worker/index.ts) runs only for:
+  //   /api/*      contact form → D1 + email alerts + submitter confirmation
+  //   /lv-relay/* first-party PostHog relay
   "name": "daley-organics",
   "compatibility_date": "2025-01-01",
   "main": "./worker/index.ts",
@@ -9,6 +10,31 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/lv-relay/*"]
-  }
+    "run_worker_first": ["/api/*", "/lv-relay/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "daley-organics-leads",
+      "database_id": "bd7ba31c-a176-4de2-9cde-d72580e83106",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Cloudflare Email Service (Email Sending). Locked to the shared LEVERAGEAI notifications sender.
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_sender_addresses": ["notifications@leverageai.network"]
+    }
+  ],
+  "vars": {
+    // Comma-separated alert recipients.
+    "NOTIFICATION_EMAIL": "macmonk@live.com,ceo@leverageai.network",
+    "FROM_EMAIL": "notifications@leverageai.network",
+    // Where a customer's reply to the confirmation email goes.
+    "REPLY_TO_EMAIL": "macmonk@live.com",
+    // Origins allowed to POST the form (production + preview).
+    "ALLOWED_ORIGINS": "https://daleyorganics.com,https://www.daleyorganics.com,https://daley-organics-preview.ceo-a53.workers.dev"
+  },
+  "observability": { "enabled": true }
 }
