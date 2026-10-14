@@ -14,8 +14,8 @@ export default {
   async fetch(request: Request, env: Env, ctx: WaitUntilContext): Promise<Response> {
     const url = new URL(request.url);
     if (isRelayPath(url.pathname)) return handleRelay(request, env, ctx);
-    if (url.pathname === "/api/contact") return handleContact(request, env);
-    if (url.pathname === "/api/newsletter") return handleNewsletter(request, env);
+    if (url.pathname === "/api/contact") return handleContact(request, env, ctx);
+    if (url.pathname === "/api/newsletter") return handleNewsletter(request, env, ctx);
     return env.ASSETS.fetch(request);
   },
 };

@@ -11,6 +11,7 @@ import { OurStory } from '../components/OurStory';
 import News from '../components/News.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 import { ContactForm } from '../components/ContactForm';
+import CallWidget from '../components/CallWidget.astro';
 import { siteConfig } from '../lib/site-config';
 import { buildImageMap } from '../lib/responsive-images';
 import HomepageSchema from '../components/schema/HomepageSchema.astro';
@@ -57,6 +58,8 @@ const images = await buildImageMap();
 
       <!-- Contact form with submission state -->
       <ContactForm client:visible />
+      <!-- Click-to-call widget for the contact section's "Talk to the yard now" link -->
+      <CallWidget />
     </main>
   </div>
 </BaseLayout>

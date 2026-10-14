@@ -36,5 +36,11 @@
     // Origins allowed to POST the form (production + preview).
     "ALLOWED_ORIGINS": "https://daleyorganics.com,https://www.daleyorganics.com,https://daley-organics-preview.ceo-a53.workers.dev"
   },
-  "observability": { "enabled": true }
+  // House rule: logs + traces declared here so a redeploy never turns them off.
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": { "enabled": true, "head_sampling_rate": 1, "invocation_logs": true, "persist": true },
+    "traces": { "enabled": true, "head_sampling_rate": 1, "persist": true }
+  }
 }

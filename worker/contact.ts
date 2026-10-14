@@ -4,6 +4,8 @@
 // address in NOTIFICATION_EMAIL. Additionally: the customer gets a confirmation email, alerts set
 // Reply-To to the customer, all user input is HTML-escaped, and D1/email calls retry with backoff.
 
+import type { WaitUntilContext } from "./posthog-relay";
+
 type D1Result = { success: boolean; meta?: { changes?: number } };
 type D1PreparedStatement = {
   bind: (...values: unknown[]) => D1PreparedStatement;
@@ -145,7 +147,7 @@ function confirmationEmail(lead: Lead): { subject: string; text: string; html: s
   };
 }
 
-export async function handleContact(request: Request, env: ContactEnv): Promise<Response> {
+export async function handleContact(request: Request, env: ContactEnv, ctx: WaitUntilContext): Promise<Response> {
   if (request.method !== "POST") return new Response("Method Not Allowed", { status: 405, headers: { allow: "POST" } });
 
   const allowed = (env.ALLOWED_ORIGINS ?? "").split(",").map((o) => o.trim()).filter(Boolean);
@@ -198,23 +200,42 @@ export async function handleContact(request: Request, env: ContactEnv): Promise<
     log("error", "d1_insert_failed", { id, message: error instanceof Error ? error.message : String(error) });
   }
 
-  const alert = alertEmail(lead, id);
-  const alertResults = await Promise.allSettled(
-    recipients.map((to) =>
-      withRetry(`alert:${to}`, () =>
-        env.EMAIL.send({ to, from, subject: alert.subject, text: alert.text, html: alert.html, replyTo: { email: lead.email, name: lead.name } }),
-      ).then(() => to),
-    ),
-  );
-  const notified = alertResults.flatMap((r) => (r.status === "fulfilled" ? [r.value] : []));
-  alertResults.forEach((r, i) => {
-    if (r.status === "rejected") log("error", "alert_failed", { id, to: recipients[i], message: String(r.reason) });
-  });
+  const delivery = deliverLead(env, lead, id, recipients, from, stored);
 
-  let confirmationSent = false;
-  try {
-    const confirmation = confirmationEmail(lead);
-    await withRetry("confirmation", () =>
+  // Stored in D1 = received (Speed-to-Lead): answer the visitor now and send the mail after the response.
+  // Each send takes ~2.4 s; awaiting them serially kept the visitor on a spinner for 5–8 s (2026-10-14).
+  if (stored) {
+    ctx.waitUntil(delivery);
+    return json({ ok: true, id });
+  }
+  // Not stored: the email is the only record, so the visitor's answer depends on it.
+  const { notified } = await delivery;
+  if (notified.length === 0) {
+    return json({ ok: false, error: "We couldn't send your message. Please call or email us directly." }, 502);
+  }
+  return json({ ok: true, id });
+}
+
+/** Alerts and the submitter confirmation, sent concurrently; the outcome is written back to the lead row. */
+async function deliverLead(
+  env: ContactEnv,
+  lead: Lead,
+  id: string,
+  recipients: string[],
+  from: EmailAddress,
+  stored: boolean,
+): Promise<{ notified: string[]; confirmationSent: boolean }> {
+  const alert = alertEmail(lead, id);
+  const confirmation = confirmationEmail(lead);
+  const [alertResults, confirmationResult] = await Promise.all([
+    Promise.allSettled(
+      recipients.map((to) =>
+        withRetry(`alert:${to}`, () =>
+          env.EMAIL.send({ to, from, subject: alert.subject, text: alert.text, html: alert.html, replyTo: { email: lead.email, name: lead.name } }),
+        ).then(() => to),
+      ),
+    ),
+    withRetry("confirmation", () =>
       env.EMAIL.send({
         to: { email: lead.email, name: lead.name },
         from,
@@ -223,30 +244,39 @@ export async function handleContact(request: Request, env: ContactEnv): Promise<
         html: confirmation.html,
         replyTo: env.REPLY_TO_EMAIL ?? recipients[0] ?? from.email,
       }),
-    );
-    confirmationSent = true;
-  } catch (error) {
-    log("error", "confirmation_failed", { id, message: error instanceof Error ? error.message : String(error) });
+    ).then(
+      () => null,
+      (error: unknown) => (error instanceof Error ? error.message : String(error)),
+    ),
+  ]);
+
+  const notified = alertResults.flatMap((r) => (r.status === "fulfilled" ? [r.value] : []));
+  const errors: string[] = [];
+  alertResults.forEach((r, i) => {
+    if (r.status === "rejected") {
+      errors.push(`alert ${recipients[i]}: ${String(r.reason)}`);
+      log("error", "alert_failed", { id, to: recipients[i], message: String(r.reason) });
+    }
+  });
+  const confirmationSent = confirmationResult === null;
+  if (!confirmationSent) {
+    errors.push(`confirmation: ${confirmationResult}`);
+    log("error", "confirmation_failed", { id, message: confirmationResult });
   }
 
   if (stored) {
-    await env.DB.prepare("UPDATE leads SET notified = ?, confirmation_sent = ? WHERE id = ?")
-      .bind(JSON.stringify(notified), confirmationSent ? 1 : 0, id)
+    await env.DB.prepare("UPDATE leads SET notified = ?, confirmation_sent = ?, mail_error = ? WHERE id = ?")
+      .bind(JSON.stringify(notified), confirmationSent ? 1 : 0, errors.length ? errors.join("\n").slice(0, 500) : null, id)
       .run()
       .catch((error: unknown) => log("warn", "d1_update_failed", { id, message: String(error) }));
   }
 
   log("info", "lead_received", { id, stored, notified: notified.length, recipients: recipients.length, confirmationSent });
-
-  // The submission counts as received if it was stored or at least one alert went out.
-  if (!stored && notified.length === 0) {
-    return json({ ok: false, error: "We couldn't send your message. Please call or email us directly." }, 502);
-  }
-  return json({ ok: true, id });
+  return { notified, confirmationSent };
 }
 
 /** Footer newsletter signup → D1 `subscribers` (deduplicated) + alert + subscriber confirmation. */
-export async function handleNewsletter(request: Request, env: ContactEnv): Promise<Response> {
+export async function handleNewsletter(request: Request, env: ContactEnv, ctx: WaitUntilContext): Promise<Response> {
   if (request.method !== "POST") return new Response("Method Not Allowed", { status: 405, headers: { allow: "POST" } });
 
   const allowed = (env.ALLOWED_ORIGINS ?? "").split(",").map((o) => o.trim()).filter(Boolean);
@@ -284,9 +314,16 @@ export async function handleNewsletter(request: Request, env: ContactEnv): Promi
 
   if (!isNew) return json({ ok: true, alreadySubscribed: true });
 
+  // The row is in D1, so the signup is safe: answer now, send the mail after the response.
+  ctx.waitUntil(sendNewsletterMail(env, email, sourcePage));
+  return json({ ok: true });
+}
+
+/** Signup alerts + subscriber confirmation, sent concurrently. */
+async function sendNewsletterMail(env: ContactEnv, email: string, sourcePage: string): Promise<void> {
   const from: EmailAddress = { email: env.FROM_EMAIL ?? "notifications@leverageai.network", name: "Daley Organics" };
   const recipients = (env.NOTIFICATION_EMAIL ?? "").split(",").map((r) => r.trim()).filter(Boolean);
-  const alerts = await Promise.allSettled(
+  const alertsSent = Promise.allSettled(
     recipients.map((to) =>
       withRetry(`newsletter_alert:${to}`, () =>
         env.EMAIL.send({
@@ -300,11 +337,7 @@ export async function handleNewsletter(request: Request, env: ContactEnv): Promi
       ),
     ),
   );
-  alerts.forEach((r, i) => {
-    if (r.status === "rejected") log("error", "newsletter_alert_failed", { to: recipients[i], message: String(r.reason) });
-  });
-
-  await withRetry("newsletter_confirmation", () =>
+  const confirmationSent = withRetry("newsletter_confirmation", () =>
     env.EMAIL.send({
       to: email,
       from,
@@ -315,6 +348,9 @@ export async function handleNewsletter(request: Request, env: ContactEnv): Promi
     }),
   ).catch((error: unknown) => log("error", "newsletter_confirmation_failed", { message: String(error) }));
 
+  const [alerts] = await Promise.all([alertsSent, confirmationSent]);
+  alerts.forEach((r, i) => {
+    if (r.status === "rejected") log("error", "newsletter_alert_failed", { to: recipients[i], message: String(r.reason) });
+  });
   log("info", "subscriber_added", { notified: alerts.filter((r) => r.status === "fulfilled").length });
-  return json({ ok: true });
 }

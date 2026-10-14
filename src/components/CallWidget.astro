@@ -1,0 +1,23 @@
+---
+// Loads the Daley click-to-call widget (Worker daley-organics-call) for the inline "Talk to the yard now" link in
+// ContactForm.tsx. widget.js mounts a floating #c2c-btn and binds the call panel to it; this page hides that
+// floating button and clicks it from the inline link instead, so the call app needs no change. Same pattern as
+// leverageai.network's CallNow.astro. Delegated listener: the link is rendered by a React island that hydrates later.
+import { callConfig } from '../lib/site-config';
+---
+
+<script is:inline src={`${callConfig.origin}/widget.js`} defer data-label={callConfig.buttonText} data-color="#d2a855"></script>
+<script is:inline>
+  document.addEventListener("click", (event) => {
+    const link = event.target instanceof Element ? event.target.closest("[data-call-now]") : null;
+    if (!link) return;
+    const widgetButton = document.getElementById("c2c-btn");
+    if (!widgetButton) return; // widget blocked or not loaded: follow the link to the hosted call page
+    event.preventDefault();
+    widgetButton.click();
+  });
+</script>
+
+<style is:global>
+  #c2c-widget-root { display: none; }
+</style>

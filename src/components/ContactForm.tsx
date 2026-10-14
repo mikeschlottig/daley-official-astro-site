@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Send, CheckCircle, AlertCircle, MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
-import { contactFormConfig, directoryLinks } from '../lib/site-config';
+import { Send, CheckCircle, AlertCircle, MapPin, Phone, PhoneCall, Mail, Clock, ExternalLink } from 'lucide-react';
+import { callConfig, contactFormConfig, directoryLinks } from '../lib/site-config';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   MapPin, Phone, Mail, Clock,
@@ -132,6 +132,20 @@ export function ContactForm() {
               </div>
             </div>
 
+            {/* Click-to-call. CallWidget.astro loads widget.js and turns this link into the in-page call panel;
+                without the widget the link opens the hosted call page. */}
+            <div className="slide-in-left p-5 bg-gold-500/5 rounded-lg border border-gold-500/30" style={{ transitionDelay: '0.15s' }}>
+              <a
+                href={`${callConfig.origin}/call`}
+                data-call-now
+                className="w-full btn-primary rounded-sm flex items-center justify-center gap-2"
+              >
+                <PhoneCall className="w-4 h-4" />
+                {callConfig.buttonText}
+              </a>
+              <p className="text-sm text-white/60 mt-3 text-center">{callConfig.note}</p>
+            </div>
+
             {/* Google Maps Embed */}
             <div className="slide-in-left rounded-lg overflow-hidden border border-white/10" style={{ transitionDelay: '0.2s' }}>
               <iframe
@@ -172,7 +186,7 @@ export function ContactForm() {
                   <h3 className="font-serif text-h5 text-white mb-2">{serverError || form.errorMessage}</h3>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Honeypot: hidden from people and screen readers; bots that fill it are ignored. */}
                   <input
                     ref={honeypotRef}
@@ -203,7 +217,7 @@ export function ContactForm() {
 
                     <div>
                       <label htmlFor="contact-phone" className="block text-sm text-white/80 mb-2">
-                        {form.phoneLabel} <span className="text-gold-500">*</span>
+                        {form.phoneLabel}
                       </label>
                       <input
                         id="contact-phone"
@@ -211,7 +225,6 @@ export function ContactForm() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        required
                         placeholder={form.phonePlaceholder}
                         autoComplete="tel"
                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white placeholder-white/40 focus:outline-none focus:border-gold-500 transition-colors"
@@ -237,7 +250,7 @@ export function ContactForm() {
 
                     <div>
                       <label htmlFor="contact-date" className="block text-sm text-white/80 mb-2">
-                        {form.visitDateLabel} <span className="text-gold-500">*</span>
+                        {form.visitDateLabel}
                       </label>
                       <input
                         id="contact-date"
@@ -245,7 +258,6 @@ export function ContactForm() {
                         name="visitDate"
                         value={formData.visitDate}
                         onChange={handleChange}
-                        required
                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white focus:outline-none focus:border-gold-500 transition-colors"
                       />
                     </div>
@@ -272,13 +284,15 @@ export function ContactForm() {
 
                   <div>
                     <label htmlFor="contact-message" className="block text-sm text-white/80 mb-2">
-                      {form.messageLabel}
+                      {form.messageLabel} <span className="text-gold-500">*</span>
                     </label>
                     <textarea
                       id="contact-message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
+                      required
+                      minLength={2}
                       rows={4}
                       placeholder={form.messagePlaceholder}
                       className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white placeholder-white/40 focus:outline-none focus:border-gold-500 transition-colors resize-none"
