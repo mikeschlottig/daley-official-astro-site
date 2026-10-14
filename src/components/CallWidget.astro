@@ -6,7 +6,7 @@
 import { callConfig } from '../lib/site-config';
 ---
 
-<script is:inline src={`${callConfig.origin}/widget.js`} defer data-label={callConfig.buttonText} data-color="#d2a855"></script>
+<script is:inline src={`${callConfig.origin}/widget.js`} defer></script>
 <script is:inline>
   document.addEventListener("click", (event) => {
     const link = event.target instanceof Element ? event.target.closest("[data-call-now]") : null;

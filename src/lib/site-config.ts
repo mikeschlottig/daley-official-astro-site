@@ -528,11 +528,12 @@ export const contactFormConfig: ContactFormConfig = {
   formEndpoint: "/api/contact",
 };
 
-// Click-to-call: Worker daley-organics-call (CloudflareRealTime-Admin-App, wrangler env "daley").
+// Click-to-call: Worker daley-organics-call on call.daleyorganics.com (CloudflareRealTime-Admin-App, wrangler env
+// "daley"; brand + receptionist in its sites/daley/site.ts).
 // The yard answers from /admin on that Worker; when nobody picks up in 20 s the AI receptionist takes the
 // message (D1 daley-organics-leads `messages`, emailed from notifications@leverageai.network).
 export const callConfig = {
-  origin: "https://daley-organics-call.ceo-a53.workers.dev",
+  origin: "https://call.daleyorganics.com",
   buttonText: "Talk to the yard now",
   note: "Video or audio, right from your browser. If nobody can pick up, our assistant takes your message.",
 };

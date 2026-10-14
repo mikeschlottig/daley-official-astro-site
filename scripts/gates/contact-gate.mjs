@@ -2,6 +2,7 @@
 //   node scripts/gates/contact-gate.mjs form [versionId] [origin]   submit one TEST lead through the real form
 //   node scripts/gates/contact-gate.mjs call [versionId] [origin]   inline call button opens the Daley call app
 // versionId → sent as Cloudflare-Workers-Version-Overrides on every request (staged release, 0% version).
+// CALL_VERSION=<id> adds the call app (Worker daley-organics-call) to the same header, to gate both staged together.
 // Exit 1 when the phase's assertion fails. Console errors are printed and counted, never hidden.
 import { createRequire } from "node:module";
 
@@ -19,7 +20,8 @@ let failed = false;
 for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 }]) {
   if (phase === "form" && viewport.width !== 1280) continue; // one real submission per run is enough
   const context = await browser.newContext({ viewport });
-  if (version) await context.setExtraHTTPHeaders({ "Cloudflare-Workers-Version-Overrides": `${WORKER}="${version}"` });
+  const overrides = [version && `${WORKER}="${version}"`, process.env.CALL_VERSION && `daley-organics-call="${process.env.CALL_VERSION}"`].filter(Boolean);
+  if (overrides.length) await context.setExtraHTTPHeaders({ "Cloudflare-Workers-Version-Overrides": overrides.join(", ") });
   const page = await context.newPage();
   const consoleErrors = [];
   page.on("console", (m) => m.type() === "error" && consoleErrors.push(m.text()));
